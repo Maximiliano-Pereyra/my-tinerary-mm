@@ -109,3 +109,5 @@ let dataShows =
      "userId": "user2"
      }
 ]
+
+export default dataShows

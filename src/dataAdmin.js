@@ -44,3 +44,5 @@ let datosAdmin= [
 		"logged": "true"
 	}
 ]
+
+export default datosAdmin
