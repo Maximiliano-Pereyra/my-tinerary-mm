@@ -36,3 +36,70 @@
     transform: rotate(360deg);
   }
 }
+
+/*estilos mt f1*/
+
+.h100 {
+  min-height: 100vh;
+}
+.w100{
+  width: 100%;
+}
+.flex {
+  display: flex;
+}
+.column {
+  flex-direction: column;
+}
+.row {
+  flex-direction: row;
+}
+.space_evenly {
+  justify-content: space-evenly;
+}
+.list {
+  list-style: none;
+}
+.nomargin {
+  margin: 0px;
+}
+.nopadding {
+  padding: 0px;
+}
+li {
+  text-decoration: none;
+  display: block;
+  background-color: aquamarine;
+  width: 170px;
+  text-align: center;
+}
+li:hover > ul {
+  display: block;
+  background-color: bisque;
+}
+.dispNone{
+  display: none;
+}
+.marginauto {
+  margin: auto;
+}
+.navWidth {
+  width: 900px;
+}
+.red {
+  background-color: red;
+}
+.blue {
+  background-color: blue;
+}
+.yellow {
+  background-color: yellow;
+}
+.img {
+  height: 50px;
+  width: 50px;
+}
+.logo {
+  height: 300px;
+  width: 300px;
+}
