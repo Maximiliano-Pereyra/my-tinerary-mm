@@ -107,3 +107,5 @@ let cities = [
     userId: "adm4",
   },
 ];
+
+export default cities

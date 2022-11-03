@@ -44,3 +44,5 @@ let users = [
     logged: true,
   },
 ];
+
+export default users
