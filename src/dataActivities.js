@@ -171,3 +171,5 @@ let activities = [
     userId: "user6",
   },
 ];
+
+export default activities

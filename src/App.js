@@ -1,9 +1,9 @@
 import './App.css';
-import Main from './layouts/Main';
+import Home2 from './layouts/Home2';
 
 function App() {
   return (
-   < Main />
+   < Home2 />
   )
 }
 

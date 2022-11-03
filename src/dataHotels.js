@@ -14,8 +14,7 @@ let dataHotels = [
       {
      id: "ho2",
      "name": "Athens Cypria Hotel",
-     "photo": ["https://media.staticontent.com/media/pictures/19884b41-8bf0-4008-b90c-145708089ac7",
-      "https://athenscypria.com/wp-content/uploads/2020/03/slider-2.jpg",
+     "photo": [
       "https://pix10.agoda.net/hotelImages/506/50697/50697_16082319240045742113.jpg?ca=6&ce=1&s=1024x768"
      ],
      "capacity": 300,
@@ -144,3 +143,5 @@ let dataHotels = [
      "userId": "adm4"
      }
     ]
+
+export default dataHotels
