@@ -25,10 +25,7 @@ let dataHotels = [
      {
      id: "ho3",
      "name": "Novotel Paris Les Halles",
-     "photo": ["https://www.novotelparis.com/photos-2/ourhotel-1.jpg",
-      "https://assets.hotelaparis.com/uploads/pictures/000/043/237/novotel-paris-les-halles-11-HD.jpg",
-      "https://assets.hotelaparis.com/uploads/pictures/000/043/236/_N2Q8098.jpg"
-     ],
+     "photo": ["https://www.novotelparis.com/photos-2/ourhotel-1.jpg"],
      "capacity": 500,
      "description": "Known for its family-friendly environment and proximity to great restaurants and attractions, Novotel Paris Les Halles makes it easy to enjoy the best of Paris",
      "cityId": "city3",
@@ -37,10 +34,7 @@ let dataHotels = [
      {
      id: "ho4",
      "name": "Westin Rusutsu Resort",
-     "photo": ["https://rusutsu.com/wp-content/uploads/westin-main_sp.jpg",
-      "https://cache.marriott.com/content/dam/marriott-renditions/CTSWI/ctswi-lobby-morning-4953-hor-clsc.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1336px:*",
-      "https://pix10.agoda.net/hotelImages/114/1147341/1147341_17081811260055498515.jpg?ca=6&ce=1&s=1024x768"
-     ],
+     "photo": ["https://rusutsu.com/wp-content/uploads/westin-main_sp.jpg"],
      "capacity": 400,
      "description": "Located 400 meters from Rusutsu Ski Resort, The Westin Rusutsu Resort offers rooms with air conditioning in Rusutsu. The property is within walking distance of several attractions, including the West Gondola and the West 2nd Quad",
      "cityId": "city4",
@@ -49,10 +43,7 @@ let dataHotels = [
      {
      id: "ho5",
      "name": "InterContinental Wellington",
-     "photo": ["https://digital.ihg.com/is/image/ihg/intercontinental-wellington-6002915753-2x1",
-      "https://digital.ihg.com/is/image/ihg/intercontinental-wellington-6002934439-2x1",
-      "https://ik.imgkit.net/3vlqs5axxjf/external/ik-seo/http://www.cfmedia.vfmleonardo.com/imageRepo/7/0/109/541/105/WLGGS_6002926884_O/InterContinental-Wellington-Pool.jpg?tr=w-780%2Ch-437%2Cfo-auto"
-     ],
+     "photo": ["https://digital.ihg.com/is/image/ihg/intercontinental-wellington-6002915753-2x1"],
      "capacity": 600,
      "description": "The 5-star InterContinental Wellington is located next to the harbor and just 5 miles from Wellington International Airport",
      "cityId": "city5",
@@ -85,10 +76,7 @@ let dataHotels = [
      {
      id: "ho8",
      "name": "Grand Hotel Bohemia",
-     "photo": ["https://ak-d.tripcdn.com/images/220o16000001087iz4F6E_Z_1100_824_R5_Q70_D.jpg",
-      "https://pix10.agoda.net/hotelImages/285/2858/2858_15060216040028254938.jpg?ca=4&ce=1&s=1024x768",
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/165367058.jpg?k=eef3b5a58ee66ef85ea9be977c654ebe06688e8e92da2f1a2b9e10747c826948&o=&hp=1"
-     ],
+     "photo": ["https://ak-d.tripcdn.com/images/220o16000001087iz4F6E_Z_1100_824_R5_Q70_D.jpg"],
      "capacity": "400",
      "description": "Grand Hotel Bohemia is located in the center of Prague, a few steps from the Powder Tower and 200 meters from the Namesti Republiky Metro Station and the Palladium Shopping Mall, overlooking the red roofs of the Old Town",
      "cityId": "city8",
@@ -109,10 +97,7 @@ let dataHotels = [
      {
      id: "ho10",
      "name": "Avani Atrium Bangkok Hotel",
-     "photo": ["https://pix10.agoda.net/hotelImages/23112526/0/628a73f3d71a49a8114039c9bffb40c5.jpg?ca=17&ce=1&s=1024x768",
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/163279019.jpg?k=4f2ff0a4c17a0b85701bf4be3ba5f08f5d5de7bcb1549cf3595a9c3646fb7641&o=&hp=1",
-      "https://r1imghtlak.mmtcdn.com/7bf49142256411ea81150242ac110004.jpg?&output-quality=75&downsize=910:612&crop=910:612;16,0&output-format=jpg"
-     ],
+     "photo": ["https://pix10.agoda.net/hotelImages/23112526/0/628a73f3d71a49a8114039c9bffb40c5.jpg?ca=17&ce=1&s=1024x768"],
      "capacity": 700,
      "description": "Avani Atrium Bangkok is located along New Petchburi Road, 700 metres from Phetchaburi MRT Station and hotel also provides drop off service to Phetchaburi MRT at exit 3 as well. Boasting a swimming pool, fitness centre and free WiFi in all areas, this hotel offers chargeable limousine services",
      "cityId": "city10",
