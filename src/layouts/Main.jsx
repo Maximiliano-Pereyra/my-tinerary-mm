@@ -1,14 +1,18 @@
-import React from 'react'
-import Logo from '../components/Logo'
-import InicioU from '../components/InicioU'
-import Empresa from '../components/Empresa'
+import React from "react";
+import Header from "../pages/Header";
+import Footer from "../components/Footer"
+import Scrolltop from "../pages/Scrolltop";
+import Home from "../pages/Home";
 
-export default function Main() {
-  return (
-    <div>
-        <div className='barra-de-arriba'></div>
-        <div className='cuerpo-general'>Cuerpo general</div>
-        <div className='footer'>Footer</div>
-    </div>
-  )
+export default function Lay05(){
+    return (
+    <>
+    <Scrolltop></Scrolltop>
+     <Header></Header>
+     <Home></Home>
+     <div className="footer">
+     <Footer></Footer>
+     </div>
+    </>
+    );
 }

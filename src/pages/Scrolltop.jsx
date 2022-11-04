@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
-import { ScrollRestoration } from "react-router-dom";
+export default function ScrollToTop() {
 
-export default function Scrolltop() {
+    const { pathname } = useLocation()
+    //console.log(pathname)
+
+    useEffect(() => {
+
+        window.scrollTo(0, 0);
+
+    }, [pathname])
+
   return (
-    <div>
-      {/* ... */}
-      <ScrollRestoration />
-    </div>
-  );
+    <></>
+  )
 }
