@@ -52,11 +52,13 @@ export default function Carrusel() {
       }else{
         setIndiceAcambiar2(0)
       }
+      clearInterval(id2)
       if(indice2A<dataHotels.length-1){
         setIndiceAcambiar2A(indice2A+1)
        }else{
          setIndiceAcambiar2A(0)
        }
+       clearInterval(idA2)
     }
     let anterior2 = () =>{   
       if(indice2>0){
@@ -64,11 +66,13 @@ export default function Carrusel() {
       }else{
         setIndiceAcambiar2(dataHotels.length-1)
       }
+      clearInterval(id2)
       if(indice2A>0){
         setIndiceAcambiar2A(indice2A-1)
        }else{
          setIndiceAcambiar2A(dataHotels.length-1)
        }
+       clearInterval(idA2)
     }
 
     /* ------------------------------CARRUSEL AUTOMATICO CIUDADES------------------------------------------ */
@@ -93,7 +97,7 @@ export default function Carrusel() {
         () =>{ 
         let idAutomaticoA =setInterval(
             ()=>{
-                posterior()
+                anterior()
             },
             3000)
             setidA(idAutomaticoA)
@@ -102,6 +106,37 @@ export default function Carrusel() {
         [indiceA]
     )
 
+    /* ------------------------------CARRUSEL AUTOMATICO HOTELES------------------------------------------ */
+
+    let [id2,setid2]= useState(0)
+    
+    useEffect(
+        () =>{ 
+        let idAutomatico2 =setInterval(
+            ()=>{
+                posterior2()
+            },
+            3000)
+            setid2(idAutomatico2)
+            return clearInterval(id2)
+        },
+        [indice2]
+    )
+
+    let [idA2,setidA2]= useState(1)
+    
+    useEffect(
+        () =>{ 
+        let idAutomaticoA2 =setInterval(
+            ()=>{
+                anterior2()
+            },
+            3000)
+            setidA2(idAutomaticoA2)
+            return clearInterval(idA2)
+        },
+        [indice2A]
+    )
     return(
     <>
     <h2 className='subtitulosHome2'>CIUDADES</h2>
