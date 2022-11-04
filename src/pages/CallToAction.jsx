@@ -1,14 +1,11 @@
 import React from 'react'
+import { Link as NavLink } from 'react-router-dom'
 
-export default function CallToAction() {
+export default function CallToAction(props) {
+  let {page, rute} = {props};
   return (
-    <div>
-        <button type='button'>
-        <img src='imagenes/avion.png' className='img' alt="" />
-        </button>
-        <button type='button'>
-        <img src='imagenes/hotel.png' className='img' alt="" />
-        </button>
-    </div>
+    <NavLink className='navl' to={rute}>
+        <button>{page}</button>
+    </NavLink>
   )
 }

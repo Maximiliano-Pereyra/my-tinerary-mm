@@ -1,11 +1,22 @@
-import React from 'react'
 
-export default function Main() {
-  return (
-    <div>
-        <div className='barra-de-arriba'></div>
-        <div className='cuerpo-general'>Cuerpo general</div>
-        <div className='footer'>Footer</div>
-    </div>
-  )
+import React from 'react'
+=======
+import React from "react";
+import Header from "../pages/Header";
+import Footer from "../components/Footer"
+import Scrolltop from "../pages/Scrolltop";
+import Home from "../pages/Home";
+
+
+export default function Lay05(){
+    return (
+    <>
+    <Scrolltop></Scrolltop>
+     <Header></Header>
+     <Home></Home>
+     <div className="footer">
+     <Footer></Footer>
+     </div>
+    </>
+    );
 }

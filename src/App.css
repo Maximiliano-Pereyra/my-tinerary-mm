@@ -66,16 +66,24 @@
 .nopadding {
   padding: 0px;
 }
+.spacebet {
+  justify-content: space-between;
+}
 li {
   text-decoration: none;
   display: block;
-  background-color: aquamarine;
-  width: 170px;
+  width: 150px;
   text-align: center;
+  color: bisque;
+  font-size: 20px;
+  margin-top: 10px;
 }
-li:hover > ul {
+li:hover {
+  background-color: #242331;
+}
+.despList:hover > ul {
   display: block;
-  background-color: bisque;
+  background-color: #242331;
 }
 .dispNone{
   display: none;
@@ -86,20 +94,40 @@ li:hover > ul {
 .navWidth {
   width: 900px;
 }
-.red {
-  background-color: red;
-}
-.blue {
-  background-color: blue;
-}
-.yellow {
-  background-color: yellow;
-}
-.img {
-  height: 50px;
+.w50 {
   width: 50px;
 }
+.img {
+  height: 100px;
+  width: 100px;
+}
 .logo {
-  height: 300px;
-  width: 300px;
+  height: 350px;
+  width: 350px;
+  display: flex;
+  align-self:center;
+  padding-top: 150px;
+}
+.imgback {
+  background-image: url(https://static01.nyt.com/images/2022/03/16/world/00Venezuela-Russians-Promo/00Venezuela-Russians-Promo-videoSixteenByNine3000.jpg);
+}
+.navl a {
+  width: 100px;
+  height: 50px;
+  background-color: #A27035;
+  margin: 3px;
+}
+.navl {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 150px;
+}
+button {
+  background-color: transparent;
+  border-style: none;
+}
+
+.heacolor{
+  background: linear-gradient(to right,#DDCA7D,#B88B4A,#A27035, #533E2D, #242331);
 }
