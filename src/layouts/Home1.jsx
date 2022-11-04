@@ -13,7 +13,6 @@ export default function Home1() {
         <CallToAction page="Cities" rute="/cities"></CallToAction>
         <CallToAction page="Hotels" rute="/hotels"></CallToAction>
       </div>
-
       </div>
     )
   }
