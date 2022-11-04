@@ -39,7 +39,9 @@ code {
   height: 35vh;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   background-color: #242331;
+  
 }
 
 /* -----------------------------------HOME 2-------------------------- */
@@ -177,4 +179,104 @@ code {
   display: flex;
   flex-wrap: wrap;
   object-fit: contain;
+}
+
+.botonFooter{
+  width: 10vw;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #1E1D29;
+  justify-content: center;
+  align-items: center;
+  font-style: none;
+  border-radius: 20px;
+}
+
+.botonFooter a{
+  color: #DDCA7D
+}
+
+.botonFooterS{
+ position: fixed;
+ z-index: 1000;
+ left: 12px;
+ bottom: 25px;
+ background-color:#DDCA7D;
+ width: 50px;
+ height: 50px;
+ color: #1E1D29;
+ text-align: center;
+ border-radius: 50%;
+ font-size: xx-large;
+}
+
+.botonFooterS:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.contenedorDeBotones{
+  width: 20vw;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.infoFooter{
+  width: 40vw;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: #DDCA7D
+ 
+}
+
+.horarios{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logosSociales{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 18px;
+  
+}
+
+.logosSociales img{
+  width: 3vw;
+  height: 5vh;
+}
+
+.mapaFooter{
+  width: 40vw;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #DDCA7D
+  
+}
+ 
+.mapaFooter iframe{
+  width: 80%;
+  height: 70%;
+  display: flex;
+  flex-wrap: wrap;
 }

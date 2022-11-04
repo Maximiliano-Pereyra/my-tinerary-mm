@@ -1,3 +1,15 @@
+MT-F2-04
+import './App.css';
+import Home2 from './layouts/Home2';
+
+function App() {
+  return (
+   < Home2 />
+  )
+}
+
+export default App;
+=======
 MT-F2-04d
 =======
 import "./App.css";
@@ -21,4 +33,5 @@ function App() {
 }
 
 export default App;
+sprint-1
 sprint-1
