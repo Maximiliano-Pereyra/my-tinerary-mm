@@ -94,6 +94,9 @@ li:hover {
 .navWidth {
   width: 900px;
 }
+.w50 {
+  width: 50px;
+}
 .img {
   height: 100px;
   width: 100px;
@@ -108,16 +111,23 @@ li:hover {
 .imgback {
   background-image: url(https://static01.nyt.com/images/2022/03/16/world/00Venezuela-Russians-Promo/00Venezuela-Russians-Promo-videoSixteenByNine3000.jpg);
 }
-.callbut {
-  background-color: transparent;
-  border: none;
+.navl a {
+  width: 100px;
+  height: 50px;
+  background-color: #A27035;
+  margin: 3px;
 }
-.butt {
+.navl {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-top: 200px;
+  flex-direction: column;
+  width: 150px;
+  height: 150px;
 }
+button {
+  background-color: transparent;
+  border-style: none;
+}
+
 .heacolor{
   background: linear-gradient(to right,#DDCA7D,#B88B4A,#A27035, #533E2D, #242331);
 }
