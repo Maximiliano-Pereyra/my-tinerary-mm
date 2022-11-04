@@ -1,3 +1,12 @@
+
+import './App.css';
+import NotFound from './layouts/NotFound';
+
+function App() {
+  return (
+   <NotFound />
+  )
+=======
 import "./App.css";
 import Header from "./pages/Header";
 import { Routes, Route, Router } from "react-router-dom";
@@ -12,6 +21,7 @@ function App() {
       <Main></Main>
     </>
   );
+
 }
 
 export default App;
