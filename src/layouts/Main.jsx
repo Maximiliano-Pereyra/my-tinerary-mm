@@ -1,7 +1,4 @@
 import React from 'react'
-import Logo from '../components/Logo'
-import InicioU from '../components/InicioU'
-import Empresa from '../components/Empresa'
 
 export default function Main() {
   return (

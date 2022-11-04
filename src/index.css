@@ -280,3 +280,32 @@ code {
   display: flex;
   flex-wrap: wrap;
 }
+
+/* --------------------------------PAGE 404-------------------------- */
+
+.c404{
+  width: 30vw;
+  height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;  
+ flex-direction: column;
+}
+
+.c404:hover{
+  background-color: #CBAB64;
+  cursor: pointer;
+  transform: scale(1.1);
+  border-radius: 50%;
+}
+
+.c404 h2{
+  font-size: xx-large;
+}
+
+.c404 img{
+  width:15vw ;
+  height: 30vh; 
+  object-fit: contain;
+}
