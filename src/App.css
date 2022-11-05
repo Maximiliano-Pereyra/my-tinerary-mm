@@ -122,6 +122,12 @@ li:hover {
   flex-direction: column;
   width: 150px;
   height: 150px;
+  align-items: center;
+}
+.callToAction {
+  background-color: transparent;
+  border-style: none;
+  align-items: center;
 }
 button {
   background-color: transparent;
@@ -130,4 +136,50 @@ button {
 
 .heacolor{
   background: linear-gradient(to right,#DDCA7D,#B88B4A,#A27035, #533E2D, #242331);
+}
+
+.container-signup {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 40vw;
+  height: 53vh;
+  background-color: #DDCA7D;
+  gap: 1rem;
+  border-radius: 30px;
+}
+
+.submit-buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.submit-buttons a{
+  background-color: #A27035;
+  margin: 8px;
+  height: 30px;
+  width: 60px;
+  text-align: center;
+  border-radius: 30px;
+}
+.container-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+.form-sign {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.signin-redirect {
+  height: 25px;
+}
+.signin-redirect:hover {
+  background-color: #A27035;
+  transform: scale(1.2);
+  border-radius: 30px;
 }

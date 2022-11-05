@@ -9,8 +9,8 @@ export default function Home1() {
       <div className='h100 w100 flex column imgback'>
         <img className='logo' src="imagenes/Logotipo.gif" alt="" />
        <div className='navl'>
-        <CallToAction page="Cities" rute="/cities"></CallToAction>
-        <CallToAction page="Hotels" rute="/hotels"></CallToAction>
+        <CallToAction page="Ciudades" rute="/cities"/>
+        <CallToAction page="Hoteles" rute="/hotels"/>
       </div>
       </div>
     )
