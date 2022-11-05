@@ -10,10 +10,12 @@ import Footer from "./components/Footer";
 import CardCity from "./pages/CardCity";
 import dataCities from './dataCities';
 import CityCard from "./pages/CityCard";
+import ChecksInputs from "./pages/ChecksInputs";
+import Prueba from "./pages/Prueba";
 
 function App() {
   return (
-    <CityCard></CityCard>
+    <Prueba></Prueba>
   )};
 
 export default App;
