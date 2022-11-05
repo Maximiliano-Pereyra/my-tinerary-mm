@@ -108,4 +108,4 @@ let cities = [
   },
 ];
 
-export default cities
+export default cities;
