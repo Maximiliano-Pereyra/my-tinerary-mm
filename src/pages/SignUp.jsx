@@ -1,41 +1,46 @@
-import React, {useEffect, useRef} from "react";
+import React from "react";
 import Input from "../components/Input";
+import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 function SignUp(){
-    const fullName = useRef(null);
-    const country = useRef(null);
-    const mail = useRef(null);
-    const pass = useRef(null);
-    const subt = useRef(null);
+    const fullNameInputElement = useRef();
+    const countryInputElement = useRef();
+    const emailInputElement = useRef();
+    const passwordInputElement = useRef();
     
-    useEffect(()=>{
-        fullName.current.focus();       
-    }, []);
-
-    function fullKeyDown(e){
-        if (e.key === "Enter"){
-      country.current.focus();
-    }}
-    function counKeyDown(e){
-        if (e.key === "Enter"){
-       mail.current.focus();
-    }}
-    function mailKeyDown(e){
-        if (e.key === "Enter"){
-        pass.current.focus();
-    }}
-    function passKeyDown(e){
-        if (e.key === "Enter"){
-        subt.current.focus();
-    }}
+    let handleSubmit = (event) => {
+        event.preventDefault();
+        const data = {
+          fullName: fullNameInputElement.current?.value,
+          country: countryInputElement.current?.value,
+          email: emailInputElement.current?.value,
+          password: passwordInputElement.current?.value
+        };
+        console.log(data);
+        localStorage.setItem('user-registered', JSON.stringify(data))
+    
+        alert('funciona')
+        console.log(event);
+      }
     return (
-        <div>
-            <Input type="text" onKeyDown={fullKeyDown} ref={fullName} placeholder="Full Name"/>
-            <Input type="text" onKeyDown={counKeyDown} ref={country} placeholder="Country"/>
-            <Input type="text" onKeyDown={mailKeyDown} ref={mail} placeholder="Email" />
-            <Input type="text" onKeyDown={passKeyDown} ref={pass} placeholder="Password" />
-            <button ref={subt}>Submit</button>
-            <button>Google</button>
+        <div className="container-signup">
+
+            <h2>If you don't have an account yet, please register:</h2>
+            <form className="form-sign">
+            <div className="container-inputs">
+            <Input type="text" ref={fullNameInputElement} id='fullName' name='fullName' className='fullName-input'  placeholder="Full Name"/>
+            <Input type="text" ref={countryInputElement} id='country' name='country' className='country-input' placeholder="Country"/>
+            <Input type="text" ref={emailInputElement} id='email' name='email' className='email-input' placeholder="Email" />
+            <Input type="text" ref={passwordInputElement} id='password' name='password' className='pasword-input' placeholder="Password" />
+            </div>
+            <div className="submit-buttons">
+            <Link to='/'> <button type="submit" onClick={handleSubmit} className='signu'>Sign Up</button></Link>
+            <Link to='/'> <button type="submit" className="google-acc">Google</button></Link>
+            </div>
+            </form>            
+            <h3>If you have an account, please:</h3>
+            <Link className='signin-redirect' to='/SignIn'><button type="submit" value='SignIn-redirect' >Sign In</button></Link>
         </div>
     )
 }

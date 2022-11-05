@@ -6,12 +6,19 @@ import CallToAction from "./pages/CallToAction";
 import Main from "./layouts/Main";
 import Home2 from "./components/Home2";
 import SignUp from "./pages/SignUp";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
+    <Header></Header>
+    <div className="cuerpo-general">
       <SignUp></SignUp>
-    </>
+    </div>
+    <div className="footer">
+    <Footer></Footer>
+    </div>
+  </>
   );
 }
 
