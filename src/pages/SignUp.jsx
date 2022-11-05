@@ -1,65 +1,42 @@
-import { ErrorResponse } from "@remix-run/router";
-import React, {useEffect, useState} from "react";
-import dataHotels from "../dataHotels";
-import Validation from "./Validation";
+import React, {useEffect, useRef} from "react";
+import Input from "../components/Input";
 
-const SignUp = ({submitForm}) => {
-    const [values, setValues] = useState({
-        fullname:'',
-        country:'',
-        email:'',
-        password:''
-    });
-    const [errors, setErrors] = useState({});
-    const [dataIsCorrect, setDataIsCorrect] = useState(false);
-    const handleChange = (event) =>{
-        setValues({
-            ...values,
-            [event.target.name]: event.target.value
-        })
-    } 
-    const handleFormSubmit = (event) =>{
-        event.preventDefault();
-        setErrors(Validation(values));
-        setDataIsCorrect(true);
-    };
+function SignUp(){
+    const fullName = useRef(null);
+    const country = useRef(null);
+    const mail = useRef(null);
+    const pass = useRef(null);
+    const subt = useRef(null);
+    
     useEffect(()=>{
-        if(Object.keys(errors).length === 0 && dataIsCorrect) {
-            SignUp(true);
-        }
+        fullName.current.focus();       
+    }, []);
 
-    }, [errors]);
-    return(
+    function fullKeyDown(e){
+        if (e.key === "Enter"){
+      country.current.focus();
+    }}
+    function counKeyDown(e){
+        if (e.key === "Enter"){
+       mail.current.focus();
+    }}
+    function mailKeyDown(e){
+        if (e.key === "Enter"){
+        pass.current.focus();
+    }}
+    function passKeyDown(e){
+        if (e.key === "Enter"){
+        subt.current.focus();
+    }}
+    return (
         <div>
-            <h2>Create Account</h2>
-        <form>
-            <div>
-                <label>Full Name</label>
-                <input type="text" name="fullname" value={values.fullname} onChange={handleChange}/>
-                {errors.fullname && <p>{errors.fullname}</p>}
-            </div>
-            <div>
-                <label>Country</label>
-                <input type="text" name="country" value={values.country} onChange={handleChange}/>
-                {errors.country && <p>{errors.country}</p>}
-            </div>
-            <div>
-                <label>Email</label>
-                <input type="email" name="email" value={values.email} onChange={handleChange}/>
-                {errors.email && <p>{errors.email}</p>}
-            </div>
-            <div>
-                <label>Password</label>
-                <input type="password" name="password" value={values.password} onChange={handleChange}/>
-                {errors.password && <p>{errors.password}</p>}
-            </div>
-            <div>
-            <button type="submit" onClick={handleFormSubmit}>Sign Up</button>
-            <button type="submit" onClick={handleFormSubmit}>Google</button>
-            </div>
-        </form>
+            <Input type="text" onKeyDown={fullKeyDown} ref={fullName} placeholder="Full Name"/>
+            <Input type="text" onKeyDown={counKeyDown} ref={country} placeholder="Country"/>
+            <Input type="text" onKeyDown={mailKeyDown} ref={mail} placeholder="Email" />
+            <Input type="text" onKeyDown={passKeyDown} ref={pass} placeholder="Password" />
+            <button ref={subt}>Submit</button>
+            <button>Google</button>
         </div>
     )
 }
-
 export default SignUp;
