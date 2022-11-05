@@ -1,12 +1,11 @@
-
 import './App.css';
-import Lay05 from './layouts/Main';
+import SignIn from './components/SignIn';
 
 function App() {
   return (
-    
-   <Lay05 />
-   
+<div className='cuerpo-general'>
+    <SignIn />
+ </div>
   )
 }
 
