@@ -42,7 +42,7 @@ export default function Carrusel() {
        }
        clearInterval(idA)
     }
-    /* ------------------------------CARRUSEL DE HOLES------------------------------------------ */
+    /* ------------------------------CARRUSEL DE HOTELES------------------------------------------ */
 
     let[indice2, setIndiceAcambiar2] = useState(0)
     let[indice2A, setIndiceAcambiar2A] = useState(1)

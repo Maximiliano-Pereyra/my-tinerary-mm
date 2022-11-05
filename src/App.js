@@ -5,11 +5,12 @@ import Home1 from "./pages/Home1";
 import CallToAction from "./pages/CallToAction";
 import Main from "./layouts/Main";
 import Home2 from "./components/Home2";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
     <>
-      <Main></Main>
+    <SignUp></SignUp>
     </>
   );
 }
