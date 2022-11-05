@@ -1,7 +1,21 @@
-import React from 'react'
+import {useEffect} from 'react';
 
-export default function BotonScroll() {
+export default function ScrollToTop() {
+  useEffect(() => {
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  }, []);
+
   return (
-    <div className ='botonFooterS'>↥</div>
-  )
+
+
+      <button className='botonFooterS'
+        onClick={() => {
+            console.log("se ejecuta scrollToTop")
+          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        }}
+      >
+        ↥
+      </button>
+
+  );
 }

@@ -1,3 +1,4 @@
+
 import "./App.css";
 import Header from "./pages/Header";
 import { Routes, Route, Router } from "react-router-dom";
@@ -20,6 +21,17 @@ function App() {
     </div>
   </>
   );
+
+import './App.css';
+import SignIn from './components/SignIn';
+
+function App() {
+  return (
+<div className='cuerpo-general'>
+    <SignIn />
+ </div>
+  )
+
 }
 
 export default App;
