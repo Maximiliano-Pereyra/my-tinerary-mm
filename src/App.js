@@ -17,7 +17,7 @@ import Search from "./pages/Search";
 import NuevaCiudad from "./pages/NuevaCiudad";
 
 function App() {
-  return <NuevaCiudad></NuevaCiudad>;
+  return <ContainerSearch></ContainerSearch>;
 }
 
 export default App;
