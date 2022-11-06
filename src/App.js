@@ -14,9 +14,10 @@ import ChecksInputs from "./pages/ChecksInputs";
 import ContainerSearch from "./pages/ContainerSearch";
 import InputSearch from "./pages/InputSearch";
 import Search from "./pages/Search";
+import NuevaCiudad from "./pages/NuevaCiudad";
 
 function App() {
-  return <ContainerSearch></ContainerSearch>;
+  return <NuevaCiudad></NuevaCiudad>;
 }
 
 export default App;

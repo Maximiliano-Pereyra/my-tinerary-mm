@@ -221,3 +221,80 @@ button {
   align-items: center;
   text-align: center;
  }
+ /* --------------------------------PAGES REGRISTRO DE NUEVAS CIUDADES-------------------------- */
+
+.formularioSignIn3{
+  width: 50vw;
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color:#242331 ;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 14px;
+  text-decoration: none;
+}
+
+.titulitoH3{
+  width: 50vw;
+  height: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.titulitoH3 h2{
+  width: 20vw;
+  display: flex;
+  flex-wrap: wrap;
+  color: #DDCA7D;
+}
+
+.titulitoH3 img{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.formularioSignIn3 label{
+  width: 60%;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.formularioSignIn3 input{
+  width: 60%;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#signIn3{
+width: 10vw;
+height: 4vh;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+background-color:#DDCA7D;
+border-radius: 30px;
+color: #242331 ;
+font-style: none;
+text-decoration: none;
+}
+
+#signIn3:hover{
+  background-color:#242331 ;
+  color:#a89858;
+  border: solid 2px #a89858;
+  transform: scale(1.1);
+
+}
