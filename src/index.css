@@ -378,3 +378,139 @@ text-decoration: none;
  #googleb img:hover{
   transform: scale(1.1);
  }
+
+ /* --------------------------------PAGES HOTELS-------------------------- */
+
+.formH{
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: aqua; */
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+ .inputH{
+  height: 2.5vh;
+  width:12vw ;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #CBAB64;
+ }
+
+ .card{
+  width:30vw ;
+  height:70vh ;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #533E2D;
+  border-radius: 10px;
+  color: #CBAB64;
+  align-items: center;
+  text-align: center;
+  padding: 0.5rem;
+  margin: 1rem;
+ }
+
+ .card:hover .image img {
+  opacity: .5;
+}
+
+ .image{
+  width: 100%;
+  height: 60% ;
+  display: flex;
+  flex-wrap: wrap;
+ }
+
+ .image img{
+  width: 100%;
+  height: 100% ;
+  border-radius: 10px;
+ }
+
+ .center h1 p{
+  color: #CBAB64;
+  align-items: center;
+  text-align: center;
+ }
+
+ /* --------------------------------PAGES REGRISTRO DE NUEVOS HOTELS-------------------------- */
+
+ .formularioSignIn2{
+  width: 50vw;
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color:#DDCA7D ;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 14px;
+  text-decoration: none;
+}
+
+.titulitoH{
+  width: 50vw;
+  height: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.titulitoH h2{
+  width: 20vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.titulitoH img{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.formularioSignIn2 label{
+  width: 60%;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.formularioSignIn2 input{
+  width: 60%;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#signIn2{
+width: 10vw;
+height: 4vh;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+background-color: #242331;
+border-radius: 30px;
+color: #DDCA7D;
+font-style: none;
+text-decoration: none;
+}
+
+#signIn2:hover{
+  background-color: #a89858 ;
+  color:#242331;
+  border: solid 2px #242331;
+  transform: scale(1.1);
+
+}
+

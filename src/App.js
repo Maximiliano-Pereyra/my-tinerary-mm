@@ -1,3 +1,16 @@
+
+import './App.css';
+import InputHotels from './components/InputHotels';
+import PginaDeCards from './components/PginasDeCards';
+
+
+function App() {
+  return (
+<div className='cuerpo-general'>
+  <InputHotels/>
+    <PginaDeCards/>
+</div> 
+  )
 import "./App.css";
 import Header from "./pages/Header";
 import { Routes, Route, Router } from "react-router-dom";
