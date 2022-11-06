@@ -2,7 +2,7 @@ import React from "react";
 import ChecksInputs from "./ChecksInputs";
 import dataCities from '../dataCities';
 
-function Prueba(){
+function InputSearch(){
     let allcities = dataCities.map((continent)=>continent.continent)
     let datacit = [...new Set(allcities)]
     datacit = Array.from(datacit) 
@@ -13,4 +13,4 @@ function Prueba(){
        </div>
     )
 } 
-export default Prueba;
+export default InputSearch;

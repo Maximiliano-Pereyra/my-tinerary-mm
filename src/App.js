@@ -8,14 +8,15 @@ import Home2 from "./components/Home2";
 import SignUp from "./pages/SignUp";
 import Footer from "./components/Footer";
 import CardCity from "./pages/CardCity";
-import dataCities from './dataCities';
+import dataCities from "./dataCities";
 import CityCard from "./pages/CityCard";
 import ChecksInputs from "./pages/ChecksInputs";
-import Prueba from "./pages/Prueba";
+import ContainerSearch from "./pages/ContainerSearch";
+import InputSearch from "./pages/InputSearch";
+import Search from "./pages/Search";
 
 function App() {
-  return (
-    <Prueba></Prueba>
-  )};
+  return <ContainerSearch></ContainerSearch>;
+}
 
 export default App;
