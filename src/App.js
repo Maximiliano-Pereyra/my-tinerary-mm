@@ -8,16 +8,30 @@ import SingIn from './components/SignIn';
 import SignUp from './pages/SignUp';
 import NuevoHotel from './components/NuevoHotel'
 import NewCity from './pages/NewCity'
+
 import DetailsCity from './pages/DetailsCity';
 import DetailsHotels from './components/DetailsHotels';
+
+import Input from './components/Input'
+import InputHotels from './components/InputHotels';
+
+
 
 
 function App() {
   return (
-  
-     <Main>
+ <Cities></Cities>
+ )
+  }
+ export default App;
+
+
+
+
+
+
+ /*   <Main>
     <Routes>
-    
     <Route path='/index' element={<Home/>} />
     <Route path='/hotels' element={<PginasDeCards/>}/>
     <Route path='/city' element={<Cities/>}/>
@@ -25,6 +39,7 @@ function App() {
     <Route path='/signUp' element={<SignUp/>} />
     <Route path='/newCity' element={<NewCity/>} />
     <Route path='/newHotel' element={<NuevoHotel/>} />
+
     <Route path='/city/detailsCity' element={<DetailsCity/>} />
     <Route path='/hotels/detailsHotels' element={<DetailsHotels/>} />
     
@@ -35,3 +50,7 @@ function App() {
   )
   }
 export default App;
+
+    </Routes>
+    </Main>*/
+

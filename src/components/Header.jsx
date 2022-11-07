@@ -2,6 +2,10 @@ import React from 'react'
 import { Link as Linkeador } from 'react-router-dom'
 
 
+import { Link as Tinerary } from 'react-router-dom'
+
+
+
 export default function Header() {
   return (
     <div className='heacolor'>
@@ -21,6 +25,7 @@ export default function Header() {
 
              <Linkeador to='/signIn'><li>Sign In</li></Linkeador>
              <Linkeador to='/signUp'><li>Sign Up</li></Linkeador>
+
              </ul>
             </li>
         </ul>
