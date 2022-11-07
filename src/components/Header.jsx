@@ -10,10 +10,10 @@ export default function Header() {
   return (
     <div className='heacolor'>
       <div className='flex row spacebet'>
-        {/* <img src="imagenes/M&M.gif" alt="" /> */}
+        {/* <img src="img/logochico.gif" alt="logo" /> */}
         <ul className='navWidth flex row space_evenly list'>
 
-            <Linkeador to='/index'><li>Home</li></Linkeador>
+            <Linkeador to=''><li>Home</li></Linkeador>
             <li className='despList'>Search
              <ul className='list nomargin nopadding dispNone'>
              <Linkeador to='/city'><li>Cities</li></Linkeador>

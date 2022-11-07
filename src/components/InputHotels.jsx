@@ -4,8 +4,8 @@ export default function InputHotels() {
     const [search, setSearch] = useState('')
 
   return (
-    <form className='formH'>
-        <input className='inputH' 
+    <form className='input-search2'>
+        <input
                 placeholder='Hotel...'
                 value={search}
                 name="search"
