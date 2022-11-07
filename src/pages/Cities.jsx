@@ -3,7 +3,7 @@ import React from "react";
 import CardCity from "./CardCity";
 import dataCities from '../dataCities';
 
-function CityCard(){
+function Cities(){
     console.log(dataCities)
     return (
      <>
@@ -11,4 +11,4 @@ function CityCard(){
        </>
     )    
 }
-export default CityCard;
+export default Cities;
