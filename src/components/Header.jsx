@@ -1,14 +1,16 @@
 import React from 'react'
-
 import { Link as Linkeador } from 'react-router-dom'
+
+
 import { Link as Tinerary } from 'react-router-dom'
+
 
 
 export default function Header() {
   return (
     <div className='heacolor'>
       <div className='flex row spacebet'>
-        <img src="imagenes/M&M.gif" alt="" />
+        {/* <img src="imagenes/M&M.gif" alt="" /> */}
         <ul className='navWidth flex row space_evenly list'>
 
             <Linkeador to='/index'><li>Home</li></Linkeador>

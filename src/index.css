@@ -381,6 +381,8 @@ text-decoration: none;
 
  /* --------------------------------PAGES HOTELS-------------------------- */
 
+.Li
+
 .formH{
   height: 10vh;
   width: 100vw;
@@ -441,7 +443,7 @@ text-decoration: none;
 }
 
 .botonH{
-  width: 8svw;
+  width: 8vw;
   height: 5vh ;
   display: flex;
   flex-wrap: wrap;

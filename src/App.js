@@ -8,8 +8,13 @@ import SingIn from './components/SignIn';
 import SignUp from './pages/SignUp';
 import NuevoHotel from './components/NuevoHotel'
 import NewCity from './pages/NewCity'
+
+import DetailsCity from './pages/DetailsCity';
+import DetailsHotels from './components/DetailsHotels';
+
 import Input from './components/Input'
 import InputHotels from './components/InputHotels';
+
 
 
 
@@ -32,7 +37,20 @@ function App() {
     <Route path='/city' element={<Cities/>}/>
     <Route path='/signIn' element={<SingIn/>} />
     <Route path='/signUp' element={<SignUp/>} />
-    <Route path='/newCity' element={<NuevaCiudad/>} />
+    <Route path='/newCity' element={<NewCity/>} />
     <Route path='/newHotel' element={<NuevoHotel/>} />
+
+    <Route path='/city/detailsCity' element={<DetailsCity/>} />
+    <Route path='/hotels/detailsHotels' element={<DetailsHotels/>} />
+    
+    </Routes>
+    </Main>
+    
+    
+  )
+  }
+export default App;
+
     </Routes>
     </Main>*/
+

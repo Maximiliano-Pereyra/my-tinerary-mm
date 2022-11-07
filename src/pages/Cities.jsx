@@ -1,5 +1,10 @@
 import "../App.css";
+
+import React from "react";
+
+
 import {useState,React} from 'react'
+
 import CardCity from "../components/CardCity";
 import dataCities from '../dataCities';
 import { useRef } from 'react'

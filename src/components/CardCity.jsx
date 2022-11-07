@@ -1,5 +1,5 @@
-
 import React from "react";
+import { Link as Linkeador } from 'react-router-dom'
 
 function CardCity (props){
 let {name} = props
@@ -14,7 +14,9 @@ let {continent} = props
                 <div className="center">
                     <h1>{name}</h1>
                     <p>{continent}</p>
-                    <button>Details</button>
+                    <Linkeador to= './detailsCity'>
+                        <button>Details</button>
+                    </Linkeador>
                 </div>
             </div>
         </div>
