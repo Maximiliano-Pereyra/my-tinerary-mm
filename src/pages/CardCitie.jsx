@@ -16,6 +16,7 @@ function CardCitie(props){
             <p>Continent: {continente}</p>
             <p>Population: {poblacion}</p>
         </div>
+        <button>Comments</button>
     </div>
 );
 }

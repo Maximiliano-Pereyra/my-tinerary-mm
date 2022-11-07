@@ -13,8 +13,8 @@ function CardItinerary(props){
             <img src={imagen}/>
         </div>
         <div>
-            <p>Duration: {duracion}</p>
-            <p>Price: {precio}</p>
+            <p>Duration: {duracion} hs</p>
+            <p>Price: {precio} USD</p>
         </div>
     </div>
 );
