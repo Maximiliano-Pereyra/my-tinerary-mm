@@ -7,14 +7,14 @@ export default function CardHotels (props) {
 
     return (
 
-        <div class="card">
-            <div class="image">
+        <div class="cardH">
+            <div class="imageH">
                 <img src={photo}  alt={`imgen de ${photo}`} />
             </div>
             <div class="details">
                 <div class="center">
                     <h1>{name}</h1>
-                    <p>{description}</p>
+                    <div className='botonH'><h3>Details</h3></div>
                 </div>
             </div>
         </div>

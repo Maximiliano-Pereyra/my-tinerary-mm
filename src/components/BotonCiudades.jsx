@@ -1,7 +1,10 @@
 import React from 'react'
+import { Link as Linkeador } from 'react-router-dom'
 
 export default function BotonCiudades() {
   return (
-    <div className='botonFooter'><a href="#">Ciudades</a></div>
+    <Linkeador to='/city'>
+    <div className='botonFooter'>Ciudades</div>
+    </Linkeador>
   )
 }
