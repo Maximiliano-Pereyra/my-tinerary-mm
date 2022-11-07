@@ -1,7 +1,10 @@
 import React from 'react'
+import { Link as Linkeador } from 'react-router-dom'
 
 export default function BotonHoteles() {
   return (
-    <div className='botonFooter'><a href="#">Hoteles</a></div>
+    <Linkeador to='/hotels'>
+       <div className='botonFooter'>Hoteles</div>
+    </Linkeador>
   )
 }

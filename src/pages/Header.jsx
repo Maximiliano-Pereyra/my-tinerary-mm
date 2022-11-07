@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link as Tinerary } from 'react-router-dom'
+import { Link as Linkeador } from 'react-router-dom'
 
 export default function Header() {
   return (
@@ -7,17 +7,17 @@ export default function Header() {
       <div className='flex row spacebet'>
         <img src="imagenes/M&M.gif" alt="" />
         <ul className='navWidth flex row space_evenly list'>
-            <Tinerary to='/index'><li>Home</li></Tinerary>
+            <Linkeador to='/index'><li>Home</li></Linkeador>
             <li className='despList'>Search
              <ul className='list nomargin nopadding dispNone'>
-               <li>Cities</li>
-               <li>Hotels</li>
+             <Linkeador to='/city'><li>Cities</li></Linkeador>
+             <Linkeador to='/hotels'><li>Hotels</li></Linkeador>
              </ul>
             </li>
             <li className='despList' >Sign
              <ul className='list nomargin nopadding dispNone'>
-               <li>Sign In</li>
-               <li>Sign Up</li>
+             <Linkeador to='/signIn'><li>Sign In</li></Linkeador>
+             <Linkeador to='/signUp'><li>Sign Up</li></Linkeador>
              </ul>
             </li>
         </ul>

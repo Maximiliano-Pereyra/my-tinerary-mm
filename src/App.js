@@ -1,36 +1,32 @@
-
 import './App.css';
-import InputHotels from './components/InputHotels';
-import PginaDeCards from './components/PginasDeCards';
+import{Routes, Route} from "react-router-dom";
+import Home from './pages/Home';
+import Main from './layouts/Main';
+import PginasDeCards from './components/PginasDeCards';
+import CardCity from './pages/CardCity';
+import SingIn from './components/SignIn';
+import SignUp from './pages/SignUp';
+import NuevoHotel from './components/NuevoHotel'
+import NuevaCiudad from './pages/NuevaCiudad'
 
 
 function App() {
   return (
-<div className='cuerpo-general'>
-  <InputHotels/>
-    <PginaDeCards/>
-</div> 
+  
+     <Main>
+    <Routes>
+    
+    <Route path='/index' element={<Home/>} />
+    <Route path='/hotels' element={<PginasDeCards/>}/>
+    <Route path='/city' element={<CardCity/>}/>
+    <Route path='/signIn' element={<SingIn/>} />
+    <Route path='/signUp' element={<SignUp/>} />
+    <Route path='/newCity' element={<NuevaCiudad/>} />
+    <Route path='/newHotel' element={<NuevoHotel/>} />
+
+    </Routes>
+    </Main>
+    
   )
-import "./App.css";
-import Header from "./pages/Header";
-import { Routes, Route, Router } from "react-router-dom";
-import Home1 from "./pages/Home1";
-import CallToAction from "./pages/CallToAction";
-import Main from "./layouts/Main";
-import Home2 from "./components/Home2";
-import SignUp from "./pages/SignUp";
-import Footer from "./components/Footer";
-import CardCity from "./pages/CardCity";
-import dataCities from "./dataCities";
-import CityCard from "./pages/CityCard";
-import ChecksInputs from "./pages/ChecksInputs";
-import ContainerSearch from "./pages/ContainerSearch";
-import InputSearch from "./pages/InputSearch";
-import Search from "./pages/Search";
-import NuevaCiudad from "./pages/NuevaCiudad";
-
-function App() {
-  return <NuevaCiudad></NuevaCiudad>;
-}
-
+  }
 export default App;
