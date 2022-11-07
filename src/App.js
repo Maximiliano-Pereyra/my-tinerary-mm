@@ -15,11 +15,14 @@ import NewCity from "./pages/NewCity";
 import CardCitie from "./pages/CardCitie";
 import Citie from "./pages/Citie";
 import Itinerary from "./pages/Itinerary";
+import Hotel from "./components/Hotel";
+import Show from "./components/Show"
 
 function App() {
   return (
     <div className="cuerpo-general">
-      <Itinerary></Itinerary>
+      <Hotel></Hotel>
+      <Show></Show>
     </div>
   );
 }
