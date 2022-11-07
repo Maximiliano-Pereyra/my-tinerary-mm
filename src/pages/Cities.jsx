@@ -1,9 +1,9 @@
 import "../App.css";
 import React from "react";
-import CardCity from "./CardCity";
+import CardCity from "../components/CardCity";
 import dataCities from '../dataCities';
 
-function CityCard(){
+function Cities(){
     console.log(dataCities)
     return (
      <div className="cuerpo-general">
@@ -11,4 +11,4 @@ function CityCard(){
        </div>
     )    
 }
-export default CityCard;
+export default Cities;

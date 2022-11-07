@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useRef } from "react";
 
-export default function NuevaCiudad() {
+export default function NewCity() {
     const idInputElement = useRef();
     const populationInputElement = useRef();
     const nombreCInputElement = useRef();

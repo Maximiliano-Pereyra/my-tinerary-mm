@@ -1,13 +1,14 @@
 import React from "react";
+import Header from "../components/Header";
+import Scrolltop from "../components/Scrolltop";
+import Footer from "../components/Footer";
 
-
-
-export default function Lay05(){
+export default function Main(){
     return (
-    <>
-        <div ></div>
-        <div ></div>
-        <div ></div>
-    </>
+        <>
+        <Header></Header>
+        <Scrolltop></Scrolltop>
+        <Footer></Footer>
+        </>
     );
 }

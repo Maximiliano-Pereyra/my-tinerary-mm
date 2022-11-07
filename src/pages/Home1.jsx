@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import CallToAction from './CallToAction'
-import Header from './Header'
-import Scrolltop from './Scrolltop'
+import CallToAction from '../components/CallToAction'
+import Header from '../components/Header'
+import Scrolltop from '../components/Scrolltop'
 
 export default function Home1() {
     return (
