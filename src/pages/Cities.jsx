@@ -1,8 +1,6 @@
 import "../App.css";
 import React from "react";
 
-import CardCity from "./CardCity";
-
 import CardCity from "../components/CardCity";
 
 import dataCities from '../dataCities';
@@ -14,10 +12,6 @@ function Cities(){
      <>
        {dataCities.map(allcities=><CardCity key={allcities.id} photo={allcities?.photo} name={allcities?.name} continent={allcities?.continent}/>)}
        </>
-
-     <div className="cuerpo-general">
-       {dataCities.map(allcities=><CardCity key={allcities.id} photo={allcities?.photo} name={allcities?.name} continent={allcities?.continent}/>)}
-       </div>
 
     )    
 }
