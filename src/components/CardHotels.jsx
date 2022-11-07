@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link as Linkeador } from 'react-router-dom'
+import InputHotels from './InputHotels'
 
 export default function CardHotels (props) {
     let {photo}=props
     let {name}= props
 
     return (
-
+     
         <div class="cardH">
             <div class="imageH">
                 <img src={photo}  alt={`imgen de ${photo}`} />

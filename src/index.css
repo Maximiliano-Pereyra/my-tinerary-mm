@@ -186,15 +186,11 @@ code {
   height: 5vh;
   display: flex;
   flex-wrap: wrap;
-  background-color: #1E1D29;
+  background-color: #DDCA7D;
   justify-content: center;
   align-items: center;
   font-style: none;
   border-radius: 20px;
-}
-
-.botonFooter a{
-  color: #DDCA7D
 }
 
 .botonFooterS{
@@ -235,7 +231,10 @@ code {
   justify-content: center;
   align-items: center;
   color: #DDCA7D
- 
+}
+
+.infoFooter a{
+  color:#DDCA7D ;
 }
 
 .horarios{
@@ -316,7 +315,7 @@ code {
 
 .formularioSignIn{
   width: 30vw;
-  height: 50vh;
+  height: 65vh;
   display: flex;
   flex-wrap: wrap;
   background-color:#DDCA7D ;
@@ -334,6 +333,23 @@ code {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+}
+
+.contenedorU{
+  width: 30vw;
+  height: 15vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedorU button{
+  width: 10vw;
+  height: 3vh;
+  background-color: #533E2D;
+  color: #DDCA7D;
+  border-radius: 15px;
 }
 
 #signIn{
@@ -381,14 +397,29 @@ text-decoration: none;
 
  /* --------------------------------PAGES HOTELS-------------------------- */
 
-.Li
+.selectH{
+  width: 20vw;
+  height: 5vh;
+  align-items: center;
+  justify-content: center;
+}
 
-.formH{
-  height: 10vh;
-  width: 100vw;
+.input-search2{
+  width: 70vw;
+  height: 5vh;
   display: flex;
   flex-wrap: wrap;
-  /* background-color: aqua; */
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem
+  ;
+}
+
+.formH{
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  background-color: aqua; 
   align-items: center;
   justify-content: center;
   gap: 2rem;
@@ -539,3 +570,120 @@ text-decoration: none;
 
 }
 
+/* --------------------------------PAGES DETALLES -------------------------- */
+
+.detallesDeHotel{
+  width: 70vw;
+  min-height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #533E2D;
+  justify-content: center;
+  border-radius: 14px;
+  margin: 2rem;
+}
+
+.detallesDeHotel button{
+width: 10vw;
+height: 4vh;
+background-color: #a89858;
+border-radius: 10px;
+border: #242331;
+}
+
+.tituloYimagen{
+  width: 70vw;
+  height: 65vh;
+  display: flex;
+  flex-wrap: wrap;
+ /*  background-color: red; */
+  justify-content: center;
+  align-items: center;
+}
+
+.tituloYimagen h1{
+  width: 70vw;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: #533E2D; */
+  justify-content: center;
+}
+
+.tituloYimagen img{
+  width: 70vw;
+  height: 53vh;
+  display: flex;
+  flex-wrap: wrap;
+  object-fit: contain;
+}
+
+.capacidadYdescripcion{
+  width: 70vw;
+  height: 17vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #DDCA7D;
+  font-size: large;
+}
+
+.detallesDeHotel2{
+  width: 70vw;
+  min-height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #DDCA7D;
+  justify-content: center;
+  border-radius: 14px;
+  margin: 2rem;
+}
+
+.detallesDeHotel2 button{
+width: 10vw;
+height: 4vh;
+background-color: #a89858;
+border-radius: 10px;
+border: #242331;
+}
+
+.tituloYimagen2{
+  width: 70vw;
+  height: 65vh;
+  display: flex;
+  flex-wrap: wrap;
+ /*  background-color: red; */
+  justify-content: center;
+  align-items: center;
+}
+
+.tituloYimagen2 h1{
+  width: 70vw;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: #533E2D; */
+  justify-content: center;
+}
+
+.tituloYimagen2 img{
+  width: 70vw;
+  height: 53vh;
+  display: flex;
+  flex-wrap: wrap;
+  object-fit: contain;
+}
+
+.capacidadYdescripcion2{
+  width: 70vw;
+  height: 17vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #242331;
+  font-size: large;
+}

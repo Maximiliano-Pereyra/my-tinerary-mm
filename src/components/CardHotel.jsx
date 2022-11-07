@@ -7,12 +7,12 @@ function CardHotel(props){
     let {capacidad} = props
     let {descripcion} = props
    return (
-    <div>
-        <div>
+    <div className="detallesDeHotel">
+        <div className="tituloYimagen">
             <h1>{titulo}</h1>
             <img src={imagen}/>
         </div>
-        <div>
+        <div className="capacidadYdescripcion">
             <p>Capacity: {capacidad}</p>
             <p>Description: {descripcion}</p>
         </div>

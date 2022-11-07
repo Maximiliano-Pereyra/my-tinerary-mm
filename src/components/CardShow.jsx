@@ -7,12 +7,12 @@ function CardHotel(props){
     let {precio} = props
     let {fecha} = props
    return (
-    <div>
-        <div>
+    <div className="detallesDeHotel2">
+        <div className="tituloYimagen2">
             <h1>{titulo}</h1>
             <img src={imagen}/>
         </div>
-        <div>
+        <div className="capacidadYdescripcion2">
             <p>Price: {precio} USD</p>
             <p>Date: {fecha}</p>
         </div>

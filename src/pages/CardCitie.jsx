@@ -7,12 +7,12 @@ function CardCitie(props){
     let {continente} = props
     let {poblacion} = props
    return (
-    <div>
-        <div>
+    <div className="detallesDeHotel2">
+        <div className="tituloYimagen2">
             <h1>City: {titulo}</h1>
             <img src={imagen}/>
         </div>
-        <div>
+        <div className="capacidadYdescripcion2">
             <p>Continent: {continente}</p>
             <p>Population: {poblacion}</p>
         </div>

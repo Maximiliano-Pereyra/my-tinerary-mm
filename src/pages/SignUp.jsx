@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "../components/Input";
-import { Link } from "react-router-dom";
+import { Link as Linkeador} from "react-router-dom";
 import { useRef } from "react";
 
 function SignUp(){
@@ -35,12 +35,14 @@ function SignUp(){
             <Input type="text" ref={passwordInputElement} id='password' name='password' className='pasword-input' placeholder="Password" />
             </div>
             <div className="submit-buttons">
-            <Link to='/'> <button type="submit" onClick={handleSubmit} className='signu'>Sign Up</button></Link>
-            <Link to='/'> <button type="submit" className="google-acc">Google</button></Link>
+            <button type="submit" onClick={handleSubmit} className='signu'>Sign Up</button>
+            <button type="submit" className="google-acc">Google</button>
             </div>
             </form>            
             <h3>If you have an account, please:</h3>
-            <Link className='signin-redirect' to='/SignIn'><button type="submit" value='SignIn-redirect' >Sign In</button></Link>
+            <Linkeador to='/signIn'>
+              <button type="submit" value='SignIn-redirect' >Sign In</button>
+            </Linkeador>
         </div>
     )
 }

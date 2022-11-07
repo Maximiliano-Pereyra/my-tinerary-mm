@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import dataUsers from '../dataUsers'
 import { useRef } from "react";
+import { Link as Linkeador } from 'react-router-dom';
 
 export default function SignIn() {
     const emailInputElement = useRef();
@@ -69,11 +70,13 @@ console.log(password);
         onChange={ev => setPassword(ev.target.value)}>
         </input>
 
-        
-
         <button id='signIn' type='submit' onClick={handleSubmit} disabled={errorMensage}>Sign In</button>
         <button id='googleb' type='submit' ><a href="https://www.google.com.ar/"><img src="./img/inicioG.png" alt="google" /></a></button>
-        {/* <p><img src="./img/datosSign.png" alt="" /></p> */}
+
+       <div className='contenedorU'>
+        <h3>If you don't have a count, go to sign up</h3>
+       <Linkeador to='/signUp'><button>Sing Up</button></Linkeador>
+       </div>
         
     </form>
     

@@ -141,12 +141,12 @@ export default function Carrusel() {
     return(
     <>
     
-    <Linkeador to='/city' ><h2 className='subtitulosHome2'>CIUDADES</h2></Linkeador>
+    <Linkeador to='/city' ><h2 className='subtitulosHome2'>CITIES</h2></Linkeador>
         <FlechaA onClick={anterior}/>
         <ImagenYCiudad img={cities[indice].photo} ciudad={cities[indice].name} />
         <ImagenYCiudad img={cities[indiceA].photo } ciudad={cities[indiceA].name} />
         <FlechaP onClick={posterior}/>
-    <Linkeador to='/hotels' ><h2 className='subtitulosHome2'>HOTELES</h2></Linkeador>
+    <Linkeador to='/hotels' ><h2 className='subtitulosHome2'>HOTELS</h2></Linkeador>
         <FlechaA onClick={anterior2}/>
         <ImagenYCiudad img={dataHotels[indice2].photo} ciudad={dataHotels[indice2].name} />
         <ImagenYCiudad img={dataHotels[indice2A].photo} ciudad={dataHotels[indice2A].name} />
