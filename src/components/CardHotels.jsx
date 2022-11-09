@@ -1,11 +1,10 @@
 import React from 'react'
 import { Link as Linkeador } from 'react-router-dom'
-import InputHotels from './InputHotels'
 
 export default function CardHotels (props) {
     let {photo}=props
     let {name}= props
-
+    let {id}= props
     return (
      
         <div class="cardH">
@@ -15,7 +14,7 @@ export default function CardHotels (props) {
             <div class="details">
                 <div class="center">
                     <h1>{name}</h1>
-                    <Linkeador to='./detailsHotels'>
+                    <Linkeador to={id}>
                         <div className='botonH'><h3>Details</h3></div>
                     </Linkeador>
                 </div>
