@@ -33,7 +33,7 @@ export default function SignIn() {
     }
 
     const validate =(email, password) =>{
-        if(!email.includes('@')) return 'Email invalido';
+        if(!correos.includes(email)) return 'Email invalido';
         if(!contraseñas.includes(password)) return 'Contraseña invalida'
     }
 
