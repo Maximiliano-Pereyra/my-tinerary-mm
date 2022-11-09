@@ -25,7 +25,7 @@ function App() {
         <Route path="/newHotel" element={<NuevoHotel />} />
         <Route path="city/:id" element={<DetailsCity />} />
         <Route path="/hotels/detailsHotels" element={<DetailsHotels />} />
-        <Route path="/notFound" element={<NotFound />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </Main>
   );

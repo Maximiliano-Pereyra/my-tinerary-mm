@@ -3,7 +3,7 @@ import { Link as Linkeador} from 'react-router-dom'
 
 export default function NotFound() {
   return (
-    <Linkeador to='/index'>
+    <Linkeador to='git '>
     <div className='c404'>
       <h2>Upss....page not found</h2>
       <img src="./img/f404.png" alt="error" />
