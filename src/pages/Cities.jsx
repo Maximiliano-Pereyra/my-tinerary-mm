@@ -20,7 +20,7 @@ function Cities() {
         console.log(array)
     }
 
-    let searchImput = (event) => {
+    let searchInput = (event) => {
         setSearched(event.target.value)
     }
 
@@ -38,7 +38,7 @@ function Cities() {
             <input
                 type="text"
                 placeholder="Search"
-                onChange={searchImput}
+                onChange={searchInput}
             />
                 {
                     Array.from(new Set(dataCities.map(city => city.continent))).map(element => {
@@ -48,7 +48,7 @@ function Cities() {
                     })
                 }
             </div>
-            {dataCities.map(allcities => <CardCity key={allcities.id} photo={allcities?.photo} name={allcities?.name} continent={allcities?.continent} />)}
+            {dataCities.map(allcities => <CardCity id={allcities.id}  key={allcities.id} photo={allcities?.photo} name={allcities?.name} continent={allcities?.continent} />)}
         </>
 
     )
