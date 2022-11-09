@@ -17,6 +17,7 @@ function App() {
   return (
  <Main>
     <Routes>
+      
     <Route path='' element={<Home/>} />
     <Route path='/hotels' element={<PginasDeCards/>}/>
     <Route path='/city' element={<Cities/>}/>
@@ -25,8 +26,8 @@ function App() {
     <Route path='/newCity' element={<NewCity/>} />
     <Route path='/newHotel' element={<NuevoHotel/>} />
     <Route path='/city/detailsCity' element={<DetailsCity/>} />
-    <Route path='/hotels/detailsHotels' element={<DetailsHotels/>} />
-    <Route path='/notFound' element={<NotFound/>} />
+    <Route path='hotels/:id' element={<DetailsHotels/>} />
+    <Route path='/*' element={<NotFound/>} />
     
     </Routes>
     </Main>
