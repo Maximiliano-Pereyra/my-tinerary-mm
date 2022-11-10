@@ -1,0 +1,344 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*estilos mt f1*/
+
+.h100 {
+  min-height: 100vh;
+}
+.w100{
+  width: 100%;
+}
+.flex {
+  display: flex;
+}
+.column {
+  flex-direction: column;
+}
+.row {
+  flex-direction: row;
+}
+.space_evenly {
+  justify-content: space-evenly;
+}
+.list {
+  list-style: none;
+}
+.nomargin {
+  margin: 0px;
+}
+.nopadding {
+  padding: 0px;
+}
+.spacebet {
+  justify-content: space-between;
+}
+li {
+  text-decoration: none;
+  display: block;
+  width: 150px;
+  text-align: center;
+  color: bisque;
+  font-size: 20px;
+  margin-top: 10px;
+}
+li:hover {
+  background-color: #242331;
+  border-radius: 7px;
+}
+.despList:hover > ul {
+  display: block;
+  background-color: #242331;
+  border-radius: 7px;
+}
+.dispNone{
+  display: none;
+}
+.marginauto {
+  margin: auto;
+}
+.navWidth {
+  width: 900px;
+}
+.w50 {
+  width: 50px;
+}
+.img {
+  height: 100px;
+  width: 100px;
+}
+.logo {
+  height: 350px;
+  width: 350px;
+  display: flex;
+  align-self:center;
+  padding-top: 150px;
+}
+.imgback {
+  background-image: url(https://static01.nyt.com/images/2022/03/16/world/00Venezuela-Russians-Promo/00Venezuela-Russians-Promo-videoSixteenByNine3000.jpg);
+}
+.navl a {
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #A27035;
+  margin: 3px;
+  border: solid #242331 3px;
+  font-size: xx-large;
+}
+.navl {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center ;
+  
+}
+.callToAction {
+  background-color: transparent;
+  border-style: none;
+  align-items: center;
+}
+button {
+  background-color: transparent;
+  border-style: none;
+}
+
+.heacolor{
+  background: linear-gradient(to right,#DDCA7D,#B88B4A,#A27035, #533E2D, #242331);
+}
+
+.container-signup {
+  width: 40vw;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: #DDCA7D;
+  border-radius: 30px;
+  justify-content: space-evenly;
+}
+
+.container-signup button{
+  height: 5vh;
+  width: 7vw;
+  background-color: #533E2D;
+  border-radius: 7px;
+}
+
+.container-inputs{
+  width: 20vw;
+  height: 30vh;
+  justify-content: space-evenly;
+}
+
+.submit-buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.submit-buttons a{
+  background-color: #A27035;
+  margin: 8px;
+  height: 30px;
+  width: 60px;
+  text-align: center;
+  border-radius: 30px;
+}
+.container-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+.form-sign {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.signin-redirect {
+  height: 25px;
+}
+.signin-redirect:hover {
+  background-color: #A27035;
+  transform: scale(1.2);
+  border-radius: 30px;
+}
+
+/*card*/
+
+.card{
+  width:30vw ;
+  height:50vh ;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #533E2D;
+  border-radius: 10px;
+  color: #CBAB64;
+  align-items: center;
+  text-align: center;
+  padding: 0.5rem;
+  margin: 1rem;
+}
+ .card:hover .image img {
+  opacity: .5;
+}
+
+ .image{
+  width: 100%;
+  height: 65% ;
+  display: flex;
+  flex-wrap: wrap;
+ }
+
+ .image img{
+  width: 100%;
+  height: 100% ;
+  border-radius: 10px;
+ }
+
+.details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+ .center h1 p{
+  color: #CBAB64;
+  align-items: center;
+  text-align: center;
+ }
+ /* --------------------------------PAGES REGRISTRO DE NUEVAS CIUDADES-------------------------- */
+
+.formularioSignIn3{
+  width: 50vw;
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color:#242331 ;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 14px;
+  text-decoration: none;
+}
+
+.titulitoH3{
+  width: 50vw;
+  height: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.titulitoH3 h2{
+  width: 20vw;
+  display: flex;
+  flex-wrap: wrap;
+  color: #DDCA7D;
+}
+
+.titulitoH3 img{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.formularioSignIn3 label{
+  width: 60%;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.formularioSignIn3 input{
+  width: 60%;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#signIn3{
+width: 10vw;
+height: 4vh;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+background-color:#DDCA7D;
+border-radius: 30px;
+color: #242331 ;
+font-style: none;
+text-decoration: none;
+}
+
+#signIn3:hover{
+  background-color:#242331 ;
+  color:#a89858;
+  border: solid 2px #a89858;
+  transform: scale(1.1);
+
+}
+
+.input-search{
+  width: 100vw;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem
+  ;
+}
+
+a {
+  text-decoration: none;
+  color: #242331;
+}

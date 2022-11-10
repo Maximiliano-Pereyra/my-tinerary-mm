@@ -1,0 +1,689 @@
+body {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.barra-de-arriba{
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #DDCA7D;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.cuerpo-general{
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #A27035;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer{
+  width: 100vw;
+  height: 35vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: #242331;
+  
+}
+
+/* -----------------------------------HOME 2-------------------------- */
+
+.barra-de-arriba-Home2{
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #DDCA7D;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.contenedorDeLogo{
+  width: 25% ;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 43px;
+  align-items: center;
+}
+
+.contenedorDeLogo img{
+  width: 25vw;
+  height: 13vh;
+  display: flex;
+  flex-wrap: wrap;
+  object-fit: contain;
+  border-radius: 43px ;
+  padding-left: 60%;
+}
+
+.titulo{
+  width: 50% ;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  
+}
+
+.contenedorDeInicio{
+  width: 25% ;
+  height: 15vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input{
+  width: 40%;
+  height: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #533E2D;
+  color: #DDCA7D;
+  border-radius: 8px;
+}
+
+.input h4{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.logoI{
+  width: 5vh;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  object-fit: contain;
+  border-radius: 43px ;
+}
+
+.cardHome2{
+  width: 35vw;
+  height: 63vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.cardHome2 img{
+  width: 30vw;
+  height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  object-fit: cover;
+  border-radius: 40px;
+}
+
+.cardHome2 h3{
+  width: 30vw;
+  height: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #7B5731;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+}
+
+.subtitulosHome2{
+  width: 100vw;
+  height: 7vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #CBAB64;
+  align-items: center;
+  justify-content: center;
+  border-radius: 60px;
+}
+
+.flechaHome2{
+  width: 4vw;
+  height: 7vh;
+  display: flex;
+  flex-wrap: wrap;  
+  justify-content: center;
+  align-items: center;
+}
+
+.flechaHome2 img{
+  width:100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  object-fit: contain;
+}
+
+.botonFooter{
+  width: 10vw;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #DDCA7D;
+  justify-content: center;
+  align-items: center;
+  font-style: none;
+  border-radius: 20px;
+}
+
+.botonFooterS{
+ position: fixed;
+ z-index: 1000;
+ left: 12px;
+ bottom: 25px;
+ background-color:#DDCA7D;
+ width: 50px;
+ height: 50px;
+ color: #1E1D29;
+ text-align: center;
+ border-radius: 50%;
+ font-size: xx-large;
+}
+
+.botonFooterS:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.contenedorDeBotones{
+  width: 20vw;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.infoFooter{
+  width: 40vw;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: #DDCA7D
+}
+
+.infoFooter a{
+  color:#DDCA7D ;
+}
+
+.horarios{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logosSociales{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 18px;
+  
+}
+
+.logosSociales img{
+  width: 3vw;
+  height: 5vh;
+}
+
+.mapaFooter{
+  width: 40vw;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #DDCA7D
+  
+}
+ 
+.mapaFooter iframe{
+  width: 80%;
+  height: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------PAGE 404-------------------------- */
+
+.c404{
+  width: 30vw;
+  height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;  
+ flex-direction: column;
+ align-self: center;
+}
+
+.c404:hover{
+  background-color: #CBAB64;
+  cursor: pointer;
+  transform: scale(1.1);
+  border-radius: 30%;
+}
+
+.c404 h2{
+  font-size: xx-large;
+}
+
+.c404 img{
+  width:15vw ;
+  height: 30vh; 
+  object-fit: contain;
+}
+
+
+/* --------------------------------SIGN IN-------------------------- */
+
+.formularioSignIn{
+  width: 30vw;
+  height: 65vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color:#DDCA7D ;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 14px;
+  text-decoration: none;
+}
+
+.formularioSignIn input{
+  width: 60%;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.contenedorU{
+  width: 30vw;
+  height: 15vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedorU button{
+  width: 10vw;
+  height: 3vh;
+  background-color: #533E2D;
+  color: #DDCA7D;
+  border-radius: 15px;
+}
+
+#signIn{
+width: 10vw;
+height: 4vh;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+background-color: #242331;
+border-radius: 30px;
+color: #DDCA7D;
+font-style: none;
+text-decoration: none;
+}
+
+#signIn:hover{
+  background-color: #a89858 ;
+  color:#242331;
+  border: solid 2px #242331;
+  transform: scale(0.9);
+
+}
+
+#googleb{
+  width: 10vw;
+  height: 7vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  }
+
+ #googleb img{
+  width: 100%;
+  height: 6vh;
+  display: flex;
+  flex-wrap: wrap;
+  object-fit: contain;
+ }
+
+ #googleb img:hover{
+  transform: scale(1.1);
+ }
+
+ /* --------------------------------PAGES HOTELS-------------------------- */
+
+.selectH{
+  width: 20vw;
+  height: 5vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-search2{
+  width: 70vw;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem
+  ;
+}
+
+.formH{
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  background-color: aqua; 
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+ .inputH{
+  height: 2.5vh;
+  width:12vw ;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #CBAB64;
+ }
+
+ .cardH{
+  width:30vw ;
+  height:60vh ;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #533E2D;
+  border-radius: 10px;
+  color: #CBAB64;
+  align-items: center;
+  text-align: center;
+  padding: 0.5rem;
+  margin: 1rem;
+ }
+
+ .cardH:hover .image img {
+  opacity: .5;
+}
+
+ .imageH{
+  width: 100%;
+  height: 60% ;
+  display: flex;
+  flex-wrap: wrap;
+ }
+
+ .imageH img{
+  width: 100%;
+  height: 100% ;
+  border-radius: 10px;
+ }
+
+.centerH{
+  width: 100%;
+  height: 40% ;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+}
+
+.botonH{
+  width: 8vw;
+  height: 5vh ;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  background-color: #CBAB64; 
+  justify-content: center;
+  color: #533E2D;
+  border-radius: 10px;
+}
+
+ .centerH h1 {
+  color: #CBAB64;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+ }
+
+ /* --------------------------------PAGES REGRISTRO DE NUEVOS HOTELS-------------------------- */
+
+ .formularioSignIn2{
+  width: 50vw;
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color:#DDCA7D ;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 14px;
+  text-decoration: none;
+}
+
+.titulitoH{
+  width: 50vw;
+  height: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.titulitoH h2{
+  width: 20vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.titulitoH img{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.formularioSignIn2 label{
+  width: 60%;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.formularioSignIn2 input{
+  width: 60%;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#signIn2{
+width: 10vw;
+height: 4vh;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+background-color: #242331;
+border-radius: 30px;
+color: #DDCA7D;
+font-style: none;
+text-decoration: none;
+}
+
+#signIn2:hover{
+  background-color: #a89858 ;
+  color:#242331;
+  border: solid 2px #242331;
+  transform: scale(1.1);
+
+}
+
+/* --------------------------------PAGES DETALLES -------------------------- */
+
+.detallesDeHotel{
+  width: 70vw;
+  min-height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #533E2D;
+  justify-content: center;
+  border-radius: 14px;
+  margin: 2rem;
+}
+
+.detallesDeHotel button{
+width: 10vw;
+height: 4vh;
+background-color: #a89858;
+border-radius: 10px;
+border: #242331;
+}
+
+.tituloYimagen{
+  width: 70vw;
+  height: 65vh;
+  display: flex;
+  flex-wrap: wrap;
+ /*  background-color: red; */
+  justify-content: center;
+  align-items: center;
+}
+
+.tituloYimagen h1{
+  width: 70vw;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: #533E2D; */
+  justify-content: center;
+}
+
+.tituloYimagen img{
+  width: 70vw;
+  height: 53vh;
+  display: flex;
+  flex-wrap: wrap;
+  object-fit: contain;
+}
+
+.capacidadYdescripcion{
+  width: 70vw;
+  height: 17vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #DDCA7D;
+  font-size: large;
+}
+
+.detallesDeHotel2{
+  width: 70vw;
+  min-height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #DDCA7D;
+  justify-content: center;
+  border-radius: 14px;
+  margin: 2rem;
+}
+
+.detallesDeHotel2 button{
+width: 10vw;
+height: 4vh;
+background-color: #a89858;
+border-radius: 10px;
+border: #242331;
+}
+
+.tituloYimagen2{
+  width: 70vw;
+  height: 65vh;
+  display: flex;
+  flex-wrap: wrap;
+ /*  background-color: red; */
+  justify-content: center;
+  align-items: center;
+}
+
+.tituloYimagen2 h1{
+  width: 70vw;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: #533E2D; */
+  justify-content: center;
+}
+
+.tituloYimagen2 img{
+  width: 70vw;
+  height: 53vh;
+  display: flex;
+  flex-wrap: wrap;
+  object-fit: contain;
+}
+
+.capacidadYdescripcion2{
+  width: 70vw;
+  height: 17vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #242331;
+  font-size: large;
+}
