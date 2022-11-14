@@ -13,7 +13,7 @@ let {id} = props
             <div className="details">
                 <div className="center">
                     <h1>{name}</h1>
-                    <Linkeador to= {id}>
+                    <Linkeador to= {`${id}`}>
                         <button className='botonH'><h3>Details</h3></button>
                     </Linkeador>
                 </div>
