@@ -1,20 +1,42 @@
 import React from 'react'
 import CardCitie from './CardCitie'
 import CardItinerary from './CardItinerary'
-import dataCities from '../dataCities'
-import dataActivities from '../dataActivities'
 import { useParams } from 'react-router-dom'
+import { BASE_URL } from '../api/url'
+import axios from 'axios'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 export default function DetailsCity() {
-    let {id}= useParams()
-    let findCity= dataCities.find((e => e.id === id)) 
-    let findActivity= dataActivities.filter((e => e.cityId === findCity.id))
-      return(
-      <>
-      <CardCitie titulo={findCity.name} imagen={findCity.photo} continente={findCity.continent} poblacion={findCity.population} ></CardCitie>
-      <CardItinerary  imagen={findActivity[0].photo[0]} descripcion={findActivity[0].description} duracion={findActivity[0].duration} precio={findActivity[0].price}></CardItinerary>
-      <CardItinerary  imagen={findActivity[1].photo[1]} descripcion={findActivity[1].description} duracion={findActivity[1].duration} precio={findActivity[1].price}></CardItinerary>
-      </>
-      );
-  }
 
+
+  let {cityid} = useParams()
+  let [foundCity, setfoundCity] = useState([])
+  let [itineraries, setItineraries] = useState([])
+
+  useEffect( () => {
+    axios.get(`${BASE_URL}/city?=${cityid}`)
+    .then(response => setfoundCity(response.data.response[1]))
+    .catch(err => console.log(err.message))
+  }, [])
+
+  useEffect( () => {
+    axios.get(`${BASE_URL}/itinerary?=${cityid}`)
+    .then(response => setItineraries(response.data.response))
+    .catch(err => console.log(err.message))
+  }, [])
+
+
+  return (
+<>
+<div>
+      <CardCitie key={foundCity.id} titulo={foundCity.name} continente={foundCity.continent} imagen={foundCity.photo} poblacion={foundCity.population}/>
+</div>
+    { 
+    (itineraries.length !== 0 )
+      ?itineraries.map( itine => <CardItinerary  key={itine._id}  imagen={itine.photo[0]} precio={itine.price} duracion={itine.duration} descripcion={itine.description}  id={itine._id}/>)
+      : <CardItinerary descripcion="Not found"></CardItinerary>
+      }
+</>
+  )
+}
