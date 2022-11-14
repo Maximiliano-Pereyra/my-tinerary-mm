@@ -2,10 +2,6 @@ import React from 'react'
 import { Link as Linkeador } from 'react-router-dom'
 
 
-import { Link as Tinerary } from 'react-router-dom'
-
-
-
 export default function Header() {
   return (
     <div className='heacolor'>

@@ -1,35 +1,31 @@
 import React, { useState } from 'react'
 import { useRef } from "react";
+import axios from 'axios';
+import { BASE_URL } from '../api/url';
 
-export default function NuevoHotel() {
-    const idInputElement = useRef();
+export default function NuevoHotel() { 
+    
+    const nameInputElement = useRef();
+    const photoInputElement = useRef();
     const capacityInputElement = useRef();
-    const nombreHInputElement = useRef();
-    const ubicacionInputElement = useRef();
-    const descripcionInputElement = useRef();
+    const cityIdInputElement = useRef();
     const userIdInputElement = useRef();
 
-    let handleSubmit = (event) => {
+    let handleSubmit = async (event) => {
         event.preventDefault();
         const data = {
-          id: idInputElement.current?.value,
-          capacity: capacityInputElement.current?.value,
-          nombreH: nombreHInputElement.current?.value,
-          ubicacion: ubicacionInputElement.current?.value,
-          descripcion: descripcionInputElement.current?.value,
-          userId: userIdInputElement.current?.value
+          name: nameInputElement.current.value,
+          photo: photoInputElement.current.value,
+          capacity: capacityInputElement.current.value,
+          cityId: cityIdInputElement.current.value,
+          userId: userIdInputElement.current.value
         };
         
-        localStorage.setItem('hotel-registered', JSON.stringify(data))
-    }
-
-    let [id,setId] = useState('');
-    let [capacity,setCapacity] = useState('');
-    let [nombreH, setNombre] = useState('');
-    let [ubicacion, setUbicacion] = useState('');
-    let [descripcion, setDescripcion] = useState('');
-    let [userId, setUserId] = useState('');
-
+        console.log(data);
+        axios.post((`http://localhost:8000/api/hotel/`), data )
+        .then(respon=>console.log(respon))
+        .catch(err=>{console.log(err)})
+      }
 
   return (
     <form className='formularioSignIn2'>
@@ -42,34 +38,18 @@ export default function NuevoHotel() {
         
         <input 
         type="text" 
-        name='nombreH' 
+        name='name' 
         autoComplete='off'
         placeholder='Hotel name' 
-        ref={nombreHInputElement}
-        value={nombreH}
-        onChange={ev => setNombre(ev.target.value)}>
-        </input>
-       
-        
-
-        <input 
-        type="text" 
-        name='ubicacion' 
-        autoComplete='off' 
-        placeholder='Location'
-        ref={ubicacionInputElement}
-        value={ubicacion}
-        onChange={ev => setUbicacion(ev.target.value)}>
+        ref={nameInputElement}>
         </input>
 
         <input 
         type="text" 
-        name='descripcion' 
+        name='photo' 
         autoComplete='off' 
-        placeholder='Description'
-        ref={descripcionInputElement}
-        value={descripcion}
-        onChange={ev => setDescripcion(ev.target.value)}>
+        placeholder='URL photo'
+        ref={photoInputElement}>
         </input>
 
         <input 
@@ -77,34 +57,27 @@ export default function NuevoHotel() {
         name='capacity' 
         autoComplete='off' 
         placeholder='Enter capacity'
-        ref={capacityInputElement}
-        value={capacity}
-        onChange={ev => setCapacity(ev.target.value)}>
-        </input>
-        
-        <input 
-        type="text" 
-        name='id' 
-        autoComplete='off'
-        placeholder='Enter Hotel Id' 
-        ref={idInputElement}
-        value={id}
-        onChange={ev => setId(ev.target.value)}>
+        ref={capacityInputElement}>
         </input>
 
+        <input 
+        type="text" 
+        name='cityId' 
+        autoComplete='off' 
+        placeholder='City Id'
+        ref={cityIdInputElement}>
+        </input>
+        
         <input 
         type="text" 
         name='userId' 
         autoComplete='off'
         placeholder='Enter User Id' 
-        ref={userIdInputElement}
-        value={userId}
-        onChange={ev => setUserId(ev.target.value)}>
+        ref={userIdInputElement}>
         </input>
     
         <button id='signIn2' type='submit' onClick={handleSubmit}>Send data</button>
     
-        
     </form>
     
   )
