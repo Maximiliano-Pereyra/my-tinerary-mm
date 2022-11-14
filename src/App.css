@@ -306,7 +306,7 @@ button {
 }
 
 #signIn3{
-width: 10vw;
+width: 20vw;
 height: 4vh;
 display: flex;
 flex-wrap: wrap;
@@ -341,4 +341,61 @@ text-decoration: none;
 a {
   text-decoration: none;
   color: #242331;
+}
+
+@media screen and (max-width: 770px){    
+  .card {
+    width: 50vw;
+  }
+  .container-signup {
+    width: 50vw;
+  }
+}
+@media screen and (max-width: 650px){
+  .space_evenly{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .formularioSignIn3{
+    width: 100vw;
+  }
+  .titulitoH3 img{
+    width: 0px;
+    height: 0px;
+    display: none;
+    flex-wrap: none;
+  }
+  .titulitoH3 h2{
+    width: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+    color: #DDCA7D;
+  }
+  .container-signup {
+    width: 100vw;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: #DDCA7D;
+    border-radius: 30px;
+    justify-content: space-evenly;
+  }
+  
+  .container-signup button{
+    height: 5vh;
+    width: 20vw;
+    background-color: #533E2D;
+    border-radius: 7px;
+  }
+  .container-inputs{
+    width: 50vw;
+    height: 30vh;
+    justify-content: space-evenly;
+  }
 }
