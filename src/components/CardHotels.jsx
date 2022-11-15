@@ -7,8 +7,8 @@ export default function CardHotels (props) {
     let {id}= props
     return (
      
-        <div class="cardH">
-            <div class="imageH">
+        <div class="card">
+            <div class="image">
                 <img src={photo}  alt={`imgen de ${photo}`} />
             </div>
             <div class="details">

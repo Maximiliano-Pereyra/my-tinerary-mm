@@ -23,7 +23,7 @@ function Cities() {
     
     
       useEffect( () => {
-        let querycheck = checked.slice()
+        let querycheck = checked
         if (checked.length > 0){
           querycheck = checked.join('&continent=')
         }
@@ -43,7 +43,7 @@ function Cities() {
     }
 
     let searchInput = (event) => {
-        setSearched(event.target.value.trim())
+        setSearched(event.target.value)
     }
 
 
