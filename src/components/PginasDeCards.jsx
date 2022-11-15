@@ -1,7 +1,6 @@
 import "../App.css";
 import React from "react";
 import CardHotels from "./CardHotels";
-import dataHotels from "../dataHotels";
 import InputHotels from "./InputHotels";
 import Select from "./Select";
 import axios from "axios";
@@ -17,13 +16,13 @@ export default function PginaDeCards(){
         axios.get(` ${BASE_URL}/hotel`)
         .then(response => setHoteles(response.data.res))
     },[] )
-    
-    console.log(dataHotels)
+
+
     return (
     <>
         <Select/>
         <InputHotels/>
-       {hoteles.map(allhotels=><CardHotels key={allhotels.id} photo={allhotels?.photo} name={allhotels?.name} id={allhotels.id}/>)}
+       {hoteles.map(allhotels=><CardHotels key={allhotels._id} photo={allhotels?.photo} name={allhotels?.name} id={allhotels._id}/>)}
     </>
     )
 }

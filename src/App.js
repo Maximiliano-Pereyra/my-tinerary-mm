@@ -24,8 +24,8 @@ function App() {
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/newCity" element={<NewCity />} />
         <Route path="/newHotel" element={<NuevoHotel />} />
-        <Route path="city/:id" element={<DetailsCity />} />
-        <Route path="/hotels/detailsHotels" element={<DetailsHotels />} />
+        <Route path="/city/:id" element={<DetailsCity />} />
+        <Route path="/hotels/:id" element={<DetailsHotels />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
       </Main>

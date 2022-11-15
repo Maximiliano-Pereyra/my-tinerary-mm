@@ -1,7 +1,6 @@
 import React from "react";
 
-function CardHotel(props){
-    console.log(props)
+function CardShow(props){
     let {titulo} = props
     let {imagen} = props
     let {precio} = props
@@ -19,4 +18,4 @@ function CardHotel(props){
     </div>
 );
 }
-export default CardHotel;
+export default CardShow;
