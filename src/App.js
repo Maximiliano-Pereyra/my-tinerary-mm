@@ -14,7 +14,8 @@ import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <Main>
+
+     <Main>
       <Routes>
         <Route path="" element={<Home />} />
         <Route path="/hotels" element={<PginasDeCards />} />
@@ -27,7 +28,7 @@ function App() {
         <Route path="/hotels/detailsHotels" element={<DetailsHotels />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
-    </Main>
+      </Main>
   );
 }
 export default App;

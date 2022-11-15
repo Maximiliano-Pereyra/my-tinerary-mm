@@ -3,11 +3,12 @@ import React from "react";
 import CardHotel from "../components/CardHotel";
 import dataHotels from '../dataHotels';
 
+
 function Citie (){
     
     return(
     
-       <CardHotel titulo={dataHotels[0].name} imagen={dataHotels[0].photo} capacidad={dataHotels[0].capacity} descripcion={dataHotels[0].description} ></CardHotel>
+       <CardHotel titulo={dataHotels.name} imagen={dataHotels.photo} capacidad={dataHotels.capacity} descripcion={dataHotels.description} ></CardHotel>
       
     );
 }
