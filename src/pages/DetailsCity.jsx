@@ -10,33 +10,29 @@ import { useState } from 'react'
 export default function DetailsCity() {
 
 
-  let {cityid} = useParams()
+  let {id} = useParams()
   let [foundCity, setfoundCity] = useState([])
   let [itineraries, setItineraries] = useState([])
 
   useEffect( () => {
-    axios.get(`${BASE_URL}/city?=${cityid}`)
-    .then(response => setfoundCity(response.data.response[1]))
+    axios.get(`${BASE_URL}/city?=${id}`)
+    .then(response => setfoundCity(response.data.response.find(city=>city._id===id)))
     .catch(err => console.log(err.message))
   }, [])
 
   useEffect( () => {
-    axios.get(`${BASE_URL}/itinerary?=${cityid}`)
-    .then(response => setItineraries(response.data.response))
+    axios.get(`${BASE_URL}/itinerary`)
+    .then(response => setItineraries(response.data.response.find(activities=>activities.cityId===id)))
     .catch(err => console.log(err.message))
   }, [])
-
-
+console.log(itineraries)
+console.log(id)
   return (
 <>
 <div>
       <CardCitie key={foundCity.id} titulo={foundCity.name} continente={foundCity.continent} imagen={foundCity.photo} poblacion={foundCity.population}/>
 </div>
-    { 
-    (itineraries.length !== 0 )
-      ?itineraries.map( itine => <CardItinerary  key={itine._id}  imagen={itine.photo[0]} precio={itine.price} duracion={itine.duration} descripcion={itine.description}  id={itine._id}/>)
-      : <CardItinerary descripcion="Not found"></CardItinerary>
-      }
+  <CardItinerary  /* imagen={itineraries?.photo[0]} */ precio={itineraries?.price} duracion={itineraries?.duration} descripcion={itineraries?.description}  id={itineraries?._id}/>      
 </>
   )
 }

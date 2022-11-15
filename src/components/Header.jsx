@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link as Linkeador } from 'react-router-dom'
 
-
 export default function Header() {
   return (
     <div className='heacolor'>
@@ -21,6 +20,14 @@ export default function Header() {
 
              <Linkeador to='/signIn'><li>Sign In</li></Linkeador>
              <Linkeador to='/signUp'><li>Sign Up</li></Linkeador>
+
+             </ul>
+            </li>
+            <li className='despList' >Set New
+             <ul className='list nomargin nopadding dispNone'>
+
+             <Linkeador to='/newCity'><li>New City</li></Linkeador>
+             <Linkeador to='/newHotel'><li>New Hotel</li></Linkeador>
 
              </ul>
             </li>

@@ -1,43 +1,28 @@
-import React, { useState } from 'react'
 import { useRef } from "react";
 import axios from 'axios';
-import {BASE_URL} from '../api/url'
-import { useEffect } from 'react';
+
 
 export default function NewCity() {
-    const idInputElement = useRef();
     const populationInputElement = useRef();
     const nombreCInputElement = useRef();
     const continentInputElement = useRef();
     const userIdInputElement = useRef();
-
-    let [dataU, setDataU] = useState(null)
+    const photoElement = useRef();
 
     let handleSubmit = (event) => {
         event.preventDefault();
         const data = {
-          id: idInputElement.current?.value,
           population: populationInputElement.current?.value,
-          nombreC: nombreCInputElement.current?.value,
+          name: nombreCInputElement.current?.value,
+          photo: photoElement.current?.value,
           continent: continentInputElement.current?.value,
           userId: userIdInputElement.current?.value
         };
-        setDataU(data)
-        event.target.reset()
+        console.log(data);
+        axios.post(('http://localhost:8000/api/city'), data )
+        .then(respon=>console.log(respon))
+        .catch(err=>{console.log(err)})
     }
-
-    useEffect( () => {
-      axios.get(`${BASE_URL}/city`)
-        .then(response => console.log(response.data.response))
-        .catch (err => console.log(err))
-      }, [])
-  
-    useEffect( () => {
-      axios.post(`${BASE_URL}/city`, dataU)
-        .then(response => console.log(response.data.response))
-        .catch (err => console.log(err))
-      }, [dataU])
-
 
   return (
     <form className='formularioSignIn3' onSubmit={handleSubmit} >
@@ -67,6 +52,9 @@ export default function NewCity() {
       >
         </input>
 
+        <input type="text" name="photo" ref={photoElement} placeholder='Photo url'>
+        </input>
+
         <input 
         type="text" 
         name='population' 
@@ -77,15 +65,6 @@ export default function NewCity() {
         >
         </input>
         
-        <input 
-        type="text" 
-        name='id' 
-        autoComplete='off'
-        placeholder='Enter City Id' 
-        ref={idInputElement}
-
-        >
-        </input>
 
         <input 
         type="text" 
