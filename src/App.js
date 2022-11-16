@@ -9,7 +9,7 @@ import SignUp from "./pages/SignUp";
 import NuevoHotel from "./pages/NuevoHotel";
 import NewCity from "./pages/NewCity";
 import DetailsCity from "./pages/DetailsCity";
-import DetailsHotels from "./components/DetailsHotels";
+import DetailsHotels from "./pages/DetailsHotels";
 import NotFound from "./pages/NotFound";
 
 function App() {
