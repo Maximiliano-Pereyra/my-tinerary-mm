@@ -1,5 +1,5 @@
 import React from 'react'
-import Carrusel from './Carrusel'
+import Carrusel from '../components/Carrusel'
 
 
 export default function Home2() {

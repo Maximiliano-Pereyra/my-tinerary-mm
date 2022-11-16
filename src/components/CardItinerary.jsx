@@ -10,7 +10,7 @@ function CardItinerary(props){
     <div className="detallesDeHotel">
         <div className="tituloYimagen">
             <h1>{descripcion}</h1>
-{/*             <img src={imagen}/> */}
+            <img src={imagen}/> 
         </div>
         <div className="capacidadYdescripcion">
             <p>Duration: {duracion} hs</p>
