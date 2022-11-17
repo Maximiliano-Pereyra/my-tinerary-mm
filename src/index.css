@@ -618,7 +618,7 @@ border: #242331;
   object-fit: contain;
 }
 
-.capacidadYdescripcion{
+.detallesDeDetails{
   width: 70vw;
   height: 17vh;
   display: flex;
@@ -630,7 +630,7 @@ border: #242331;
   font-size: large;
 }
 
-.detallesDeHotel2{
+.detallesDeShow{
   width: 70vw;
   min-height: 90vh;
   display: flex;
@@ -641,7 +641,7 @@ border: #242331;
   margin: 2rem;
 }
 
-.detallesDeHotel2 button{
+.detallesDeShow button{
 width: 10vw;
 height: 4vh;
 background-color: #a89858;
@@ -649,7 +649,7 @@ border-radius: 10px;
 border: #242331;
 }
 
-.tituloYimagen2{
+.tituloEImagenDeShow{
   width: 70vw;
   height: 65vh;
   display: flex;
@@ -659,7 +659,7 @@ border: #242331;
   align-items: center;
 }
 
-.tituloYimagen2 h1{
+.tituloEImagenDeShow h1{
   width: 70vw;
   height: 5vh;
   display: flex;
@@ -668,7 +668,7 @@ border: #242331;
   justify-content: center;
 }
 
-.tituloYimagen2 img{
+.tituloEImagenDeShow img{
   width: 70vw;
   height: 53vh;
   display: flex;
@@ -676,7 +676,7 @@ border: #242331;
   object-fit: contain;
 }
 
-.capacidadYdescripcion2{
+.suplementoDeShow{
   width: 70vw;
   height: 17vh;
   display: flex;
@@ -805,7 +805,7 @@ border: #242331;
   border-radius: 10px;
   border: #242331;
   }
-  .detallesDeHotel2 button{
+  .detallesDeShow button{
     width: 25vw;
     height: 4vh;
     background-color: #a89858;
