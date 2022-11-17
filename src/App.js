@@ -15,7 +15,7 @@ import NotFound from "./pages/NotFound";
 function App() {
   return (
 
-    <Main>
+     <Main>
       <Routes>
         <Route path="" element={<Home />} />
         <Route path="/hotels" element={<PginasDeCards />} />
@@ -24,10 +24,11 @@ function App() {
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/newCity" element={<NewCity />} />
         <Route path="/newHotel" element={<NuevoHotel />} />
-        <Route path="city/:id" element={<DetailsCity />} />
-        <Route path="/hotels/detailsHotels" element={<DetailsHotels />} />
+        <Route path="/city/:id" element={<DetailsCity />} />
+        <Route path="/hotels/:id" element={<DetailsHotels />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
+      </Main>
   );
 }
 export default App;

@@ -4,7 +4,7 @@ import CardHotel from "../components/CardHotel";
 import dataHotels from '../dataHotels';
 
 
-function Citie (){
+function Hotel (){
     
     return(
     
@@ -12,4 +12,4 @@ function Citie (){
       
     );
 }
-export default Citie;
+export default Hotel;

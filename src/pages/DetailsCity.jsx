@@ -1,20 +1,38 @@
 import React from 'react'
 import CardCitie from './CardCitie'
 import CardItinerary from './CardItinerary'
-import dataCities from '../dataCities'
-import dataActivities from '../dataActivities'
 import { useParams } from 'react-router-dom'
+import { BASE_URL } from '../api/url'
+import axios from 'axios'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 export default function DetailsCity() {
-    let {id}= useParams()
-    let findCity= dataCities.find((e => e.id === id)) 
-    let findActivity= dataActivities.filter((e => e.cityId === findCity.id))
-      return(
-      <>
-      <CardCitie titulo={findCity.name} imagen={findCity.photo} continente={findCity.continent} poblacion={findCity.population} ></CardCitie>
-      <CardItinerary  imagen={findActivity[0].photo[0]} descripcion={findActivity[0].description} duracion={findActivity[0].duration} precio={findActivity[0].price}></CardItinerary>
-      <CardItinerary  imagen={findActivity[1].photo[1]} descripcion={findActivity[1].description} duracion={findActivity[1].duration} precio={findActivity[1].price}></CardItinerary>
-      </>
-      );
-  }
 
+
+  let {id} = useParams()
+  let [foundCity, setfoundCity] = useState([])
+  let [itineraries, setItineraries] = useState([])
+
+  useEffect( () => {
+    axios.get(`${BASE_URL}/city?=${id}`)
+    .then(response => setfoundCity(response.data.response.find(city=>city._id===id)))
+    .catch(err => console.log(err.message))
+  }, [])
+
+  useEffect( () => {
+    axios.get(`${BASE_URL}/itinerary`)
+    .then(response => setItineraries(response.data.response.find(activities=>activities.cityId===id)))
+    .catch(err => console.log(err.message))
+  }, [])
+console.log(itineraries)
+console.log(id)
+  return (
+<>
+<div>
+      <CardCitie key={foundCity.id} titulo={foundCity.name} continente={foundCity.continent} imagen={foundCity.photo} poblacion={foundCity.population}/>
+</div>
+  <CardItinerary  /* imagen={itineraries?.photo[0]} */ precio={itineraries?.price} duracion={itineraries?.duration} descripcion={itineraries?.description}  id={itineraries?._id}/>      
+</>
+  )
+}

@@ -1,22 +1,34 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import dataHotels from '../dataHotels'
-import dataShows from '../dataShows'
-import CardHotel from './CardShow'
-import CardShow from './CardShow'
+import CardHotel from './CardHotel'
+import { useEffect } from 'react'
+import axios from 'axios'
+import { BASE_URL } from '../api/url'
+import { useState } from 'react'
+import CardShow from "./CardShow"
 
 export default function DetailsHotels() {
-  let {id}= useParams()
+  let {id} = useParams()
+  let [hotelFind, setHotelFind] = useState([])
+  let [show, setShow] = useState([])
 
-  let findHotel= dataHotels.find((e => e.id == id)) 
-  let findShow= dataShows.find((e => e.hotelId == findHotel.id))
-  console.log(findHotel);
+  useEffect( () => {
+    axios.get(`${BASE_URL}/hotel/?id=${id}`)
+    .then(response => setHotelFind(response.data.res.find(hotel=>hotel._id===id)))
+    .catch(err => console.log(err.message))
+  }, [])
+
+  useEffect( () => {
+    axios.get(`${BASE_URL}/show`)
+    .then(response => setShow(response.data.res.find(show=>show.hotelId===id)))
+    .catch(err => console.log(err.message))
+  }, [])  
+
+  
   return (
     <>
-        <CardHotel titulo={findHotel.name} imagen={findHotel.photo} capacidad={findHotel.capacity} descripcion={findHotel.description}/>
-        <CardShow titulo={findShow[0].name} imagen={findShow[0].photo} precio={findShow[0].price} fecha={findShow[0].date}/>
-        <CardShow titulo={findShow[1].name} imagen={findShow[1].photo} precio={findShow[1].price} fecha={findShow[1].date}/>
-        
+        <CardHotel ey={hotelFind.id} titulo={hotelFind.name} imagen={hotelFind.photo} capacidad={hotelFind.capacity}  />
+       ( <CardShow titulo={show?.name} imagen={show?.photo} precio={show?.price} fecha={show?.date}/>)   
     </>
   )
 }

@@ -10,146 +10,146 @@ export default function Carrusel() {
 
 /* ------------------------------CARRUSEL DE CIUDADES------------------------------------------ */
 
-   let [indice, setIndiceAcambiar] = useState(0) 
-   let [indiceA, setIndiceAcambiarA] = useState(1) 
+   let [indiceCiudad, setIndiceCiudad] = useState(0) 
+   let [indiceCiudad2, setIndiceCiudad2] = useState(1) 
  
     let posterior = () =>{  
-      if(indice+1<cities.length-1){
-       setIndiceAcambiar(indice+1)
+      if(indiceCiudad+1<cities.length-1){
+       setIndiceCiudad(indiceCiudad+1)
       }else{
-        setIndiceAcambiar(0)
+        setIndiceCiudad(0)
       }
-      clearInterval(id)
+      clearInterval(idHotels)
 
-      if(indiceA+1<cities.length-1){
-        setIndiceAcambiarA(indiceA+1)
+      if(indiceCiudad2+1<cities.length-1){
+        setIndiceCiudad2(indiceCiudad2+1)
        }else{
-         setIndiceAcambiarA(0)
+         setIndiceCiudad2(0)
        }
-       clearInterval(idA)
+       clearInterval(idHotels2)
     }
     let anterior = () =>{   
-      if(indice>0){
-       setIndiceAcambiar(indice-1)
+      if(indiceCiudad>0){
+       setIndiceCiudad(indiceCiudad-1)
       }else{
-        setIndiceAcambiar(cities.length-1)
+        setIndiceCiudad(cities.length-1)
       }
-      clearInterval(id)
+      clearInterval(idHotels)
 
-      if(indiceA>0){
-        setIndiceAcambiarA(indiceA-1)
+      if(indiceCiudad2>0){
+        setIndiceCiudad2(indiceCiudad2-1)
        }else{
-         setIndiceAcambiarA(cities.length-1)
+         setIndiceCiudad2(cities.length-1)
        }
-       clearInterval(idA)
+       clearInterval(idHotels2)
     }
     /* ------------------------------CARRUSEL DE HOTELES------------------------------------------ */
 
-    let[indice2, setIndiceAcambiar2] = useState(0)
-    let[indice2A, setIndiceAcambiar2A] = useState(1)
+    let[indiceHotels, setIndiceHotels] = useState(0)
+    let[indiceHotels2, setIndiceHotels2] = useState(1)
     let posterior2 = () =>{   
-      if(indice2<dataHotels.length-1){
-       setIndiceAcambiar2(indice2+1)
+      if(indiceHotels<dataHotels.length-1){
+       setIndiceHotels(indiceHotels+1)
       }else{
-        setIndiceAcambiar2(0)
+        setIndiceHotels(0)
       }
-      clearInterval(id2)
-      if(indice2A<dataHotels.length-1){
-        setIndiceAcambiar2A(indice2A+1)
+      clearInterval(idHotels)
+      if(indiceHotels2<dataHotels.length-1){
+        setIndiceHotels2(indiceHotels2+1)
        }else{
-         setIndiceAcambiar2A(0)
+         setIndiceHotels2(0)
        }
-       clearInterval(idA2)
+       clearInterval(idHotels2)
     }
     let anterior2 = () =>{   
-      if(indice2>0){
-       setIndiceAcambiar2(indice2-1)
+      if(indiceHotels>0){
+       setIndiceHotels(indiceHotels-1)
       }else{
-        setIndiceAcambiar2(dataHotels.length-1)
+        setIndiceHotels(dataHotels.length-1)
       }
-      clearInterval(id2)
-      if(indice2A>0){
-        setIndiceAcambiar2A(indice2A-1)
+      clearInterval(idHotels)
+      if(indiceHotels2>0){
+        setIndiceHotels2(indiceHotels2-1)
        }else{
-         setIndiceAcambiar2A(dataHotels.length-1)
+         setIndiceHotels2(dataHotels.length-1)
        }
-       clearInterval(idA2)
+       clearInterval(idHotels2)
     }
 
     /* ------------------------------CARRUSEL AUTOMATICO CIUDADES------------------------------------------ */
-    let [id,setid]= useState(0)
+    let [idCiudad,setIdCiudad]= useState(0)
     
     useEffect(
         () =>{ 
-        let idAutomatico =setInterval(
+        let idCiudadAutomatico =setInterval(
             ()=>{
                 posterior()
             },
             3000)
-            setid(idAutomatico)
-            return clearInterval(id)
+            setIdCiudad(idCiudadAutomatico)
+            return clearInterval(idCiudad)
         },
-        [indice]
+        [indiceCiudad]
     )
 
-    let [idA,setidA]= useState(1)
+    let [idCiudad2,setIdCiudad2]= useState(1)
     
     useEffect(
         () =>{ 
-        let idAutomaticoA =setInterval(
+        let idCiudadAutomatico2 =setInterval(
             ()=>{
                 anterior()
             },
             3000)
-            setidA(idAutomaticoA)
-            return clearInterval(idA)
+            setIdCiudad2(idCiudadAutomatico2)
+            return clearInterval(idCiudad2)
         },
-        [indiceA]
+        [indiceCiudad2]
     )
 
     /* ------------------------------CARRUSEL AUTOMATICO HOTELES------------------------------------------ */
 
-    let [id2,setid2]= useState(0)
+    let [idHotels,setIdHotels]= useState(0)
     
     useEffect(
         () =>{ 
-        let idAutomatico2 =setInterval(
+        let idAutomaticoHotels =setInterval(
             ()=>{
                 posterior2()
             },
             3000)
-            setid2(idAutomatico2)
-            return clearInterval(id2)
+            setIdHotels(idAutomaticoHotels)
+            return clearInterval(idHotels)
         },
-        [indice2]
+        [indiceHotels]
     )
 
-    let [idA2,setidA2]= useState(1)
+    let [idHotels2,setIdHotels2]= useState(1)
     
     useEffect(
         () =>{ 
-        let idAutomaticoA2 =setInterval(
+        let idAutomaticoHotels2 =setInterval(
             ()=>{
                 anterior2()
             },
             3000)
-            setidA2(idAutomaticoA2)
-            return clearInterval(idA2)
+            setIdHotels2(idAutomaticoHotels2)
+            return clearInterval(idHotels2)
         },
-        [indice2A]
+        [indiceHotels2]
     )
     return(
     <>
     
     <Linkeador to='/city' ><h2 className='subtitulosHome2'>CITIES</h2></Linkeador>
         <FlechaA onClick={anterior}/>
-        <ImagenYCiudad img={cities[indice].photo} ciudad={cities[indice].name} />
-        <ImagenYCiudad img={cities[indiceA].photo } ciudad={cities[indiceA].name} />
+        <ImagenYCiudad img={cities[indiceCiudad].photo} ciudad={cities[indiceCiudad].name} />
+        <ImagenYCiudad img={cities[indiceCiudad2].photo } ciudad={cities[indiceCiudad2].name} />
         <FlechaP onClick={posterior}/>
     <Linkeador to='/hotels' ><h2 className='subtitulosHome2'>HOTELS</h2></Linkeador>
         <FlechaA onClick={anterior2}/>
-        <ImagenYCiudad img={dataHotels[indice2].photo} ciudad={dataHotels[indice2].name} />
-        <ImagenYCiudad img={dataHotels[indice2A].photo} ciudad={dataHotels[indice2A].name} />
+        <ImagenYCiudad img={dataHotels[indiceHotels].photo} ciudad={dataHotels[indiceHotels].name} />
+        <ImagenYCiudad img={dataHotels[indiceHotels2].photo} ciudad={dataHotels[indiceHotels2].name} />
         <FlechaP onClick={posterior2}/>
     </>
   )
