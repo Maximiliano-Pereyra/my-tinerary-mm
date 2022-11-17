@@ -6,12 +6,12 @@ function CardShow(props){
     let {precio} = props
     let {fecha} = props
    return (
-    <div className="detallesDeHotel2">
-        <div className="tituloYimagen2">
+    <div className="detallesDeShow">
+        <div className="tituloEImagenDeShow">
             <h1>{titulo}</h1>
             <img src={imagen}/>
         </div>
-        <div className="capacidadYdescripcion2">
+        <div className="suplementoDeShow">
             <p>Price: {precio} USD</p>
             <p>Date: {fecha}</p>
         </div>

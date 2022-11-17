@@ -11,7 +11,7 @@ function CardHotel(props){
             <h1>{titulo}</h1>
             <img src={imagen}/>
         </div>
-        <div className="capacidadYdescripcion">
+        <div className="detallesDeDetails">
             <p>Capacity: {capacidad}</p>
         </div>
         <button>Comments</button>

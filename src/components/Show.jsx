@@ -3,7 +3,7 @@ import React from "react";
 import CardShow from "../components/CardShow";
 import dataShows from '../dataShows';
 
-function Citie (){
+function Show (){
     
     return(
     
@@ -11,4 +11,4 @@ function Citie (){
        
     );
 }
-export default Citie;
+export default Show;
