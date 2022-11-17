@@ -1,6 +1,6 @@
 import "../App.css";
 import React from "react";
-import CardHotel from "../components/CardHotel";
+import CardHotel from "./CardHotel";
 import dataHotels from '../dataHotels';
 
 
