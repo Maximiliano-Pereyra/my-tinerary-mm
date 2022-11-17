@@ -4,18 +4,18 @@ import Home from "./pages/Home";
 import Main from "./layouts/Main";
 import PginasDeCards from "./components/PginasDeCards";
 import Cities from "./pages/Cities";
-import SingIn from "./components/SignIn";
+import SingIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
-import NuevoHotel from "./components/NuevoHotel";
+import NuevoHotel from "./pages/NuevoHotel";
 import NewCity from "./pages/NewCity";
 import DetailsCity from "./pages/DetailsCity";
-import DetailsHotels from "./components/DetailsHotels";
+import DetailsHotels from "./pages/DetailsHotels";
 import NotFound from "./pages/NotFound";
 
 function App() {
   return (
 
-    <Main>
+     <Main>
       <Routes>
         <Route path="" element={<Home />} />
         <Route path="/hotels" element={<PginasDeCards />} />
@@ -24,10 +24,11 @@ function App() {
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/newCity" element={<NewCity />} />
         <Route path="/newHotel" element={<NuevoHotel />} />
-        <Route path="city/:id" element={<DetailsCity />} />
-        <Route path="/hotels/detailsHotels" element={<DetailsHotels />} />
+        <Route path="/city/:id" element={<DetailsCity />} />
+        <Route path="/hotels/:id" element={<DetailsHotels />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
+      </Main>
   );
 }
 export default App;

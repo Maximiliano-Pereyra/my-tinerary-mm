@@ -1,35 +1,31 @@
-import React, { useState } from 'react'
 import { useRef } from "react";
+import axios from 'axios';
+
 
 export default function NewCity() {
-    const idInputElement = useRef();
     const populationInputElement = useRef();
     const nombreCInputElement = useRef();
     const continentInputElement = useRef();
     const userIdInputElement = useRef();
+    const photoElement = useRef();
 
     let handleSubmit = (event) => {
         event.preventDefault();
         const data = {
-          id: idInputElement.current?.value,
           population: populationInputElement.current?.value,
-          nombreC: nombreCInputElement.current?.value,
+          name: nombreCInputElement.current?.value,
+          photo: photoElement.current?.value,
           continent: continentInputElement.current?.value,
           userId: userIdInputElement.current?.value
         };
-        
-        localStorage.setItem('city-registered', JSON.stringify(data))
+        console.log(data);
+        axios.post(('http://localhost:8000/api/city'), data )
+        .then(respon=>console.log(respon))
+        .catch(err=>{console.log(err)})
     }
 
-    let [id,setId] = useState('');
-    let [population,setPopulation] = useState('');
-    let [nombreC, setNombreC] = useState('');
-    let [continent, setContinent] = useState('');
-    let [userId, setUserId] = useState('');
-
-
   return (
-    <form className='formularioSignIn3'>
+    <form className='formularioSignIn3' onSubmit={handleSubmit} >
 
         <div className='titulitoH3'>
         <h2>New city information</h2> 
@@ -42,8 +38,8 @@ export default function NewCity() {
         autoComplete='off'
         placeholder='City name' 
         ref={nombreCInputElement}
-        value={nombreC}
-        onChange={ev => setNombreC(ev.target.value)}>
+
+        >
         </input>
        
         <input 
@@ -52,8 +48,11 @@ export default function NewCity() {
         autoComplete='off' 
         placeholder='Continent'
         ref={continentInputElement}
-        value={continent}
-        onChange={ev => setContinent(ev.target.value)}>
+
+      >
+        </input>
+
+        <input type="text" name="photo" ref={photoElement} placeholder='Photo url'>
         </input>
 
         <input 
@@ -62,19 +61,10 @@ export default function NewCity() {
         autoComplete='off' 
         placeholder='Enter population'
         ref={populationInputElement}
-        value={population}
-        onChange={ev => setPopulation(ev.target.value)}>
+
+        >
         </input>
         
-        <input 
-        type="text" 
-        name='id' 
-        autoComplete='off'
-        placeholder='Enter City Id' 
-        ref={idInputElement}
-        value={id}
-        onChange={ev => setId(ev.target.value)}>
-        </input>
 
         <input 
         type="text" 
@@ -82,8 +72,8 @@ export default function NewCity() {
         autoComplete='off'
         placeholder='Enter User Id' 
         ref={userIdInputElement}
-        value={userId}
-        onChange={ev => setUserId(ev.target.value)}>
+
+     >
         </input>
     
         <button id='signIn3' type='submit' onClick={handleSubmit}>Send data</button>

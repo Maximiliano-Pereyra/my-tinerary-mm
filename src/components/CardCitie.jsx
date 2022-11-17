@@ -1,7 +1,6 @@
 import React from "react";
 
 function CardCitie(props){
-    console.log(props)
     let {titulo} = props
     let {imagen} = props
     let {continente} = props

@@ -1,37 +1,53 @@
-import "../App.css";
 import React from "react";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import CardCity from "../components/CardCity";
-import dataCities from '../dataCities';
-import { useRef } from 'react'
+import { BASE_URL } from '../api/url'
+import axios from 'axios'
 
 function Cities() {
-    console.log(dataCities)
     let [checked, setChecked] = useState([])
     let [searched, setSearched] = useState([])
+    let [cities, setCities] = useState([])
+    let [filter, setFilter] = useState([])
+
+
+    let allcities = cities.map((city)=>city.continent)
+    let thecontinent = [...new Set(allcities)]
+    thecontinent = Array.from(thecontinent)
+   // console.log(thecontinent)
+
+    useEffect( () => {
+        axios.get(`${BASE_URL}/city`)
+        .then(response => setCities(response.data.response))
+        .catch (err => console.log(err.message))
+        }, [])
+    
+    
+      useEffect( () => {
+        let querycheck = checked
+        if (checked.length > 0){
+          querycheck = checked.join('&continent=')
+        }
+        axios.get(`${BASE_URL}/city?name=${searched}&continent=${querycheck}`)
+        .then(response => setFilter(response.data.response))
+        .catch (err => console.log(err.message))
+        }, [searched, checked])
+   
     let checkboxH = (event) => {
-        let array = [...checked]
+        let array = [...checked] //nueva array 
         if (event.target.checked) {
-            array.push(event.target.value)
+            array.push(event.target.value)//si esta chekeado va a hacer un push de lo q esta chekeado
         } else {
-            array = array.filter(element => element !== event.target.value)
+            array = array.filter(element => element !== event.target.value)// para que cuando deschekee me muestre todas las cards
         }
         setChecked(array)
-        console.log(array)
     }
 
     let searchInput = (event) => {
         setSearched(event.target.value)
     }
 
-    const dataFiltered = useRef(null)
-    dataFiltered.current = (checked + " " + searched)
 
-    console.log(dataFiltered)
-    console.log(checked)
-    console.log(searched)
-    console.log(setSearched)
-    console.log(setChecked)
     return (
         <>
         <div className='input-search'>
@@ -40,15 +56,17 @@ function Cities() {
                 placeholder="Search"
                 onChange={searchInput}
             />
-                {
-                    Array.from(new Set(dataCities.map(city => city.continent))).map(element => {
-                        return (
-                            <label key={element}><input onClick={checkboxH} type="checkbox" id={element} value={element} /> {element}</label>
-                        )
-                    })
-                }
+                {thecontinent.map(element => {
+          return(
+            <label key={element}><input onClick={checkboxH} type="checkbox" id={element} value={element} /> {element}</label>
+          )
+        })}
             </div>
-            {dataCities.map(allcities => <CardCity id={allcities.id}  key={allcities.id} photo={allcities?.photo} name={allcities?.name} continent={allcities?.continent} />)}
+            {
+        (filter.length > 0) //si hay una q cumpla me va atraer lo q quiero
+        ? filter.map(thecity=><CardCity key={thecity?._id} id={thecity?._id} name={thecity?.name} continent={thecity?.continent} photo={thecity?.photo} population={thecity?.population}/>)
+        : <CardCity name="Not found" continent="Not found"  population="0"/>
+      }
         </>
 
     )
