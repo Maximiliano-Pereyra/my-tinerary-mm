@@ -3,8 +3,14 @@ import { useState, useEffect } from 'react'
 import CardCity from "../components/CardCity";
 import { BASE_URL } from '../api/url'
 import axios from 'axios'
+import {useDispatch} from 'react-redux'
+import cityActions from "../redux/actions/cityActions";
 
 function Cities() {
+
+    const dispatch = useDispatch()
+    const {getCities} = cityActions
+
     let [checked, setChecked] = useState([])
     let [searched, setSearched] = useState([])
     let [cities, setCities] = useState([])
@@ -17,11 +23,11 @@ function Cities() {
    // console.log(thecontinent)
 
     useEffect( () => {
-        axios.get(`${BASE_URL}/city`)
+       axios.get(`${BASE_URL}/city`)
         .then(response => setCities(response.data.response))
         .catch (err => console.log(err.message))
+        dispatch(getCities("Hola de data"))
         }, [])
-    
     
       useEffect( () => {
         let querycheck = checked
