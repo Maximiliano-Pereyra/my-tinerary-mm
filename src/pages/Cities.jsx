@@ -1,57 +1,47 @@
 import React from "react";
 import { useState, useEffect } from 'react'
 import CardCity from "../components/CardCity";
-import { BASE_URL } from '../api/url'
-import axios from 'axios'
-import {useDispatch} from 'react-redux'
+import { useDispatch, useSelector } from "react-redux";
+import { useRef } from "react";
 import cityActions from "../redux/actions/cityActions";
 
 function Cities() {
-
-    const dispatch = useDispatch()
-    const {getCities} = cityActions
-
-    let [checked, setChecked] = useState([])
-    let [searched, setSearched] = useState([])
-    let [cities, setCities] = useState([])
-    let [filter, setFilter] = useState([])
-
-
-    let allcities = cities.map((city)=>city.continent)
-    let thecontinent = [...new Set(allcities)]
-    thecontinent = Array.from(thecontinent)
-   // console.log(thecontinent)
-
-    useEffect( () => {
-       axios.get(`${BASE_URL}/city`)
-        .then(response => setCities(response.data.response))
-        .catch (err => console.log(err.message))
-        dispatch(getCities("Hola de data"))
-        }, [])
     
-      useEffect( () => {
-        let querycheck = checked
-        if (checked.length > 0){
-          querycheck = checked.join('&continent=')
-        }
-        axios.get(`${BASE_URL}/city?name=${searched}&continent=${querycheck}`)
-        .then(response => setFilter(response.data.response))
-        .catch (err => console.log(err.message))
-        }, [searched, checked])
-   
-    let checkboxH = (event) => {
-        let array = [...checked] //nueva array 
-        if (event.target.checked) {
-            array.push(event.target.value)//si esta chekeado va a hacer un push de lo q esta chekeado
-        } else {
-            array = array.filter(element => element !== event.target.value)// para que cuando deschekee me muestre todas las cards
-        }
-        setChecked(array)
-    }
+    const dispatch = useDispatch();
+    const { getCities, getCitiesFilter } = cityActions;
+    const { cities, categories } = useSelector((state) => state.cities);
+    const { continent, value } = useSelector((store) => store.cities);
 
-    let searchInput = (event) => {
-        setSearched(event.target.value)
+   let [checkb, setChecked] = useState([])
+   let searchInput = useRef()
+   
+   useEffect(() => {
+    if (cities.length === 0) {
+      dispatch(getCities());
     }
+  }, []);
+  console.log(continent);
+  console.log(value);
+   
+  let filter = (event) => {
+    console.log(event);
+    let checks = filterChecks(event);
+    console.log(checks);
+    let text = searchInput.current.value;
+    let urlChecks = checks.map((check) => `continent=${check}`).join("&");
+    dispatch(getCitiesFilter({ continent: urlChecks, value: text }));
+  };
+
+  function filterChecks(event) {
+    let arrayCheck = [];
+    if (event.target.checked) {
+      arrayCheck = [...checkb, event.target.value];
+    } else {
+      arrayCheck = checkb.filter((e) => e !== event.target.value);
+    }
+    setChecked(arrayCheck);
+    return arrayCheck;
+  }
 
 
     return (
@@ -60,21 +50,30 @@ function Cities() {
             <input
                 type="text"
                 placeholder="Search"
-                onChange={searchInput}
+                ref={searchInput}
+                onKeyUp={filter}
             />
-                {thecontinent.map(element => {
+            <div>
+                {categories?.map(element => {
           return(
-            <label key={element}><input onClick={checkboxH} type="checkbox" id={element} value={element} /> {element}</label>
+            <label key={element}><input onChange={filter} type="checkbox" id={element} value={element} /> {element}</label>
           )
-        })}
+        })}</div>
             </div>
-            {
-        (filter.length > 0) //si hay una q cumpla me va atraer lo q quiero
-        ? filter.map(thecity=><CardCity key={thecity?._id} id={thecity?._id} name={thecity?.name} continent={thecity?.continent} photo={thecity?.photo} population={thecity?.population}/>)
-        : <CardCity name="Not found" continent="Not found"  population="0"/>
-      }
+        
+        {cities?.map((theCity) => {
+          return (
+            <CardCity
+              id={theCity._id}
+              key={theCity._id}
+              name={theCity.name}
+              photo={theCity.photo}
+            ></CardCity>
+          );
+        })}
+      
         </>
 
-    )
-}
+    )}
+
 export default Cities;
