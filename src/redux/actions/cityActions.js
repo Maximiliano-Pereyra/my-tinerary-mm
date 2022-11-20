@@ -37,6 +37,6 @@ const getCitiesFilter = createAsyncThunk(
 const cityActions = {
   //es un objeto que nos permite sacar las acciones que tenemos creadas
   getCities,
-  getCitiesFilter, //nombre de la accion
+  getCitiesFilter, 
 };
 export default cityActions;
