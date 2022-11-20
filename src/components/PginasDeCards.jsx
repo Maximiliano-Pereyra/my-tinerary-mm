@@ -7,16 +7,24 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import { BASE_URL } from "../api/url";
+import { useDispatch } from "react-redux";
+import hotelActions from "../redux/actions/hotelActions";
 
 export default function PginaDeCards(){
+
+    const dispatch = useDispatch( )
+    const { getHotels } = hotelActions
 
     const [hotels, setHotels] = useState([ ])
     let select = '/'
     const [search, setSearch] = useState([ ])
 
     useEffect( () => {
-        axios.get(` ${BASE_URL}/hotel`)
-        .then(response => setHotels(response.data.res))
+        /* axios.get(` ${BASE_URL}/hotel`)
+        .then(response => setHotels(response.data.res)) */
+
+        dispatch(getHotels('Hola de data'))
+
     },[ ] )
 
     function filterF (value){
