@@ -12,10 +12,10 @@ import DetailsCity from "./pages/DetailsCity";
 import DetailsHotels from "./pages/DetailsHotels";
 import NotFound from "./pages/NotFound";
 import MyCities from "../src/pages/MyCities.jsx"
+import CityEdit from "../src/components/CityEdit"
 
 function App() {
   return (
-
      <Main>
       <Routes>
         <Route path="" element={<Home />} />
@@ -29,8 +29,9 @@ function App() {
         <Route path="/hotels/:id" element={<DetailsHotels />} />
         <Route path="/*" element={<NotFound />} />
         <Route path="/mycity" element={<MyCities/>}/>
+        <Route path="/cityedit/:id" element={<CityEdit/>} />
       </Routes>
-      </Main>
+      </Main> 
   );
 }
 export default App;

@@ -342,6 +342,50 @@ a {
   text-decoration: none;
   color: #242331;
 }
+/*-----------------------------------------------my city---------------------------------*/
+.containermycities{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.containermycity{
+  background-color: #3a3f47;
+  border-radius: 10px;
+  height: auto;
+  margin: 2px;
+}
+.mycitimg{
+  width: 50vmax;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  height: 30vmax;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.mycitname{
+  text-align: center;
+}
+.mycitybtns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3px;
+  padding-bottom: 25px;
+  justify-content: space-around;
+}
+.mycitybtn {
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #be9361;
+  margin: 3px;
+  border: solid #242331 3px;
+  font-size: large;
+}
+
 
 @media screen and (max-width: 770px){    
   .card {

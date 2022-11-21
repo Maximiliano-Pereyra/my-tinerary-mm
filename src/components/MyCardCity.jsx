@@ -1,27 +1,33 @@
-import React from "react"
-import { Link as Linkeador } from "react-router-dom"
+import React from "react";
+import { Link as Linkeador} from "react-router-dom";
 
-function MyCardCity(props){
-    let {photo} = props
-    let {name} = props
-    let {id} = props
-    let {click} = props
-   return (
-    <div className="detallesDeHotel2">
-        <div className="tituloYimagen2">
-            <h1>{name}</h1>
-            <img src={photo}/>
-        </div>
+export default function MyHotelsCard(props) {
+  let { img } = props;
+  let { name } = props;
+  let { id } = props;
+  let {onClick} = props 
+
+  return (
+    <div>
+      <div className="containermycity">
         <div>
-     <Linkeador to={`/city/${id}`}><button>Details</button></Linkeador>
-     <div>
-        <button>Edit</button>
-     </div>
-     <div>
-        <button onClick={click}>Delete</button>
-     </div>
+          <img className="mycitimg" src={img} alt={name}></img>
         </div>
+
+        <div>
+          <div>
+            <h2 className="mycitname">{name}</h2>
+          </div>
+          <div className="mycitybtns">           
+            <div>
+              <button className="mycitybtn" onClick={onClick}>Delete</button>
+            </div>
+            <Linkeador to={`/cityedit/${id}`}>
+              <button className="mycitybtn">Edit</button>
+            </Linkeador>
+          </div>
+        </div>
+      </div>
     </div>
-);
+  );
 }
-export default MyCardCity;
