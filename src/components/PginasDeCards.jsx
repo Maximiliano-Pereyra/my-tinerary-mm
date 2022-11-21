@@ -13,10 +13,11 @@ export default function PginaDeCards(){
    
     const search = useRef();
     const select = useRef();
+
     useEffect(() => {
-        if (hotels.length === 0) {
+    
           dispatch(getHotels());
-        }
+        
         // eslint-disable-next-line
       }, []);
     

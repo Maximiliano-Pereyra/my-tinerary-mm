@@ -1,7 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 import hotelActions from "../actions/hotelActions";
 
-const { getHotels, getHotelsFilter, getHotelsSelect } = hotelActions;
+const { getHotels, getHotelsFilter, getHotelsSelect, getHotelsId, deleteHotels } = hotelActions;
 
 const initialState = {
   hotels: [],
@@ -20,6 +20,14 @@ const hotelReducers = createReducer(initialState, (builder) => {
 
         };
       })
+      .addCase(deleteHotels.fulfilled, (state, action) => {
+    
+        return {
+          ...state,
+          hotels: action.payload,
+
+        };
+      })
       .addCase(getHotelsFilter.fulfilled, (state, action) => {
         return {
           ...state,
@@ -31,7 +39,13 @@ const hotelReducers = createReducer(initialState, (builder) => {
           ...state,
           ...action.payload,
         };
-      });
+      })
+      .addCase(getHotelsId.fulfilled, (state, action) => {
+        return {
+          ...state,
+          ...action.payload,
+        };
+      })
     })
 
       export default hotelReducers;
