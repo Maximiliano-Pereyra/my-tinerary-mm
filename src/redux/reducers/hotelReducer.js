@@ -1,20 +1,37 @@
 import { createReducer } from "@reduxjs/toolkit";
-import hotelsActions from "../actions/hotelActions";
+import hotelActions from "../actions/hotelActions";
 
-const { getHotels } = hotelsActions
+const { getHotels, getHotelsFilter, getHotelsSelect } = hotelActions;
 
-const inicialState = {
-    hotels: [ ]
-}
+const initialState = {
+  hotels: [],
+  name: "",
+  order: "",
+ 
+};
 
-const hotelReducer = createReducer (inicialState,
-    (builder) =>{
-            builder.addCase(getHotels, (state, action)=>{
-                console.log(state);
-                console.log(action.payload);
-                console.log(action.type);
-            })
+const hotelReducers = createReducer(initialState, (builder) => {
+    builder
+      .addCase(getHotels.fulfilled, (state, action) => {
+    
+        return {
+          ...state,
+          hotels: action.payload,
 
-})
+        };
+      })
+      .addCase(getHotelsFilter.fulfilled, (state, action) => {
+        return {
+          ...state,
+          ...action.payload,
+        };
+      })
+      .addCase(getHotelsSelect.fulfilled, (state, action) => {
+        return {
+          ...state,
+          ...action.payload,
+        };
+      });
+    })
 
-export default hotelReducer;
+      export default hotelReducers;

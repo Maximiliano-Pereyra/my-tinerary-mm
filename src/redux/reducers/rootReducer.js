@@ -1,7 +1,10 @@
+
 import hotelReducer from './hotelReducer'
+import cityReducer from "./cityReducer";
 
 const rootReducer = {
-    hotel : hotelReducer
+    hotels : hotelReducer,
+    cities: cityReducer
 }
 
-export default rootReducer
+export default rootReducer 

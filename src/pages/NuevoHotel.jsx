@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { useRef } from "react";
 import axios from 'axios';
 import { BASE_URL } from '../api/url';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function NuevoHotel() {
 
@@ -23,15 +26,33 @@ export default function NuevoHotel() {
 
     console.log(data);
     try {
-      let res = axios.post((`http://localhost:8000/api/hotel/`), data)
-      console.log(data);
+      let res = await axios.post((`http://localhost:8000/api/hotel/`), data)
+      console.log(res);
       if (res.data.success) {
-        alert('se pudo crear')
-      }else{
-        alert('no se pudo')
+        toast.success(' The hotel was created', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",});
+          window.location.href=`http://localhost:3000/hotels`
       }
+        
     } catch (error) {
       console.log(error.message);
+      toast.error('Sorry, the hotel could not be created!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
     }
 
   }
@@ -86,6 +107,7 @@ export default function NuevoHotel() {
       </input>
 
       <button id='signIn2' type='submit' onClick={handleSubmit}>Send data</button>
+      <ToastContainer />
 
     </form>
 

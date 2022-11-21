@@ -1,56 +1,55 @@
 import "../App.css";
 import React from "react";
 import CardHotels from "./CardHotels";
-import InputHotels from "./InputHotels";
-import Select from "./Select";
-import axios from "axios";
 import { useEffect } from "react";
-import { useState } from "react";
-import { BASE_URL } from "../api/url";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import hotelActions from "../redux/actions/hotelActions";
+import { useRef } from "react";
 
 export default function PginaDeCards(){
-
-    const dispatch = useDispatch( )
-    const { getHotels } = hotelActions
-
-    const [hotels, setHotels] = useState([ ])
-    let select = '/'
-    const [search, setSearch] = useState([ ])
-
-    useEffect( () => {
-        /* axios.get(` ${BASE_URL}/hotel`)
-        .then(response => setHotels(response.data.res)) */
-
-        dispatch(getHotels('Hola de data'))
-
-    },[ ] )
-
-    function filterF (value){
-
-        if(value.target.type === "select-one"){
-            select = value.target.value
+    const dispatch = useDispatch();
+    const { getHotels, getHotelsFilter, getHotelsSelect } = hotelActions;
+    const { order, name, hotels } = useSelector((state) => state.hotels);
+   
+    const search = useRef();
+    const select = useRef();
+    useEffect(() => {
+        if (hotels.length === 0) {
+          dispatch(getHotels());
         }
-
-        if(value.target.type === "search"){
-            setSearch(value.target.value)
+        // eslint-disable-next-line
+      }, []);
+    
+      
+    
+      let filter = () => {
+        let text = search.current.value;
+        let selectFil = select.current.value;
+    
+        if (selectFil !== "asc" && selectFil !== "desc") {
+          dispatch(getHotelsFilter({ name: text }));
+        } else {
+          dispatch(getHotelsSelect({ order: selectFil, name: text }));
         }
-        axios.get(`${BASE_URL}/hotel/?name=${search}&${select}`)
-        .then(res => setHotels(res.data.res))
-
-    }
-
-    useEffect(()=>{
-        axios.get(`${BASE_URL}/hotel/?name=${search}&${select}`)
-        .then(res => setHotels(res.data.res))
-    },[search])
-
+      };
 
     return (
     <>
-        <Select filter={filterF}/>
-        <InputHotels filter={filterF}/>
+        <select className='selectH' type='select' ref={select} onChange={filter}>
+          <option >Capacity...</option>
+            <option value="asc">Low Capacity</option>
+            <option value="desc">High Capacity</option>
+      </select>
+
+        <form className='input-search2'>
+      <input
+        placeholder='Hotel...'
+        type='search'
+        ref={search}
+        onChange={filter}>
+      </input>
+    </form>
+
        {hotels.map(allhotels=><CardHotels key={allhotels._id} photo={allhotels?.photo} name={allhotels?.name} id={allhotels._id}/>)}
     </>
     )
