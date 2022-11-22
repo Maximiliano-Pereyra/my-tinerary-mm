@@ -31,7 +31,7 @@ export default function Cities() {
                 position: toast.POSITION.TOP_CENTER,
               });
               setTimeout(function () {
-                window.location.replace("");
+                window.location.replace("");//una vez que elimino recarga la pagina y desaparece lo que elimine
               }, 1500);
             }
           }

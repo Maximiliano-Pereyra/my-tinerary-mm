@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function MyTineraries() {
 
-  let [reload, setReload] = useState(false);
+
     const dispatch = useDispatch();
     const { deleteTinerary, getMyTinerary} = myTineraryActions;
 
@@ -23,7 +23,7 @@ export default function MyTineraries() {
 let userId ="636d8bcade38ce0e1619410f"
 dispatch(getMyTinerary({tineId: userId}))
  
-  }, [reload]);
+  }, []);
 
   return (
     <div ><ToastContainer/>
@@ -36,7 +36,7 @@ dispatch(getMyTinerary({tineId: userId}))
               position: toast.POSITION.TOP_CENTER,
             });
           }
-          setReload(!reload)
+
         }
         return (
           <MyCardTinerary
