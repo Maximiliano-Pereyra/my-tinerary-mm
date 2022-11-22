@@ -11,11 +11,16 @@ import NewCity from "./pages/NewCity";
 import DetailsCity from "./pages/DetailsCity";
 import DetailsHotels from "./pages/DetailsHotels";
 import NotFound from "./pages/NotFound";
+
 import MyCities from "../src/pages/MyCities.jsx"
 import CityEdit from "../src/components/CityEdit"
 import MyTineraries from "../src/pages/MyTineraries"
 import MyCardTinerary from "./components/MyCardTinerary";
 import TineraryEdit from "./components/TineraryEdit"
+
+import HotelesDeUsuario from "./pages/HotelesDeUsuario";
+import EditorDeHotel from "./pages/EditorDeHotels";
+import MyShows from "./pages/MyShows";
 
 function App() {
   return (
@@ -29,6 +34,9 @@ function App() {
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/newCity" element={<NewCity />} />
         <Route path="/newHotel" element={<NuevoHotel />} />
+        <Route path="/hotels/prueba" element={<HotelesDeUsuario/>} />
+        <Route path="/hotels/prueba/:id/edit" element={<EditorDeHotel/>} />
+        <Route path="/shows/prueba" element={<MyShows/>} />
         <Route path="/city/:id" element={<DetailsCity />} />
         <Route path="/hotels/:id" element={<DetailsHotels />} />
         <Route path="/*" element={<NotFound />} />
