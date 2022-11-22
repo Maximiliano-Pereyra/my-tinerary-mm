@@ -39,11 +39,22 @@ export default function NuevoHotel() {
           progress: undefined,
           theme: "dark",});
           window.location.href=`http://localhost:3000/hotels`
+      }else{
+        toast.error(res.data.message.join('///'), {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          });
       }
         
     } catch (error) {
       console.log(error.message);
-      toast.error('Sorry, the hotel could not be created!', {
+     /*  toast.error('Sorry, the hotel could not be created!', {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -52,7 +63,7 @@ export default function NuevoHotel() {
         draggable: true,
         progress: undefined,
         theme: "dark",
-        });
+        }); */
     }
 
   }
