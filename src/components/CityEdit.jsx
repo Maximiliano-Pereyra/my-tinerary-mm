@@ -13,9 +13,6 @@ export default function CityEdit() {
   };
   let { id } = useParams();
   console.log(id);
-  const notify = () => {
-    toast();
-  };
 
   useEffect(() => {
     axios
@@ -114,7 +111,6 @@ export default function CityEdit() {
                     <div>
                       <input
                         type="submit"
-                        onClick={notify}
                         required
                         value="Edit"
                       />
