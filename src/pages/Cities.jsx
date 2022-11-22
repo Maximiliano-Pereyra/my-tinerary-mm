@@ -9,10 +9,10 @@ function Cities() {
     
     const dispatch = useDispatch();
     const { getCities, getCitiesFilter } = cityActions;
-    const { cities, categories } = useSelector((state) => state.cities);
+    const { cities, categories } = useSelector((store) => store.cities);
     const { continent, value } = useSelector((store) => store.cities);
 
-   let [checkb, setChecked] = useState([])
+   let [checkb, setChecked] = useState([]) //creo estado vacio para los checks inicialmente
    let searchInput = useRef()
    
    useEffect(() => {
@@ -24,13 +24,13 @@ function Cities() {
   console.log(value);
    
   let filter = (event) => {
-    console.log(event);
+    console.log(event);//trae el evento change
     let checks = filterChecks(event);
-    console.log(checks);
-    let text = searchInput.current.value;
-    let urlChecks = checks.map((check) => `continent=${check}`).join("&");
-    dispatch(getCitiesFilter({ continent: urlChecks, value: text }));
-  };
+    console.log(checks);//trae el valor de lo chekeado
+    let text = searchInput.current.value;//valor de la barra de busqueda
+    let urlChecks = checks.map((check) => `continent=${check}`).join("&");//join añade los elementos de un array a un string, en este caso separados por &
+    dispatch(getCitiesFilter({ continent: urlChecks, value: text }));// dispatch es la accion despachadora que acepta la accion asincrona
+};//urlchecks tiene el valor de lo chekeado
 
   function filterChecks(event) {
     let arrayCheck = [];
@@ -56,7 +56,7 @@ function Cities() {
             <div>
                 {categories?.map(element => {
           return(
-            <label key={element}><input onChange={filter} type="checkbox" id={element} value={element} /> {element}</label>
+            <label key={element}><input onChange={filter} type="checkbox" id={element} value={element} /> {element}</label> //onchange es un evento, dentro de este esta la propiedad target
           )
         })}</div>
             </div>
