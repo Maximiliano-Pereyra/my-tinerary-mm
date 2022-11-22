@@ -11,6 +11,13 @@ import NewCity from "./pages/NewCity";
 import DetailsCity from "./pages/DetailsCity";
 import DetailsHotels from "./pages/DetailsHotels";
 import NotFound from "./pages/NotFound";
+
+import MyCities from "../src/pages/MyCities.jsx"
+import CityEdit from "../src/components/CityEdit"
+import MyTineraries from "../src/pages/MyTineraries"
+import MyCardTinerary from "./components/MyCardTinerary";
+import TineraryEdit from "./components/TineraryEdit"
+
 import HotelesDeUsuario from "./pages/HotelesDeUsuario";
 import EditorDeHotel from "./pages/EditorDeHotels";
 import MyShows from "./pages/MyShows";
@@ -18,8 +25,8 @@ import EditDeShow from "./pages/EditDeShow";
 
 function App() {
   return (
-
-     <Main>
+    
+      <Main>
       <Routes>
         <Route path="" element={<Home />} />
         <Route path="/hotels" element={<PginasDeCards />} />
@@ -36,8 +43,15 @@ function App() {
         <Route path="/hotels/:id" element={<DetailsHotels />} />
         <Route path="/*" element={<NotFound />} />
 
+
+
+        <Route path="/mycity" element={<MyCities/>}/>
+        <Route path="/cityedit/:id" element={<CityEdit/>} />
+        <Route path="/mytineraries" element={<MyTineraries/>}/>
+        <Route path="/tineraryedit/:id" element={<TineraryEdit/>} />
+
       </Routes>
-      </Main>
+      </Main>   
   );
 }
 export default App;

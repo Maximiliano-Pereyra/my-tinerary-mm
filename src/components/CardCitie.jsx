@@ -6,16 +6,17 @@ function CardCitie(props){
     let {continente} = props
     let {poblacion} = props
    return (
-    <div className="detallesDeHotel2">
-        <div className="tituloYimagen2">
+    <div className="cardsdetcity">
+        <div className="subcarddet">
             <h1>City: {titulo}</h1>
-            <img src={imagen}/>
+            <img className="imgdet" src={imagen}/>
         </div>
-        <div className="capacidadYdescripcion2">
+        <div className="detailsdet">
             <p>Continent: {continente}</p>
             <p>Population: {poblacion}</p>
+            <button>Comments</button>
         </div>
-        <button>Comments</button>
+        
     </div>
 );
 }

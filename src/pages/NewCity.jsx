@@ -1,15 +1,19 @@
 import { useRef } from "react";
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {BASE_URL} from '../api/url'
 
 
 export default function NewCity() {
+  
     const populationInputElement = useRef();
     const nombreCInputElement = useRef();
     const continentInputElement = useRef();
     const userIdInputElement = useRef();
     const photoElement = useRef();
 
-    let handleSubmit = (event) => {
+  async function handleSubmit (event) {
         event.preventDefault();
         const data = {
           population: populationInputElement.current?.value,
@@ -18,11 +22,24 @@ export default function NewCity() {
           continent: continentInputElement.current?.value,
           userId: userIdInputElement.current?.value
         };
-        console.log(data);
-        axios.post(('http://localhost:8000/api/city'), data )
-        .then(respon=>console.log(respon))
-        .catch(err=>{console.log(err)})
-    }
+        try {
+          let res = await axios.post(`${BASE_URL}/city`, data);
+          console.log(res);
+          if (res.data.success){
+            toast.success("The city was created", {
+              position: toast.POSITION.TOP_CENTER,
+              theme:"colored"
+            });window.location.href='http://localhost:3001/city';
+          } else {
+            toast.error(res.data.message.join("&"), {
+              position: toast.POSITION.TOP_CENTER,
+              theme:"colored"
+            });
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
 
   return (
     <form className='formularioSignIn3' onSubmit={handleSubmit} >
@@ -78,7 +95,7 @@ export default function NewCity() {
     
         <button id='signIn3' type='submit' onClick={handleSubmit}>Send data</button>
     
-        
+        <ToastContainer></ToastContainer>
     </form>
     
   )

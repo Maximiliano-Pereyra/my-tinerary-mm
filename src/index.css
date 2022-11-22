@@ -687,8 +687,29 @@ border: #242331;
   color: #242331;
   font-size: large;
 }
-
-
+/*-------------------------------------------------------------------------Mycity---------------------------------------------------------------------------------------*/
+.contmycit{
+  background-color: #eff1f6;
+  width: 1000px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mycit{
+  background-color: #61dafb;
+  display: flex;
+  flex-wrap: wrap;
+  width: 1000px;
+  justify-content: center;
+  height: 900px;
+}
+.butmycard{
+  height: 100px;
+  width: 100px;
+  background-color: #242331;
+  color: #CBAB64;
+}
 
 @media screen and (max-width: 770px){    
   .horarios{
