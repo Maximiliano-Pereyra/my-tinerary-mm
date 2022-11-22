@@ -18,7 +18,7 @@ export default function PginaDeCards(){
     
           dispatch(getHotels());
         
-        // eslint-disable-next-line
+        
       }, []);
     
       

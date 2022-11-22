@@ -5,7 +5,7 @@ import { BASE_URL } from "../../api/url";
 const getHotels = createAsyncThunk("getHotels", async () => {
   try {
     const res = await axios.get(`${BASE_URL}/hotel`);
-
+    console.log(res.data);
     return res.data.res;
 
   } catch (error) {

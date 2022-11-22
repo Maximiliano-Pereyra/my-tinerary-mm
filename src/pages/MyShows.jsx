@@ -9,12 +9,12 @@ import showActions from '../redux/actions/showAction';
 
 export default function MyShows() {
     const dispatch = useDispatch();
-    const { getShow} = showActions;
-    const  show  = useSelector((state) => state.show);
+    const { getShow, getShowId} = showActions;
+    const  {shows} = useSelector((state) => state.shows);
 
     useEffect(() => {
-        
-        dispatch(getShow(  ));
+        let uId = '636d8bcade38ce0e1619410f'
+        dispatch(getShowId( uId ));
 
     }, []);
 
@@ -22,7 +22,7 @@ export default function MyShows() {
   return (
     <>
     
-    {show.map(allhotels=><CardHotelsUser key={allhotels._id} photo={allhotels?.photo} name={allhotels?.name} id={allhotels._id}/>)}
+    {shows.map(allhotels=><CardHotelsUser key={allhotels._id} photo={allhotels?.photo} name={allhotels?.name} id={allhotels._id}/>)}
     
     </>
   )
