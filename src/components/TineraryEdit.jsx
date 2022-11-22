@@ -1,51 +1,50 @@
-import React, { useEffect, useState, useRef } from "react";
+ import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { BASE_URL } from "../api/url";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useParams } from "react-router-dom";
 
-export default function CityEdit() {
-  let [cities, setCities] = useState([]);
+
+export default function TineraryEdit() {
+  let [tinerary, setTineraries] = useState([]);
 
   const onInputChange = (e) => {
-    setCities({ ...cities, [e.target.placeholder]: e.target.value });
+    setTineraries({ ...tinerary, [e.target.placeholder]: e.target.value });
   };
   let { id } = useParams();
   console.log(id);
-  const notify = () => {
-    toast();
-  };
-
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/city/${id}`)
-      .then((response) => setCities(response.data.response));
+      .get(`${BASE_URL}/itinerary/${id}`)
+      .then((response) => setTineraries(response.data.response));
   
   }, []);
 
   let info = useRef();
-  let NewCityName = useRef();
-  let NewCityPhoto = useRef();
-  let NewCityContinent = useRef();
-  let CityPopulation= useRef();
+  let NewTineraryName = useRef();
+  let NewTineraryPhoto = useRef();
+  let NewTineraryPrice = useRef();
+  let NewTineraryDuration= useRef();
+  let NewTineraryDescription=useRef();
 
-  async function newCity(event) {
+  async function newTinerary(event) {
     event.preventDefault();
-    let newCity = {
-      name: NewCityName.current.value,
-      continent: NewCityContinent.current.value,
-      photo: NewCityPhoto.current.value,
-      population: CityPopulation.current.value,
+    let newTinerary= {
+      name: NewTineraryName.current.value,
+      price: NewTineraryPrice .current.value,
+      photo: NewTineraryPhoto .current.value,
+      duration: NewTineraryDuration.current.value,
+      description: NewTineraryDescription.current.value,
       userId: "636d8bcade38ce0e1619410f",
     };
 
     try {
-      let response = await axios.put(`${BASE_URL}/city/${id}`, newCity);
+      let response = await axios.put(`${BASE_URL}/itinerary/${id}`, newTinerary);
       console.log(response);
 
       if (response.data.success) {
-        toast.success("The city was modified", {
+        toast.success("The tinerary was modified", {
           position: toast.POSITION.TOP_CENTER,
         });
       } else {
@@ -65,56 +64,65 @@ export default function CityEdit() {
           <div>
             <div>
               <div >
-                <h1 >Edit City</h1>
+                <h1 >Edit Tinerary</h1>
                 <div >
                   <form
-                    onSubmit={newCity}
+                    onSubmit={newTinerary}
                     ref={ info}
                   >
                     <div>
                       <input
-                        value={cities.name}
+                        value={tinerary.name}
                         placeholder={"name"}
                         type="text"
-                        name={"nameNewCity"}
-                        ref={NewCityName}
+                        name={"NewTineraryName"}
+                        ref={NewTineraryName}
                         onChange={(e) => onInputChange(e)}
                       />
                     </div>
                     <div>
                       <input
-                        value={cities.photo}
+                        value={tinerary.photo}
                         placeholder={"photo"}
                         type="text"
-                        name={"photoNewCity"}
-                        ref={NewCityPhoto}
+                        name={"NewTineraryPhoto"}
+                        ref={NewTineraryPhoto}
                         onChange={(e) => onInputChange(e)}
                       />
                     </div>
                     <div>
                       <input
-                        value={cities.continent}
-                        placeholder={"continent"}
+                        value={tinerary.price}
+                        placeholder={"price"}
                         type="text"
-                        name={"continent"}
-                        ref={NewCityContinent}
+                        name={"NewTineraryPrice"}
+                        ref={NewTineraryPrice}
                         onChange={(e) => onInputChange(e)}
                       />
                     </div>
                     <div>
                       <input
-                        value={cities.population}
-                        placeholder={"population"}
+                        value={tinerary.duration}
+                        placeholder={"duration"}
                         type="text"
-                        name={"populate"}
-                        ref={CityPopulation}
+                        name={"NewTineraryDuration"}
+                        ref={NewTineraryDuration}
+                        onChange={(e) => onInputChange(e)}
+                      />
+                    </div>
+                    <div>
+                      <input
+                        value={tinerary.description}
+                        placeholder={"description"}
+                        type="text"
+                        name={"NewTineraryDescription"}
+                        ref={NewTineraryDescription}
                         onChange={(e) => onInputChange(e)}
                       />
                     </div>
                     <div>
                       <input
                         type="submit"
-                        onClick={notify}
                         required
                         value="Edit"
                       />
@@ -129,4 +137,4 @@ export default function CityEdit() {
       </div>
     </>
   );
-}
+}  

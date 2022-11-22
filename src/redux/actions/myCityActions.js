@@ -18,7 +18,7 @@ const getMyCity = createAsyncThunk("getMyCity", async ({ id }) => {
 });
 
 const deleteMyCity = createAsyncThunk("deleteMyCity", async ({ cityid }) => {
-  let url = `${BASE_URL}/city/${cityid}`;
+  let url = `${BASE_URL}/city/destroy/${cityid}`;
   try {
     const response = await axios.delete(url);
     return {
