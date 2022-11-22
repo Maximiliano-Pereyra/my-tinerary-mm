@@ -54,7 +54,7 @@ export default function NuevoHotel() {
         
     } catch (error) {
       console.log(error.message);
-     /*  toast.error('Sorry, the hotel could not be created!', {
+      toast.error('Sorry, the hotel could not be created!', {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -63,7 +63,7 @@ export default function NuevoHotel() {
         draggable: true,
         progress: undefined,
         theme: "dark",
-        }); */
+        });
     }
 
   }
