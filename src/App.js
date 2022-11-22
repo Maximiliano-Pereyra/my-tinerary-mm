@@ -21,6 +21,7 @@ import TineraryEdit from "./components/TineraryEdit"
 import HotelesDeUsuario from "./pages/HotelesDeUsuario";
 import EditorDeHotel from "./pages/EditorDeHotels";
 import MyShows from "./pages/MyShows";
+import EditDeShow from "./pages/EditDeShow";
 
 function App() {
   return (
@@ -37,13 +38,18 @@ function App() {
         <Route path="/hotels/prueba" element={<HotelesDeUsuario/>} />
         <Route path="/hotels/prueba/:id/edit" element={<EditorDeHotel/>} />
         <Route path="/shows/prueba" element={<MyShows/>} />
+        <Route path="/shows/prueba/:id/edit" element={<EditDeShow/>} />
         <Route path="/city/:id" element={<DetailsCity />} />
         <Route path="/hotels/:id" element={<DetailsHotels />} />
         <Route path="/*" element={<NotFound />} />
+
+
+
         <Route path="/mycity" element={<MyCities/>}/>
         <Route path="/cityedit/:id" element={<CityEdit/>} />
         <Route path="/mytineraries" element={<MyTineraries/>}/>
         <Route path="/tineraryedit/:id" element={<TineraryEdit/>} />
+
       </Routes>
       </Main>   
   );

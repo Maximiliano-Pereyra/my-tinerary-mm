@@ -15,18 +15,31 @@ const getShow = createAsyncThunk("getShow", async () => {
       };
     }
   });
-
-
-
-
-
-
-
-
-
+  const getShowId = createAsyncThunk(
+    "getShowId",
+    async (userId) => {
+      let url = ` ${BASE_URL}/show/?userId=${userId}`;
+      try { 
+        console.log(url);
+        const res = await axios.get(url);
+        console.log(res.data.res);
+        console.log(userId);
+        return {
+          shows: res.data.res,
+          userId,
+        };
+      } catch (error) {
+        console.log(error);
+        return {
+          payload: "Error",
+        };
+      }
+    }
+  );
 
 const showActions = {
-    getShow
+    getShow,
+    getShowId
   };
   
   export default showActions;
