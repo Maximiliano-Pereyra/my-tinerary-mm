@@ -23,7 +23,7 @@ async function handleSubmit(event){
           lastName: lastNameInputElement.current?.value,
           photo: photoInputElement.current?.value,
           age: ageInputElement.current?.value,
-          role: "admin",
+          role: "user",
           email: emailInputElement.current?.value,
           password: passwordInputElement.current?.value
         };
