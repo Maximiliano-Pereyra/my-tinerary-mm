@@ -5,7 +5,7 @@ import { BASE_URL } from "../../api/url";
 const getCities = createAsyncThunk("getCities", async () => {
   // get cities es el callback
   try {
-    let response = await axios.get(`${BASE_URL}/city`);
+    let response = await axios.get(`${BASE_URL}/city`); //aca hago el pedido a la pagina original
     return response.data.response;
   } catch (error) {
     console.log(error);
@@ -16,7 +16,6 @@ const getCitiesFilter = createAsyncThunk(
   "getCitiesFilter",
   async ({ continent, value }) => {
     let url = `${BASE_URL}/city?${continent}&name=${value}`;
-
     try {
       const res = await axios.get(url);
       console.log(res.data.response);
