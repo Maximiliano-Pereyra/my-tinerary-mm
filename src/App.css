@@ -7,7 +7,7 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) { 
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
@@ -144,6 +144,7 @@ button {
 
 .heacolor{
   background: linear-gradient(to right,#DDCA7D,#B88B4A,#A27035, #533E2D, #242331);
+  width: 100vw;
 }
 
 .container-signup {
@@ -157,11 +158,10 @@ button {
   border-radius: 30px;
   justify-content: space-evenly;
 }
-
 .container-signup button{
   height: 5vh;
   width: 7vw;
-  background-color: #533E2D;
+  background-color: #53362d;
   border-radius: 7px;
 }
 
@@ -342,6 +342,75 @@ a {
   text-decoration: none;
   color: #242331;
 }
+/*-----------------------------------------------my city---------------------------------*/
+.containermycities{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.containermycity{
+  background-color: #3a3f47;
+  border-radius: 10px;
+  height: auto;
+  margin: 2px;
+}
+.mycitimg{
+  width: 50vmax;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  height: 30vmax;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.mycitname{
+  text-align: center;
+}
+.mycitybtns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3px;
+  padding-bottom: 25px;
+  justify-content: space-around;
+}
+.mycitybtn {
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #be9361;
+  margin: 3px;
+  border: solid #242331 3px;
+  font-size: large;
+}
+/*-----------------------------------------------------------------------------details ------------------------------------------------------------------*/
+.cardsdetcity{
+width: auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.imgdet{
+  width: 100vh;
+}
+.subcarddet{
+  display: flex;
+  flex-direction: column;
+}
+.detailsdet{
+  display: flex;
+  flex-direction: column;
+}
+.detgeneral{
+  display: flex;
+  flex-direction: column;
+  width: 100vh;
+  flex-wrap: wrap;
+}
+
+
 
 @media screen and (max-width: 770px){    
   .card {
