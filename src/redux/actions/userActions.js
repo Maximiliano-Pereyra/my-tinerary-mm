@@ -3,7 +3,9 @@ import axios from 'axios'
 import { BASE_URL } from '../../api/url'
 
 const enter = createAsyncThunk('enter', async (datos) => {
-    let url = `${BASE_URL}/auth/sign-in`
+
+    let url =` ${BASE_URL}/auth/sign-in`
+
     try {
         let user = await axios.post(url,datos)
         console.log(user)
@@ -23,8 +25,9 @@ const enter = createAsyncThunk('enter', async (datos) => {
 })
 
 const reEnter = createAsyncThunk('reEnter', async (token) => {
-    let url = `${BASE_URL}/auth/token`
-    let headers = {headers: {'Authorization': `Bearer ${token}`}}
+    let url =` ${BASE_URL}/auth/token`
+    let headers = {headers: {'Authorization':` Bearer ${token}`}}
+
     try {
         let user = await axios.post(url,null,headers)
         console.log(user)
@@ -33,7 +36,7 @@ const reEnter = createAsyncThunk('reEnter', async (token) => {
                 response: user.data.response,
                 token:token,
             }
-        
+
     } catch (error) {
         console.log(error.response)
         return {

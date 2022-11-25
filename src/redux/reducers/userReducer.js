@@ -36,7 +36,9 @@ const usersReducer = createReducer(initialState, (builder) => {
     }
   })
   .addCase(reEnter.fulfilled, (state, action)=>{
-    const{success,response,token}= action.payload       
+  
+    const{success,response,token}= action.payload
+
    if(success){
      let { user } = response;
 
@@ -49,7 +51,7 @@ const usersReducer = createReducer(initialState, (builder) => {
       role:user.role,
       token:token,
     }
-   
+
     return newState;
    }else {
     let newState = {
@@ -62,4 +64,6 @@ const usersReducer = createReducer(initialState, (builder) => {
   })
 })
 
-export default usersReducer
+
+export default usersReducer 
+
