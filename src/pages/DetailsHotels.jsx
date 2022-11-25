@@ -1,11 +1,11 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import CardHotel from './CardHotel'
+import CardHotel from '../components/CardHotel'
 import { useEffect } from 'react'
 import axios from 'axios'
 import { BASE_URL } from '../api/url'
 import { useState } from 'react'
-import CardShow from "./CardShow"
+import CardShow from "../components/CardShow"
 
 export default function DetailsHotels() {
   let {id} = useParams()

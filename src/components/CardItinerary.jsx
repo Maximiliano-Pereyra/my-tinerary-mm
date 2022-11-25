@@ -7,12 +7,12 @@ function CardItinerary(props){
     let {duracion} = props
     let {precio} = props
    return (
-    <div className="detallesDeHotel">
-        <div className="tituloYimagen">
+    <div className="cardsdetcity">
+        <div className="subcarddet">
             <h1>{descripcion}</h1>
-{/*             <img src={imagen}/> */}
+            <img className="imgdet" src={imagen}/> 
         </div>
-        <div className="capacidadYdescripcion">
+        <div className="detailsdet">
             <p>Duration: {duracion} hs</p>
             <p>Price: {precio} USD</p>
         </div>

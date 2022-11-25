@@ -1,50 +1,47 @@
 import React from "react";
 import { useState, useEffect } from 'react'
 import CardCity from "../components/CardCity";
-import { BASE_URL } from '../api/url'
-import axios from 'axios'
+import { useDispatch, useSelector } from "react-redux";
+import { useRef } from "react";
+import cityActions from "../redux/actions/cityActions";
 
 function Cities() {
-    let [checked, setChecked] = useState([])
-    let [searched, setSearched] = useState([])
-    let [cities, setCities] = useState([])
-    let [filter, setFilter] = useState([])
-
-
-    let allcities = cities.map((city)=>city.continent)
-    let thecontinent = [...new Set(allcities)]
-    thecontinent = Array.from(thecontinent)
-
-    useEffect( () => {
-        axios.get(`${BASE_URL}/city`)
-        .then(response => setCities(response.data.response))
-        .catch (err => console.log(err.message))
-        }, [])
     
-    
-      useEffect( () => {
-        let querycheck = checked
-        if (checked.length > 0){
-          querycheck = checked.join('&continent=')
-        }
-        axios.get(`${BASE_URL}/city?name=${searched}&continent=${querycheck}`)
-        .then(response => setFilter(response.data.response))
-        .catch (err => console.log(err.message))
-        }, [searched, checked])
+    const dispatch = useDispatch();
+    const { getCities, getCitiesFilter } = cityActions;
+    const { cities, categories } = useSelector((store) => store.cities);
+    const { continent, value } = useSelector((store) => store.cities);
+
+   let [checkb, setChecked] = useState([]) //creo estado vacio para los checks inicialmente
+   let searchInput = useRef()
    
-    let checkboxH = (event) => {
-        let array = [...checked]
-        if (event.target.checked) {
-            array.push(event.target.value)
-        } else {
-            array = array.filter(element => element !== event.target.value)
-        }
-        setChecked(array)
+   useEffect(() => {
+    if (cities.length === 0) {
+      dispatch(getCities());
     }
+  }, []);
+  console.log(continent);
+  console.log(value);
+   
+  let filter = (event) => {
+    console.log(event);//trae el evento change
+    let checks = filterChecks(event);
+    console.log(checks);//trae el valor de lo chekeado
+    let text = searchInput.current.value;//valor de la barra de busqueda
+    let urlChecks = checks.map((check) => `continent=${check}`).join("&");//join añade los elementos de un array a un string, en este caso separados por &
+    dispatch(getCitiesFilter({ continent: urlChecks, value: text }));// dispatch es la accion despachadora que acepta la accion asincrona
+};//urlchecks tiene el valor de lo chekeado
 
-    let searchInput = (event) => {
-        setSearched(event.target.value)
+  function filterChecks(event) {
+    let arrayCheck = [];
+    if (event.target.checked) {
+      arrayCheck = [...checkb, event.target.value];
+    } else {
+      arrayCheck = checkb.filter((e) => e !== event.target.value);
     }
+    setChecked(arrayCheck);
+    return arrayCheck;
+  }
 
 
     return (
@@ -53,21 +50,30 @@ function Cities() {
             <input
                 type="text"
                 placeholder="Search"
-                onChange={searchInput}
+                ref={searchInput}
+                onKeyUp={filter}
             />
-                {thecontinent.map(element => {
+            <div>
+                {categories?.map(element => {
           return(
-            <label key={element}><input onClick={checkboxH} type="checkbox" id={element} value={element} /> {element}</label>
+            <label key={element}><input onChange={filter} type="checkbox" id={element} value={element} /> {element}</label> //onchange es un evento, dentro de este esta la propiedad target
           )
-        })}
+        })}</div>
             </div>
-            {
-        (filter.length > 0)
-        ? filter.map(thecity=><CardCity key={thecity?._id} id={thecity?._id} name={thecity?.name} continent={thecity?.continent} photo={thecity?.photo} population={thecity?.population}/>)
-        : <CardCity name="Not found" continent="Not found"  population="0"/>
-      }
+        
+        {cities?.map((theCity) => {
+          return (
+            <CardCity
+              id={theCity._id}
+              key={theCity._id}
+              name={theCity.name}
+              photo={theCity.photo}
+            ></CardCity>
+          );
+        })}
+      
         </>
 
-    )
-}
+    )}
+
 export default Cities;

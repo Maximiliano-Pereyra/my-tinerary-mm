@@ -1,6 +1,6 @@
 import React from 'react'
-import CardCitie from './CardCitie'
-import CardItinerary from './CardItinerary'
+import CardCitie from '../components/CardCitie'
+import CardItinerary from '../components/CardItinerary'
 import { useParams } from 'react-router-dom'
 import { BASE_URL } from '../api/url'
 import axios from 'axios'
@@ -8,9 +8,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 
 export default function DetailsCity() {
-
-
-  let {id} = useParams()
+  let {id} = useParams() //id de la url de la barra de busqueda
   let [foundCity, setfoundCity] = useState([])
   let [itineraries, setItineraries] = useState([])
 
@@ -28,11 +26,11 @@ export default function DetailsCity() {
 console.log(itineraries)
 console.log(id)
   return (
-<>
+<div className='detgeneral'>
 <div>
       <CardCitie key={foundCity.id} titulo={foundCity.name} continente={foundCity.continent} imagen={foundCity.photo} poblacion={foundCity.population}/>
 </div>
-  <CardItinerary  /* imagen={itineraries?.photo[0]} */ precio={itineraries?.price} duracion={itineraries?.duration} descripcion={itineraries?.description}  id={itineraries?._id}/>      
-</>
+  <CardItinerary  imagen={itineraries?.photo}  precio={itineraries?.price} duracion={itineraries?.duration} descripcion={itineraries?.description}  id={itineraries?._id}/>      
+</div>
   )
 }
