@@ -45,35 +45,64 @@ export default function Header() {
       route: "/myhotels",
     },
   ];
+
   return (
     <div className='heacolor'>
       <div className='flex row spacebet'>
-        {/* <img src="img/logochico.gif" alt="logo" /> */}
-        <ul className='navWidth flex row space_evenly list'>
-            <Linkeador to=''><li>Home</li></Linkeador>
-            <li className='despList'>Search
+      <div>
+          <h3 onClick={hide}>
+            Home{" "}
+          </h3>
+          {showHide ? (
+            <>
+              <div >
+
+              <li className='despList'>Search
              <ul className='list nomargin nopadding dispNone'>
              <Linkeador to='/city'><li>Cities</li></Linkeador>
              <Linkeador to='/hotels'><li>Hotels</li></Linkeador>
-             </ul>
-            </li>
+             </ul></li>
+                {(user.role === "user" || user.role === "admin") &&
+                  userPages.map((route) => (
+                    <Linkeador
+                      to={route.route}
+                      key={route.name}
+                    >
+                      <h3>{route.name}</h3>
+                    </Linkeador>
+                  ))}
+                {(user.role === "user" || user.role === "admin") &&
+                  adminPages.map((route) => (
+                    <Linkeador
+                      to={route.route}
+                      key={route.name}
+                    >
+                      <h3>{route.name}</h3>
+                    </Linkeador>
+                  ))}
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
+        </div>
+        <div>
+          <h3 onClick={data}>
+            Users{" "}
+          </h3>
+          {show ? (
+            <>
             <li className='despList' >Sign
              <ul className='list nomargin nopadding dispNone'>
-
              <Linkeador to='/signIn'><li>Sign In</li></Linkeador>
              <Linkeador to='/signUp'><li>Sign Up</li></Linkeador>
-
              </ul>
             </li>
-            <li className='despList' >Set New
-             <ul className='list nomargin nopadding dispNone'>
-
-             <Linkeador to='/newCity'><li>New City</li></Linkeador>
-             <Linkeador to='/newHotel'><li>New Hotel</li></Linkeador>
-
-             </ul>
-            </li>
-        </ul>
+            </>
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
     </div>
   )
