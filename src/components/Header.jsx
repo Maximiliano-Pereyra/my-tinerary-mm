@@ -50,13 +50,12 @@ export default function Header() {
     <div className='heacolor'>
       <div className='flex row spacebet'>
       <div>
-          <h3 onClick={hide}>
+       <Linkeador to='/'>  <h3 onClick={hide}>
             Home{" "}
-          </h3>
+          </h3></Linkeador> 
           {showHide ? (
             <>
               <div >
-
               <li className='despList'>Search
              <ul className='list nomargin nopadding dispNone'>
              <Linkeador to='/city'><li>Cities</li></Linkeador>
