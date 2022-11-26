@@ -17,12 +17,12 @@ export default function SignIn() {
 
     async function iniciarSecion(event) {
         event.preventDefault();
-        const user = "user"
+       
 
         let datos = {
           email: email.current.value,
           password: password.current.value,
-          role: user
+          
         };
         try {
           let res = await dispatch(enter (datos));
