@@ -50,7 +50,7 @@ useEffect(()=>{
         <Route
           element={
             <RuteProtect
-              isAllowed={user.role === "user" || user.role === "admin"}
+              isAllowed={user.role === "admin"}
               redirect="/signin"
             />
           }
@@ -63,8 +63,7 @@ useEffect(()=>{
         <Route
           element={
             <RuteProtect
-              isAllowed={user.role === "user" || user.role === "admin"}
-              redirect="/signin"
+              isAllowed={user.role === "user"}
             />
           }
         ></Route>
