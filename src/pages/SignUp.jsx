@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import {BASE_URL} from "../api/url"
 
-export default function SignUp(){
+export default function SignUp(props){
     const firstNameInputElement = useRef();
     const lastNameInputElement = useRef();
     const photoInputElement = useRef();
@@ -14,6 +14,7 @@ export default function SignUp(){
     const emailInputElement = useRef();
     const passwordInputElement = useRef();
     let form = useRef();
+    let {role} = props
     
 async function handleSubmit(event){
   event.preventDefault(); 
@@ -23,7 +24,7 @@ async function handleSubmit(event){
           lastName: lastNameInputElement.current?.value,
           photo: photoInputElement.current?.value,
           age: ageInputElement.current?.value,
-          role: "user",
+          role,
           email: emailInputElement.current?.value,
           password: passwordInputElement.current?.value
         };

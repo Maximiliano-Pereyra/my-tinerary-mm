@@ -11,10 +11,11 @@ export default function Cities() {
   const { getMyCity, deleteMyCity } = myCityActions;
   const { city } = useSelector((state) => state.mycity);
   const { id, cityid } = useSelector((state) => state.mycity);
+  const { idUser} = useSelector((state) => state.user);
 
 
   useEffect(() => {
-    let userId = "636d8bcade38ce0e1619410f";
+    let userId = idUser;
     dispatch(getMyCity({ id: userId }));
 
   }, []);
