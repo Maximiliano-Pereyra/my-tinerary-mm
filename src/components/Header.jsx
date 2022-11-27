@@ -25,7 +25,7 @@ export default function Header() {
   function signOut () {
     Swal.fire({
       icon: "question",
-      title: "Would do you like close your session?",
+      title: "Would do you like close session?",
       showConfirmButton: true,
       iconColor: "#01344f",
       confirmButtonColor: "#01344f",
@@ -49,6 +49,10 @@ export default function Header() {
       name: "My Tineraries",
       route: "/mytineraries",
     },
+    {
+    name: "New Tinerary",
+    route: "/useritinerary"
+  },
   ];
   const adminPages = [
     {
@@ -81,15 +85,12 @@ export default function Header() {
 
   return (
     <div className='heacolor'>
-      <div className='flex row spacebet'>
+      <div className='flex row '>
       <div>
-         <h3 onClick={hide}>
-            Home
-          </h3>
+         <Linkeador to='/'> <li onClick={hide}>Home</li></Linkeador> 
           {showHide ? (
             <>
               <div >
-             <Linkeador to='/'> <li>Home</li></Linkeador> 
               <li className='despList'>Search
              <ul className='list nomargin nopadding dispNone'>
              <Linkeador to='/city'><li>Cities</li></Linkeador>
@@ -101,7 +102,7 @@ export default function Header() {
                       to={route.route}
                       key={route.name}
                     >
-                      <h3>{route.name}</h3>
+                      <li>{route.name}</li>
                     </Linkeador>
                   ))}
                 {user.role === "admin" &&
@@ -110,7 +111,7 @@ export default function Header() {
                       to={route.route}
                       key={route.name}
                     >
-                      <h3>{route.name}</h3>
+                      <li>{route.name}</li>
                     </Linkeador>
                   ))}
               </div>
@@ -121,17 +122,17 @@ export default function Header() {
         </div>
         <div>
           {(user.role === "admin" || user.role === "user") && (
-            <h3
+            <li
               onClick={data}
             >
               <img src={photo}  alt="img-user" />
               {name}
-            </h3>
+            </li>
           )}
           {user.role !== "admin" && user.role !== "user" && (
-            <h3 onClick={data}>
+            <li onClick={data}>
               Users
-            </h3>
+            </li>
           )}
           {show ? (
             <>
@@ -139,10 +140,10 @@ export default function Header() {
                 {(user.role === "admin" || user.role === "user") && (
                   <>
                     <Linkeador to="/myprofile" >
-                      <h3>My Profile</h3>
+                      <li>My Profile</li>
                     </Linkeador>
                     <div to="/signin">
-                    <h3 onClick={signOut} >  Sign Out</h3>
+                    <li onClick={signOut} >  Sign Out</li>
                      </div>
                   </>
                 )}
@@ -153,7 +154,7 @@ export default function Header() {
                       to={route.route}
                       key={route.name}
                     >
-                      <h3 >{route.name}</h3>
+                      <li >{route.name}</li>
                     </Linkeador>
                   ))}
               </div>

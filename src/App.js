@@ -12,11 +12,11 @@ import DetailsCity from "./pages/DetailsCity";
 import DetailsHotels from "./pages/DetailsHotels";
 import NotFound from "./pages/NotFound";
 
-import MyCities from "../src/pages/MyCities.jsx"
-import CityEdit from "../src/components/CityEdit"
-import MyTineraries from "../src/pages/MyTineraries"
+import MyCities from "../src/pages/MyCities.jsx";
+import CityEdit from "../src/components/CityEdit";
+import MyTineraries from "../src/pages/MyTineraries";
 import MyCardTinerary from "./components/MyCardTinerary";
-import TineraryEdit from "./components/TineraryEdit"
+import TineraryEdit from "./components/TineraryEdit";
 
 import HotelesDeUsuario from "./pages/HotelesDeUsuario";
 import EditorDeHotel from "./pages/EditorDeHotels";
@@ -26,22 +26,22 @@ import RuteProtect from "./components/RuteProtect";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import userActions from "./redux/actions/userActions";
+import NewItinerary from "./pages/NewItinerary";
 
 function App() {
-let user = useSelector((store)=>store.user);
-let dispatch = useDispatch();
-let {reEnter} = userActions;
+  let user = useSelector((store) => store.user);
+  let dispatch = useDispatch();
+  let { reEnter } = userActions;
 
-useEffect(()=>{
-  let token= JSON.parse(localStorage.getItem("token"));
-  if (token){
-    dispatch(reEnter(token.token.user));
-  } 
-},[]);
+  useEffect(() => {
+    let token = JSON.parse(localStorage.getItem("token"));
+    if (token) {
+      dispatch(reEnter(token.token.user));
+    }
+  }, []);
 
   return (
-    
-      <Main>
+    <Main>
       <Routes>
         <Route path="" element={<Home />} />
         <Route path="/hotels" element={<PginasDeCards />} />
@@ -49,36 +49,29 @@ useEffect(()=>{
         <Route path="/signIn" element={<SingIn />} />
         <Route
           element={
-            <RuteProtect
-              isAllowed={user.role === "admin"}
-              redirect="/signin"
-            />
+            <RuteProtect isAllowed={user.role === "admin"} redirect="/signin" />
           }
         ></Route>
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/newCity" element={<NewCity />} />
         <Route path="/newHotel" element={<NuevoHotel />} />
-        <Route path="/hotels/prueba" element={<HotelesDeUsuario/>} />
-        <Route path="/hotels/prueba/:id/edit" element={<EditorDeHotel/>} />
+        <Route path="/hotels/prueba" element={<HotelesDeUsuario />} />
+        <Route path="/hotels/prueba/:id/edit" element={<EditorDeHotel />} />
         <Route
-          element={
-            <RuteProtect
-              isAllowed={user.role === "user"}
-            />
-          }
+          element={<RuteProtect isAllowed={user.role === "user"} />}
         ></Route>
-        <Route path="/shows/prueba" element={<MyShows/>} />
-        <Route path="/shows/prueba/:id/edit" element={<EditDeShow/>} />
+        <Route path="/shows/prueba" element={<MyShows />} />
+        <Route path="/shows/prueba/:id/edit" element={<EditDeShow />} />
         <Route path="/city/:id" element={<DetailsCity />} />
         <Route path="/hotels/:id" element={<DetailsHotels />} />
         <Route path="/*" element={<NotFound />} />
-        <Route path="/mycity" element={<MyCities/>}/>
-        <Route path="/cityedit/:id" element={<CityEdit/>} />
-        <Route path="/mytineraries" element={<MyTineraries/>}/>
-        <Route path="/tineraryedit/:id" element={<TineraryEdit/>} />
-
+        <Route path="/mycity" element={<MyCities />} />
+        <Route path="/cityedit/:id" element={<CityEdit />} />
+        <Route path="/mytineraries" element={<MyTineraries />} />
+        <Route path="/tineraryedit/:id" element={<TineraryEdit />} />
+        <Route path="/useritinerary" element={<NewItinerary />} />
       </Routes>
-      </Main>   
+    </Main>
   );
 }
 export default App;

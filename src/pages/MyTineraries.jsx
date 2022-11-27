@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import myTineraryActions from "../redux/actions/myTineraryActions";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link as Linkeador } from "react-router-dom";
 
 
 
@@ -15,23 +16,24 @@ export default function MyTineraries() {
 
     const dispatch = useDispatch();
     const { deleteTinerary, getMyTinerary} = myTineraryActions;
-    const { idUser} = useSelector((state) => state.user);
+    const { idUser, token } = useSelector((state) => state.user);
     const { tineId, itineraries } = useSelector((state) => state.mytineraries);
 
   useEffect(() => {
-    
-let userId = idUser
-dispatch(getMyTinerary({tineId: userId}))
+dispatch(getMyTinerary({tineId: idUser}))
  
   }, []);
 
   return (
     <div ><ToastContainer/>
-    <h1>My Tineraries</h1>
+        <div> 
+              <h1>My Tineraries</h1>
+         <Linkeador to={`/useritinerary`}><button className="mycitybtn">Create</button></Linkeador>  
+        </div>
     <div>
       {itineraries?.map((item) => {
         function functionDelete() {
-          if (dispatch(deleteTinerary({ tineId: item._id}))) {
+          if (dispatch(deleteTinerary({ tineId: item._id, token}))) {
             toast.success("The Tinerary was deleted", {
               position: toast.POSITION.TOP_CENTER,
             });
@@ -44,7 +46,8 @@ dispatch(getMyTinerary({tineId: userId}))
           name={item.name}
           img={item.photo[1]}
           description={item.description}
-          price={item.price} duration={item.duration}
+          price={item.price} 
+          duration={item.duration}
             onClick={functionDelete}
             id={item._id}
           ></MyCardTinerary>

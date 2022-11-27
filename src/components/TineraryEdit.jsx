@@ -4,16 +4,17 @@ import { BASE_URL } from "../api/url";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 export default function TineraryEdit() {
+
+  const { idUser, token } = useSelector((state) => state.user);
   let [tinerary, setTineraries] = useState([]);
 
-  const onInputChange = (e) => {
-    setTineraries({ ...tinerary, [e.target.placeholder]: e.target.value });
-  };
   let { id } = useParams();
   console.log(id);
+
   useEffect(() => {
     axios
       .get(`${BASE_URL}/itinerary/${id}`)
@@ -36,11 +37,11 @@ export default function TineraryEdit() {
       photo: NewTineraryPhoto .current.value,
       duration: NewTineraryDuration.current.value,
       description: NewTineraryDescription.current.value,
-      userId: "636d8bcade38ce0e1619410f",
+      userId: idUser,
     };
-
+    let data= { data: { Authorization: `Bearer ${token}` } };
     try {
-      let response = await axios.put(`${BASE_URL}/itinerary/${id}`, newTinerary);
+      let response = await axios.put(`${BASE_URL}/itinerary/${id}`, newTinerary, data);
       console.log(response);
 
       if (response.data.success) {
@@ -77,7 +78,7 @@ export default function TineraryEdit() {
                         type="text"
                         name={"NewTineraryName"}
                         ref={NewTineraryName}
-                        onChange={(e) => onInputChange(e)}
+                    
                       />
                     </div>
                     <div>
@@ -87,7 +88,7 @@ export default function TineraryEdit() {
                         type="text"
                         name={"NewTineraryPhoto"}
                         ref={NewTineraryPhoto}
-                        onChange={(e) => onInputChange(e)}
+                      
                       />
                     </div>
                     <div>
@@ -97,7 +98,7 @@ export default function TineraryEdit() {
                         type="text"
                         name={"NewTineraryPrice"}
                         ref={NewTineraryPrice}
-                        onChange={(e) => onInputChange(e)}
+                      
                       />
                     </div>
                     <div>
@@ -107,7 +108,7 @@ export default function TineraryEdit() {
                         type="text"
                         name={"NewTineraryDuration"}
                         ref={NewTineraryDuration}
-                        onChange={(e) => onInputChange(e)}
+                        
                       />
                     </div>
                     <div>
@@ -117,7 +118,7 @@ export default function TineraryEdit() {
                         type="text"
                         name={"NewTineraryDescription"}
                         ref={NewTineraryDescription}
-                        onChange={(e) => onInputChange(e)}
+                       
                       />
                     </div>
                     <div>

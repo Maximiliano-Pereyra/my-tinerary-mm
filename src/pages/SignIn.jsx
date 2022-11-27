@@ -53,8 +53,6 @@ export default function SignIn() {
           console.log(error);
         }
       }
-    
-
   return (
     <form className='formularioSignIn' ref={form} onSubmit={iniciarSecion} >
         <h2>Sign In</h2>
