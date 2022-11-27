@@ -720,7 +720,7 @@ border: #242331;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
-  border: solid black 2px;
+  border: solid black 5px;
   padding: 10px;
   border-radius: 12px;
 }
@@ -731,37 +731,44 @@ border: #242331;
   display: flex;
   flex-wrap: wrap;
   object-fit: contain;
-  background-color: #a89858;
 }
 
 .profile-user h4{
 font-size: x-large;
-background-color: red;
+background-color:#d1c07c;
 width: 43vw;
 min-height: 6vh;
 justify-content: center;
 align-items: center;
 display: flex;
+border-radius: 9px;
 }
 
 .profile-user h5{
 font-size: large;
-background-color: #242331;
+background-color: #c4b36e;;
 width: 33vw;
 min-height: 6vh;
 justify-content: center;
 align-items: center;
 display: flex;
+border-radius: 9px;
 }
 
 .profile-user button{
 width: 15vw;
 height: 6vh;
+color: #c4b36e;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: rebeccapurple;
+background-color: #242331;
 border-radius: 9px;
+}
+
+img{
+  width: 50px;
+  height: 50px;
 }
 
 
