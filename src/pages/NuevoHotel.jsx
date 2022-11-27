@@ -1,18 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useRef } from "react";
 import axios from 'axios';
-import { BASE_URL } from '../api/url';
+import { useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function NuevoHotel() {
 
+
+  const { idUser } = useSelector((state) => state.user);
+  console.log(idUser);
+
   const nameInputElement = useRef();
   const photoInputElement = useRef();
   const capacityInputElement = useRef();
   const cityIdInputElement = useRef();
-  const userIdInputElement = useRef();
 
   let handleSubmit = async (event) => {
     event.preventDefault();
@@ -21,7 +24,7 @@ export default function NuevoHotel() {
       photo: photoInputElement.current.value,
       capacity: capacityInputElement.current.value,
       cityId: cityIdInputElement.current.value,
-      userId: userIdInputElement.current.value
+      userId: idUser
     };
 
     console.log(data);
@@ -109,14 +112,6 @@ export default function NuevoHotel() {
         ref={cityIdInputElement}>
       </input>
 
-      <input
-        type="text"
-        name='userId'
-        autoComplete='off'
-        placeholder='Enter User Id'
-        ref={userIdInputElement}>
-      </input>
-
       <button id='signIn2' type='submit' onClick={handleSubmit}>Send data</button>
       <ToastContainer />
 
@@ -124,9 +119,3 @@ export default function NuevoHotel() {
 
   )
 }
-
-/* data.name!=='' &&
-       data.photo!=='' &&
-       data.capacity!=='' &&
-       data.cityId!=='' &&
-       data.userId!=='' */

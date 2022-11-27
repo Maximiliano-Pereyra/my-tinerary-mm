@@ -27,6 +27,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import userActions from "./redux/actions/userActions";
 import MyProfile from "./pages/MyProfile";
+import EditMyProfile from "./pages/EditMyProfile";
 
 function App() {
 let user = useSelector((store)=>store.user);
@@ -74,6 +75,7 @@ useEffect(()=>{
         <Route path="/hotels/:id" element={<DetailsHotels />} />
         <Route path="/*" element={<NotFound />} />
         <Route path="/myProfile" element={<MyProfile />} />
+        <Route path="/myProfile/:id/editProfile" element={<EditMyProfile />} />
         <Route path="/mycity" element={<MyCities/>}/>
         <Route path="/cityedit/:id" element={<CityEdit/>} />
         <Route path="/mytineraries" element={<MyTineraries/>}/>
