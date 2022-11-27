@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useRef } from "react";
 import axios from 'axios';
-import { BASE_URL } from '../api/url';
 import { ToastContainer, toast } from 'react-toastify';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';

@@ -4,18 +4,19 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import { useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { useSelector } from 'react-redux';
 
 
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function EditMyPerfil() {
 
-
+    const {idUser } = useSelector((state) => state.user);
     const nameInputElement = useRef();
     const lastNameInputElement = useRef()
     const photoInputElement = useRef();
     const emailInputElement = useRef();
-    let { id } = useParams();
+    let id  =idUser
 
     let handleSubmit = async (event) => {
 
@@ -35,7 +36,7 @@ export default function EditMyPerfil() {
             if (res.data.success) {
                 Swal.fire({
                     icon: "question",
-                    title: "Would do you like close your session?",
+                    title: "Would do you like change your profile?",
                     showConfirmButton: true,
                     iconColor: "#01344f",
                     confirmButtonColor: "#01344f",
