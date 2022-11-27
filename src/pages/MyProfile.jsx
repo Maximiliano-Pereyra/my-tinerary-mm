@@ -14,7 +14,7 @@ export default function MyProfile(props) {
         <h4>{name}</h4>
         <h4>{lastName}</h4>
         <h5>{email} </h5>
-        <Linkeador to = {`${idUser}/editProfile`}>
+        <Linkeador to = {`/editProfile`}>
         <button>Edit my profile</button>
         </Linkeador>
     </div>

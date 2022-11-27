@@ -28,6 +28,7 @@ import { useEffect } from "react";
 import userActions from "./redux/actions/userActions";
 import MyProfile from "./pages/MyProfile";
 import EditMyProfile from "./pages/EditMyProfile";
+import NewShow from "./pages/NewShow";
 
 function App() {
 let user = useSelector((store)=>store.user);
@@ -70,12 +71,13 @@ useEffect(()=>{
           }
         ></Route>
         <Route path="/shows/prueba" element={<MyShows/>} />
+        <Route path="/newShow" element={<NewShow/>} />
         <Route path="/shows/prueba/:id/edit" element={<EditDeShow/>} />
         <Route path="/city/:id" element={<DetailsCity />} />
         <Route path="/hotels/:id" element={<DetailsHotels />} />
         <Route path="/*" element={<NotFound />} />
-        <Route path="/myProfile" element={<MyProfile />} />
-        <Route path="/myProfile/:id/editProfile" element={<EditMyProfile />} />
+        <Route path="/api/auth/me/:id" element={<MyProfile />} />
+        <Route path="/editProfile" element={<EditMyProfile />} />
         <Route path="/mycity" element={<MyCities/>}/>
         <Route path="/cityedit/:id" element={<CityEdit/>} />
         <Route path="/mytineraries" element={<MyTineraries/>}/>

@@ -7,12 +7,15 @@ import usersActions from '../redux/actions/userActions';
 
 export default function Header() {
 
+  const { idUser } = useSelector((state) => state.user);
+  let id = idUser
   let [showHide, setShowHide] = useState(false);
   let [show, setShow] = useState(false);
   let dispatch = useDispatch()
   const { signout} = usersActions;
   const { photo, name,token } = useSelector((state) => state.user);
   let user = useSelector((store) => store.user);
+
   let hide = () => {
     setShowHide(!showHide);
     setShow(false);
@@ -135,7 +138,7 @@ export default function Header() {
               <div >
                 {(user.role === "admin" || user.role === "user") && (
                   <>
-                    <Linkeador to="/myProfile" >
+                    <Linkeador to={`/api/auth/me/${id}` }>
                       <li>My Profile</li>
                     </Linkeador>
                     <div to="/signin">
