@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useRef } from "react";
 import axios from 'axios';
-import { BASE_URL } from '../api/url';
 import { ToastContainer, toast } from 'react-toastify';
 import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -15,7 +15,7 @@ export default function EditorDeHotel() {
   const photoInputElement = useRef();
   const capacityInputElement = useRef();
   const cityIdInputElement = useRef();
-  const userIdInputElement = useRef();
+  const { idUser } = useSelector((state) => state.user);
  let {id} = useParams();
 
   let handleSubmit = async (event) => {
@@ -27,7 +27,7 @@ export default function EditorDeHotel() {
       photo: photoInputElement.current.value,
       capacity: capacityInputElement.current.value,
       cityId: cityIdInputElement.current.value,
-      userId: userIdInputElement.current.value
+      userId:idUser
     };
 
     console.log(data);
@@ -141,13 +141,6 @@ export default function EditorDeHotel() {
         ref={cityIdInputElement}>
       </input>
 
-      <input
-        type="text"
-        name='userId'
-        autoComplete='off'
-        placeholder='Enter User Id'
-        ref={userIdInputElement}>
-      </input>
 
       <button id='signIn2' type='submit' onClick={handleSubmit}>Send data</button>
       <ToastContainer />

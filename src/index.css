@@ -711,6 +711,68 @@ border: #242331;
   color: #CBAB64;
 }
 
+/* ---------------------------------------------------MY PROFILE-------------------------------------------------------------- */
+.profile-user{
+  width: 70vw;
+  min-height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  border: solid black 5px;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.profile-user img{
+  width: 30vw;
+  height: 30vh;
+  display: flex;
+  flex-wrap: wrap;
+  object-fit: contain;
+}
+
+.profile-user h4{
+font-size: x-large;
+background-color:#d1c07c;
+width: 43vw;
+min-height: 6vh;
+justify-content: center;
+align-items: center;
+display: flex;
+border-radius: 9px;
+}
+
+.profile-user h5{
+font-size: large;
+background-color: #c4b36e;;
+width: 33vw;
+min-height: 6vh;
+justify-content: center;
+align-items: center;
+display: flex;
+border-radius: 9px;
+}
+
+.profile-user button{
+width: 15vw;
+height: 6vh;
+color: #c4b36e;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #242331;
+border-radius: 9px;
+}
+
+img{
+  width: 50px;
+  height: 50px;
+}
+
+
+
 @media screen and (max-width: 770px){    
   .horarios{
     width: 100%;
@@ -896,4 +958,5 @@ border: #242331;
     width: 15vw;
   }
 }
+
 

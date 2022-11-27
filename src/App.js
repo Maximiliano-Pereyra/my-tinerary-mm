@@ -26,7 +26,13 @@ import RuteProtect from "./components/RuteProtect";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import userActions from "./redux/actions/userActions";
+
 import NewItinerary from "./pages/NewItinerary";
+
+import MyProfile from "./pages/MyProfile";
+import EditMyProfile from "./pages/EditMyProfile";
+import NewShow from "./pages/NewShow";
+
 
 function App() {
   let user = useSelector((store) => store.user);
@@ -41,6 +47,7 @@ function App() {
   }, []);
 
   return (
+
     <Main>
       <Routes>
         <Route path="" element={<Home />} />
@@ -60,6 +67,7 @@ function App() {
         <Route
           element={<RuteProtect isAllowed={user.role === "user"} />}
         ></Route>
+
         <Route path="/shows/prueba" element={<MyShows />} />
         <Route path="/shows/prueba/:id/edit" element={<EditDeShow />} />
         <Route path="/city/:id" element={<DetailsCity />} />
@@ -72,6 +80,8 @@ function App() {
         <Route path="/useritinerary" element={<NewItinerary />} />
       </Routes>
     </Main>
+
   );
 }
+
 export default App;

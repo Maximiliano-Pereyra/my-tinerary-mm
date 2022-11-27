@@ -6,18 +6,19 @@ import { useDispatch, useSelector } from "react-redux";
 import showActions from '../redux/actions/showAction';
 
 
-
 export default function MyShows() {
     const dispatch = useDispatch();
     const { getShow, getShowId} = showActions;
     const  {shows} = useSelector((state) => state.shows);
+    const { idUser} = useSelector((state) => state.user);
 
     useEffect(() => {
-        let uId = '636d8bcade38ce0e1619410f'
-        dispatch(getShowId( uId ));
+        
+        dispatch(getShowId(idUser ));
 
     }, []);
 
+    console.log(shows);
 
   return (
     <>
