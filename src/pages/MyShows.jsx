@@ -4,6 +4,7 @@ import CardHotelsUser  from "../components/CardHotelsUser";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import showActions from '../redux/actions/showAction';
+import { Link as Linkeador } from 'react-router-dom';
 
 
 export default function MyShows() {
@@ -21,10 +22,12 @@ export default function MyShows() {
     console.log(shows);
 
   return (
-    <>
-    
+    <div>
+    <h1>My Showes</h1>
     {shows.map(allhotels=><CardHotelsUser key={allhotels._id} photo={allhotels?.photo} name={allhotels?.name} id={allhotels._id}/>)}
-    
-    </>
+    <Linkeador to = "/shows/prueba/newShow">
+    <button className='btNewShow'>  New Show</button>
+    </Linkeador>
+    </div>
   )
 }

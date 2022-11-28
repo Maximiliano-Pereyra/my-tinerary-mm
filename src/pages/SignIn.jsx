@@ -15,7 +15,7 @@ export default function SignIn() {
     let form = useRef();
     let navegation = useNavigate()
 
-    async function iniciarSecion(event) {
+    async function iniciarSesion(event) {
         event.preventDefault();
        
 
@@ -54,7 +54,7 @@ export default function SignIn() {
         }
       }
   return (
-    <form className='formularioSignIn' ref={form} onSubmit={iniciarSecion} >
+    <form className='formularioSignIn' ref={form} onSubmit={iniciarSesion} >
         <h2>Sign In</h2>
         <input 
         type="text" 
@@ -73,7 +73,7 @@ export default function SignIn() {
         ref={password}>
         </input>
 
-        <button id='signIn' type='submit' onClick={iniciarSecion} >Sign In</button>
+        <button id='signIn' type='submit' onClick={iniciarSesion} >Sign In</button>
         <button id='googleb' type='submit' ><a href="https://www.google.com.ar/"><img src="./img/inicioG.png" alt="google" /></a></button>
 
        <div className='contenedorU'>
