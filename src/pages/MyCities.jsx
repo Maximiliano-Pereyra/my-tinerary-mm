@@ -12,6 +12,7 @@ export default function Cities() {
   const { city } = useSelector((state) => state.mycity);
   const { id, cityid } = useSelector((state) => state.mycity);
   const { idUser} = useSelector((state) => state.user);
+  
 
 
   useEffect(() => {

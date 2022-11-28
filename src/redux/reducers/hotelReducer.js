@@ -21,11 +21,9 @@ const hotelReducers = createReducer(initialState, (builder) => {
         };
       })
       .addCase(deleteHotels.fulfilled, (state, action) => {
-    
-        return {
-          ...state,
-          hotels: action.payload,
-
+        return{
+            ...state,
+            ...action.payload,
         };
       })
       .addCase(getHotelsFilter.fulfilled, (state, action) => {

@@ -10,7 +10,11 @@ const initialState = {
   logged: false,
   token: "",
   idUser: "",
+
   user: [],
+
+  email:"",
+
 };
 
 const usersReducer = createReducer(initialState, (builder) => {
@@ -32,6 +36,7 @@ const usersReducer = createReducer(initialState, (builder) => {
           role: user.role,
           idUser: user.id,
           token: token,
+          email:user.email
         };
         return newState;
       } else {
@@ -57,6 +62,7 @@ const usersReducer = createReducer(initialState, (builder) => {
           role: user.role,
           idUser: user.id,
           token: token,
+          email:user.email,
         };
 
         return newState;
@@ -81,6 +87,7 @@ const usersReducer = createReducer(initialState, (builder) => {
           role: "",
           idUser: "",
           token: "",
+          email:"",
         };
         console.log(newState);
         return newState;

@@ -15,11 +15,14 @@ const getHotels = createAsyncThunk("getHotels", async () => {
     };
   }
 });
-const deleteHotels = createAsyncThunk("deleteHotels", async () => {
+const deleteHotels = createAsyncThunk("deleteHotels", async ({hotelId}) => {
   try {
-    const res = await axios.delete(`http://localhost:8000/api/hotel/:id`);
+    const res = await axios.delete(`http://localhost:8000/api/hotel/${hotelId}`);
 
-    return res.data.res;
+    return {
+      success: true,
+      response: res.data.message,
+    };
 
   } catch (error) {
     console.log(error);
@@ -55,13 +58,11 @@ const getHotelsSelect = createAsyncThunk(
 
     try {
       const res = await axios.get(url);
-      console.log(res.data.res);
-      console.log(name);
-      console.log(order);
+
       return {
         hotels: res.data.res,
-        name,
         order,
+        name,
       };
     } catch (error) {
       console.log(error);
