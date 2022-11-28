@@ -17,23 +17,12 @@ const getMyTinerary = createAsyncThunk("getMyTinerary", async ({ tineId }) => {
 
 const deleteTinerary = createAsyncThunk(
   "deleteTinerary",
-  async ({ tineId }) => {
+  async ({ tineId, token }) => {
     let url = `${BASE_URL}/itinerary/destroy/${tineId}`;
+    let data = { data: { Authorization: `Bearer ${token}` } };
     try {
-      const response = await axios.delete(url);
-      console.log(response.data.message);
-      console.log(response.data);
-      if (response.data._id) {
-        return {
-          success: false,
-          response: response.data,
-        };
-      } else {
-        return {
-          success: true,
-          response: response.data.message,
-        };
-      }
+      const response = await axios.delete(url, data);
+      return response.data;
     } catch (error) {
       console.log(error);
       return {

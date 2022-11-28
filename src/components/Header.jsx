@@ -28,7 +28,7 @@ export default function Header() {
   function signOut () {
     Swal.fire({
       icon: "question",
-      title: "Would do you like close your session?",
+      title: "Would do you like close session?",
       showConfirmButton: true,
       iconColor: "#01344f",
       confirmButtonColor: "#01344f",
@@ -52,6 +52,10 @@ export default function Header() {
       name: "My Tineraries",
       route: "/mytineraries",
     },
+    {
+    name: "New Tinerary",
+    route: "/useritinerary"
+  },
   ];
   const adminPages = [
     {
@@ -138,7 +142,11 @@ export default function Header() {
               <div >
                 {(user.role === "admin" || user.role === "user") && (
                   <>
+
+                    <Linkeador to="/myprofile" >
+
                     <Linkeador to={`/api/auth/me/${id}` }>
+
                       <li>My Profile</li>
                     </Linkeador>
                     <div to="/signin">
