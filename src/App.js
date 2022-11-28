@@ -71,7 +71,7 @@ useEffect(()=>{
           }
         ></Route>
         <Route path="/shows/prueba" element={<MyShows/>} />
-        <Route path="/newShow" element={<NewShow/>} />
+        <Route path="/shows/prueba/newShow" element={<NewShow/>} />
         <Route path="/shows/prueba/:id/edit" element={<EditDeShow/>} />
         <Route path="/city/:id" element={<DetailsCity />} />
         <Route path="/hotels/:id" element={<DetailsHotels />} />

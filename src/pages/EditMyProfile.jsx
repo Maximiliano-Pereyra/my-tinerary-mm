@@ -11,22 +11,26 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function EditMyPerfil() {
 
-    const {idUser } = useSelector((state) => state.user);
+    const {idUser, role } = useSelector((state) => state.user);
     const nameInputElement = useRef();
     const lastNameInputElement = useRef()
     const photoInputElement = useRef();
     const emailInputElement = useRef();
+    const ageInputElement = useRef();
+    const passwordInputElement = useRef();
     let id  =idUser
 
     let handleSubmit = async (event) => {
 
         event.preventDefault();
         const data = {
-            _id: id,
             name: nameInputElement.current.value,
             lastName: lastNameInputElement.current.value,
             photo: photoInputElement.current.value,
             email: emailInputElement.current.value,
+            role: role,
+            age: ageInputElement.current.value,
+            password: passwordInputElement.current.value
         }
 
         console.log(data);
@@ -87,6 +91,14 @@ export default function EditMyPerfil() {
 
             <input
                 type="text"
+                name='age'
+                autoComplete='off'
+                placeholder='Enter age'
+                ref={ageInputElement}>
+            </input>
+
+            <input
+                type="text"
                 name='photo'
                 autoComplete='off'
                 placeholder='URL photo'
@@ -99,6 +111,14 @@ export default function EditMyPerfil() {
                 autoComplete='off'
                 placeholder='Enter email'
                 ref={emailInputElement}>
+            </input>
+
+            <input
+                type="text"
+                name='password'
+                autoComplete='off'
+                placeholder='Enter new password'
+                ref={passwordInputElement}>
             </input>
 
             <button id='signIn2' type='submit' onClick={handleSubmit}>Send data</button>

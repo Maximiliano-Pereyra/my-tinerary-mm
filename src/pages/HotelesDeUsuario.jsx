@@ -19,8 +19,9 @@ export default function HotelesDeUsuario() {
     }, []);
 
     return (
-    <>
+    <div>
+    <h1>My Hotels</h1>
      {hotels.map(allhotels=><CardHotelsUser key={allhotels._id} photo={allhotels?.photo} name={allhotels?.name} id={allhotels._id}/>)}
-    </>
+    </div>
   )
 }

@@ -42,7 +42,7 @@ export default function NewShow() {
           draggable: true,
           progress: undefined,
           theme: "dark",});
-          window.location.href=`http://localhost:3000/shows/prueba`
+          window.location.href=`http://localhost:3000`
       }else{
         toast.error(res.data.message.join('///'), {
           position: "top-center",
