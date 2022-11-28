@@ -208,8 +208,8 @@ button {
 /*card*/
 
 .card{
-  width:30vw ;
-  height:50vh ;
+ width:30vw ;
+ min-height: 50vh ;
   display: flex;
   flex-wrap: wrap;
   background-color: #533E2D;
@@ -226,7 +226,7 @@ button {
 
  .image{
   width: 100%;
-  height: 65% ;
+  height: 35vh ;
   display: flex;
   flex-wrap: wrap;
  }
@@ -238,6 +238,7 @@ button {
  }
 
 .details{
+  min-height:24vh ;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -329,7 +330,7 @@ text-decoration: none;
 
 .input-search{
   width: 100vw;
-  height: 5vh;
+  min-height: 5vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -480,4 +481,10 @@ width: auto;
   color: #a89858;
 border-radius: 10px;
 font-size: medium;
+}
+
+@media screen and (max-width: 485px){    
+  .card {
+    width: 80vw;
+  }
 }

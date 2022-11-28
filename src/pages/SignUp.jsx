@@ -14,19 +14,19 @@ export default function SignUp(){
     const emailInputElement = useRef();
     const passwordInputElement = useRef();
     let form = useRef();
-
     
 async function handleSubmit(event){
   event.preventDefault(); 
 
     let handleSubmit = {
-          name: firstNameInputElement.current.value,
-          lastName: lastNameInputElement.current.value,
-          photo: photoInputElement.current.value,
-          age: ageInputElement.current.value,
+          name: firstNameInputElement.current?.value,
+          lastName: lastNameInputElement.current?.value,
+          photo: photoInputElement.current?.value,
+          age: ageInputElement.current?.value,
           role:'user',
-          email: emailInputElement.current.value,
-          password: passwordInputElement.current.value
+          email: emailInputElement.current?.value,
+          password: passwordInputElement.current?.value
+
         };
         try {
           let response = await axios.post(`${BASE_URL}/auth/sign-up`, handleSubmit)
