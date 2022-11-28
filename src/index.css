@@ -14,7 +14,7 @@ code {
     monospace;
 }
 
-.barra-de-arriba{
+.barra-de-arriba {
   width: 100vw;
   height: 70vh;
   display: flex;
@@ -24,7 +24,7 @@ code {
   justify-content: space-around;
 }
 
-.cuerpo-general{
+.cuerpo-general {
   width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -34,19 +34,19 @@ code {
   align-items: center;
 }
 
-.footer{
+.footer {
   width: 100vw;
   height: 35vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   background-color: #242331;
-  
+
 }
 
 /* -----------------------------------HOME 2-------------------------- */
 
-.barra-de-arriba-Home2{
+.barra-de-arriba-Home2 {
   width: 100vw;
   height: 20vh;
   display: flex;
@@ -56,8 +56,8 @@ code {
   justify-content: space-around;
 }
 
-.contenedorDeLogo{
-  width: 25% ;
+.contenedorDeLogo {
+  width: 25%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -65,27 +65,27 @@ code {
   align-items: center;
 }
 
-.contenedorDeLogo img{
+.contenedorDeLogo img {
   width: 25vw;
   height: 13vh;
   display: flex;
   flex-wrap: wrap;
   object-fit: contain;
-  border-radius: 43px ;
+  border-radius: 43px;
   padding-left: 60%;
 }
 
-.titulo{
-  width: 50% ;
+.titulo {
+  width: 50%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  
+
 }
 
-.contenedorDeInicio{
-  width: 25% ;
+.contenedorDeInicio {
+  width: 25%;
   height: 15vh;
   display: flex;
   flex-wrap: wrap;
@@ -95,7 +95,7 @@ code {
   gap: 5px;
 }
 
-.input{
+.input {
   width: 40%;
   height: 30%;
   display: flex;
@@ -107,23 +107,23 @@ code {
   border-radius: 8px;
 }
 
-.input h4{
+.input h4 {
   width: 100%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
 }
 
-.logoI{
+.logoI {
   width: 5vh;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
   object-fit: contain;
-  border-radius: 43px ;
+  border-radius: 43px;
 }
 
-.cardHome2{
+.cardHome2 {
   width: 35vw;
   height: 63vh;
   display: flex;
@@ -133,7 +133,7 @@ code {
   padding: 1rem;
 }
 
-.cardHome2 img{
+.cardHome2 img {
   width: 30vw;
   height: 50vh;
   display: flex;
@@ -142,7 +142,7 @@ code {
   border-radius: 40px;
 }
 
-.cardHome2 h3{
+.cardHome2 h3 {
   width: 30vw;
   height: 10vh;
   display: flex;
@@ -153,7 +153,7 @@ code {
   border-radius: 40px;
 }
 
-.subtitulosHome2{
+.subtitulosHome2 {
   width: 100vw;
   height: 7vh;
   display: flex;
@@ -164,24 +164,24 @@ code {
   border-radius: 60px;
 }
 
-.flechaHome2{
+.flechaHome2 {
   width: 4vw;
   height: 7vh;
   display: flex;
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
-.flechaHome2 img{
-  width:100%;
+.flechaHome2 img {
+  width: 100%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
   object-fit: contain;
 }
 
-.botonFooter{
+.botonFooter {
   width: 10vw;
   height: 5vh;
   display: flex;
@@ -193,26 +193,26 @@ code {
   border-radius: 20px;
 }
 
-.botonFooterS{
- position: fixed;
- z-index: 1000;
- left: 12px;
- bottom: 25px;
- background-color:#DDCA7D;
- width: 50px;
- height: 50px;
- color: #1E1D29;
- text-align: center;
- border-radius: 50%;
- font-size: xx-large;
+.botonFooterS {
+  position: fixed;
+  z-index: 1000;
+  left: 12px;
+  bottom: 25px;
+  background-color: #DDCA7D;
+  width: 50px;
+  height: 50px;
+  color: #1E1D29;
+  text-align: center;
+  border-radius: 50%;
+  font-size: xx-large;
 }
 
-.botonFooterS:hover{
+.botonFooterS:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
 
-.contenedorDeBotones{
+.contenedorDeBotones {
   width: 20vw;
   height: 100%;
   display: flex;
@@ -223,7 +223,7 @@ code {
   flex-direction: column;
 }
 
-.infoFooter{
+.infoFooter {
   width: 40vw;
   height: 100%;
   display: flex;
@@ -233,11 +233,11 @@ code {
   color: #DDCA7D
 }
 
-.infoFooter a{
-  color:#DDCA7D ;
+.infoFooter a {
+  color: #DDCA7D;
 }
 
-.horarios{
+.horarios {
   width: 100%;
   height: 70%;
   display: flex;
@@ -247,7 +247,7 @@ code {
   flex-direction: column;
 }
 
-.logosSociales{
+.logosSociales {
   width: 100%;
   height: 30%;
   display: flex;
@@ -255,25 +255,24 @@ code {
   align-items: flex-start;
   justify-content: center;
   gap: 18px;
-  
+
 }
 
-.logosSociales img{
+.logosSociales img {
   width: 3vw;
   height: 5vh;
 }
 
-.mapaFooter{
+.mapaFooter {
   width: 40vw;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   color: #DDCA7D
-  
 }
- 
-.mapaFooter iframe{
+
+.mapaFooter iframe {
   width: 80%;
   height: 70%;
   display: flex;
@@ -282,43 +281,43 @@ code {
 
 /* --------------------------------PAGE 404-------------------------- */
 
-.c404{
+.c404 {
   width: 30vw;
   height: 50vh;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;  
- flex-direction: column;
- align-self: center;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
 }
 
-.c404:hover{
+.c404:hover {
   background-color: #CBAB64;
   cursor: pointer;
   transform: scale(1.1);
   border-radius: 30%;
 }
 
-.c404 h2{
+.c404 h2 {
   font-size: xx-large;
 }
 
-.c404 img{
-  width:15vw ;
-  height: 30vh; 
+.c404 img {
+  width: 15vw;
+  height: 30vh;
   object-fit: contain;
 }
 
 
 /* --------------------------------SIGN IN-------------------------- */
 
-.formularioSignIn{
+.formularioSignIn {
   width: 30vw;
   height: 65vh;
   display: flex;
   flex-wrap: wrap;
-  background-color:#DDCA7D ;
+  background-color: #DDCA7D;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -327,7 +326,7 @@ code {
   text-decoration: none;
 }
 
-.formularioSignIn input{
+.formularioSignIn input {
   width: 60%;
   height: 5vh;
   display: flex;
@@ -335,7 +334,7 @@ code {
   flex-direction: column;
 }
 
-.contenedorU{
+.contenedorU {
   width: 30vw;
   height: 15vh;
   display: flex;
@@ -344,7 +343,7 @@ code {
   align-items: center;
 }
 
-.contenedorU button{
+.contenedorU button {
   width: 10vw;
   height: 3vh;
   background-color: #533E2D;
@@ -352,90 +351,89 @@ code {
   border-radius: 15px;
 }
 
-#signIn{
-width: 10vw;
-height: 4vh;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-background-color: #242331;
-border-radius: 30px;
-color: #DDCA7D;
-font-style: none;
-text-decoration: none;
+#signIn {
+  width: 10vw;
+  height: 4vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #242331;
+  border-radius: 30px;
+  color: #DDCA7D;
+  font-style: none;
+  text-decoration: none;
 }
 
-#signIn:hover{
-  background-color: #a89858 ;
-  color:#242331;
+#signIn:hover {
+  background-color: #a89858;
+  color: #242331;
   border: solid 2px #242331;
   transform: scale(0.9);
 
 }
 
-#googleb{
+#googleb {
   width: 10vw;
   height: 7vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  }
+}
 
- #googleb img{
+#googleb img {
   width: 100%;
   height: 6vh;
   display: flex;
   flex-wrap: wrap;
   object-fit: contain;
- }
+}
 
- #googleb img:hover{
+#googleb img:hover {
   transform: scale(1.1);
- }
+}
 
- /* --------------------------------PAGES HOTELS-------------------------- */
+/* --------------------------------PAGES HOTELS-------------------------- */
 
-.selectH{
+.selectH {
   width: 20vw;
   height: 5vh;
   align-items: center;
   justify-content: center;
 }
 
-.input-search2{
+.input-search2 {
   width: 70vw;
   height: 5vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 1rem;
-  gap: 1rem
-  ;
+  gap: 1rem;
 }
 
-.formH{
+.formH {
   width: 100vw;
   height: 10vh;
   display: flex;
-  background-color: aqua; 
+  background-color: aqua;
   align-items: center;
   justify-content: center;
   gap: 2rem;
 }
 
- .inputH{
+.inputH {
   height: 2.5vh;
-  width:12vw ;
+  width: 12vw;
   display: flex;
   flex-wrap: wrap;
   background-color: #CBAB64;
- }
+}
 
- .cardH{
-  width:30vw ;
-  height:60vh ;
+.cardH {
+  width: 30vw;
+  height: 60vh;
   display: flex;
   flex-wrap: wrap;
   background-color: #533E2D;
@@ -445,62 +443,62 @@ text-decoration: none;
   text-align: center;
   padding: 0.5rem;
   margin: 1rem;
- }
+}
 
- .cardH:hover .image img {
+.cardH:hover .image img {
   opacity: .5;
 }
 
- .imageH{
+.imageH {
   width: 100%;
-  height: 60% ;
+  height: 60%;
   display: flex;
   flex-wrap: wrap;
- }
+}
 
- .imageH img{
+.imageH img {
   width: 100%;
-  height: 100% ;
+  height: 100%;
   border-radius: 10px;
- }
+}
 
-.centerH{
+.centerH {
   width: 100%;
-  height: 40% ;
+  height: 40%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   align-content: center;
 }
 
-.botonH{
-  width: 8vw;
-  height: 5vh ;
+.botonH {
+  min-width: 8vw;
+  height: 5vh;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   align-content: center;
-  background-color: #CBAB64; 
+  background-color: #CBAB64;
   justify-content: center;
   color: #533E2D;
   border-radius: 10px;
 }
 
- .centerH h1 {
+.centerH h1 {
   color: #CBAB64;
   align-items: center;
   text-align: center;
   justify-content: center;
- }
+}
 
- /* --------------------------------PAGES REGRISTRO DE NUEVOS HOTELS-------------------------- */
+/* --------------------------------PAGES REGRISTRO DE NUEVOS HOTELS-------------------------- */
 
- .formularioSignIn2{
+.formularioSignIn2 {
   width: 50vw;
   height: 80vh;
   display: flex;
   flex-wrap: wrap;
-  background-color:#DDCA7D ;
+  background-color: #DDCA7D;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -509,30 +507,30 @@ text-decoration: none;
   text-decoration: none;
 }
 
-.titulitoH{
+.titulitoH {
   width: 50vw;
   height: 10vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  
+
 }
 
-.titulitoH h2{
+.titulitoH h2 {
   width: 20vw;
   display: flex;
   flex-wrap: wrap;
 }
 
-.titulitoH img{
+.titulitoH img {
   width: 50px;
   height: 50px;
   display: flex;
   flex-wrap: wrap;
 }
 
-.formularioSignIn2 label{
+.formularioSignIn2 label {
   width: 60%;
   height: 5vh;
   display: flex;
@@ -540,7 +538,7 @@ text-decoration: none;
   flex-direction: column;
 }
 
-.formularioSignIn2 input{
+.formularioSignIn2 input {
   width: 60%;
   height: 5vh;
   display: flex;
@@ -548,23 +546,23 @@ text-decoration: none;
   flex-direction: column;
 }
 
-#signIn2{
-width: 20vw;
-height: 4vh;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-background-color: #242331;
-border-radius: 30px;
-color: #DDCA7D;
-font-style: none;
-text-decoration: none;
+#signIn2 {
+  width: 20vw;
+  height: 4vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #242331;
+  border-radius: 30px;
+  color: #DDCA7D;
+  font-style: none;
+  text-decoration: none;
 }
 
-#signIn2:hover{
-  background-color: #a89858 ;
-  color:#242331;
+#signIn2:hover {
+  background-color: #a89858;
+  color: #242331;
   border: solid 2px #242331;
   transform: scale(1.1);
 
@@ -572,7 +570,7 @@ text-decoration: none;
 
 /* --------------------------------PAGES DETALLES -------------------------- */
 
-.detallesDeHotel{
+.detallesDeHotel {
   width: 70vw;
   min-height: 90vh;
   display: flex;
@@ -583,25 +581,25 @@ text-decoration: none;
   margin: 2rem;
 }
 
-.detallesDeHotel button{
-width: 10vw;
-height: 4vh;
-background-color: #a89858;
-border-radius: 10px;
-border: #242331;
+.detallesDeHotel button {
+  width: 10vw;
+  height: 4vh;
+  background-color: #a89858;
+  border-radius: 10px;
+  border: #242331;
 }
 
-.tituloYimagen{
+.tituloYimagen {
   width: 70vw;
   height: 65vh;
   display: flex;
   flex-wrap: wrap;
- /*  background-color: red; */
+  /*  background-color: red; */
   justify-content: center;
   align-items: center;
 }
 
-.tituloYimagen h1{
+.tituloYimagen h1 {
   width: 70vw;
   height: 5vh;
   display: flex;
@@ -610,7 +608,7 @@ border: #242331;
   justify-content: center;
 }
 
-.tituloYimagen img{
+.tituloYimagen img {
   width: 70vw;
   height: 53vh;
   display: flex;
@@ -618,7 +616,7 @@ border: #242331;
   object-fit: contain;
 }
 
-.detallesDeDetails{
+.detallesDeDetails {
   width: 70vw;
   height: 17vh;
   display: flex;
@@ -630,7 +628,7 @@ border: #242331;
   font-size: large;
 }
 
-.detallesDeShow{
+.detallesDeShow {
   width: 70vw;
   min-height: 90vh;
   display: flex;
@@ -641,25 +639,25 @@ border: #242331;
   margin: 2rem;
 }
 
-.detallesDeShow button{
-width: 10vw;
-height: 4vh;
-background-color: #a89858;
-border-radius: 10px;
-border: #242331;
+.detallesDeShow button {
+  width: 10vw;
+  height: 4vh;
+  background-color: #a89858;
+  border-radius: 10px;
+  border: #242331;
 }
 
-.tituloEImagenDeShow{
+.tituloEImagenDeShow {
   width: 70vw;
   height: 65vh;
   display: flex;
   flex-wrap: wrap;
- /*  background-color: red; */
+  /*  background-color: red; */
   justify-content: center;
   align-items: center;
 }
 
-.tituloEImagenDeShow h1{
+.tituloEImagenDeShow h1 {
   width: 70vw;
   height: 5vh;
   display: flex;
@@ -668,7 +666,7 @@ border: #242331;
   justify-content: center;
 }
 
-.tituloEImagenDeShow img{
+.tituloEImagenDeShow img {
   width: 70vw;
   height: 53vh;
   display: flex;
@@ -676,7 +674,7 @@ border: #242331;
   object-fit: contain;
 }
 
-.suplementoDeShow{
+.suplementoDeShow {
   width: 70vw;
   height: 17vh;
   display: flex;
@@ -687,8 +685,9 @@ border: #242331;
   color: #242331;
   font-size: large;
 }
+
 /*-------------------------------------------------------------------------Mycity---------------------------------------------------------------------------------------*/
-.contmycit{
+.contmycit {
   background-color: #eff1f6;
   width: 1000px;
   height: auto;
@@ -696,7 +695,8 @@ border: #242331;
   flex-direction: column;
   align-items: center;
 }
-.mycit{
+
+.mycit {
   background-color: #61dafb;
   display: flex;
   flex-wrap: wrap;
@@ -704,7 +704,8 @@ border: #242331;
   justify-content: center;
   height: 900px;
 }
-.butmycard{
+
+.butmycard {
   height: 100px;
   width: 100px;
   background-color: #242331;
@@ -712,7 +713,7 @@ border: #242331;
 }
 
 /* ---------------------------------------------------MY PROFILE-------------------------------------------------------------- */
-.profile-user{
+.profile-user {
   width: 70vw;
   min-height: 80vh;
   display: flex;
@@ -725,7 +726,7 @@ border: #242331;
   border-radius: 12px;
 }
 
-.profile-user img{
+.profile-user img {
   width: 30vw;
   height: 30vh;
   display: flex;
@@ -733,48 +734,48 @@ border: #242331;
   object-fit: contain;
 }
 
-.profile-user h4{
-font-size: x-large;
-background-color:#d1c07c;
-width: 43vw;
-min-height: 6vh;
-justify-content: center;
-align-items: center;
-display: flex;
-border-radius: 9px;
+.profile-user h4 {
+  font-size: x-large;
+  background-color: #d1c07c;
+  width: 43vw;
+  min-height: 6vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 9px;
 }
 
-.profile-user h5{
-font-size: large;
-background-color: #c4b36e;;
-width: 33vw;
-min-height: 6vh;
-justify-content: center;
-align-items: center;
-display: flex;
-border-radius: 9px;
+.profile-user h5 {
+  font-size: large;
+  background-color: #c4b36e;
+  ;
+  width: 33vw;
+  min-height: 6vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 9px;
 }
 
-.profile-user button{
-width: 15vw;
-height: 6vh;
-color: #c4b36e;
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: #242331;
-border-radius: 9px;
+.profile-user button {
+  width: 15vw;
+  height: 6vh;
+  color: #c4b36e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #242331;
+  border-radius: 9px;
 }
 
-img{
+img {
   width: 50px;
   height: 50px;
 }
 
 
-
-@media screen and (max-width: 770px){    
-  .horarios{
+@media screen and (max-width: 1100px) {
+  .horarios {
     width: 100%;
     height: 70%;
     display: flex;
@@ -783,8 +784,8 @@ img{
     align-items: center;
     flex-direction: row;
   }
-  
-  .logosSociales{
+
+  .logosSociales {
     width: 100%;
     height: 30%;
     display: flex;
@@ -792,15 +793,15 @@ img{
     align-items: flex-end;
     justify-content: center;
     gap: 18px;
-    
+
   }
-  
-  .logosSociales img{
+
+  .logosSociales img {
     width: 2vw;
     height: 2vh;
   }
-  
-  .mapaFooter{
+
+  .mapaFooter {
     width: 40vw;
     height: 100%;
     display: flex;
@@ -808,9 +809,10 @@ img{
     justify-content: center;
     color: #DDCA7D
   }
-  .cardH{
-    width:50vw ;
-    height:60vh ;
+
+  .cardH {
+    width: 50vw;
+    height: 60vh;
     display: flex;
     flex-wrap: wrap;
     background-color: #533E2D;
@@ -820,19 +822,22 @@ img{
     text-align: center;
     padding: 0.5rem;
     margin: 1rem;
-   }
-   .formularioSignIn{
+  }
+
+  .formularioSignIn {
     width: 50vw;
   }
-  .formularioSignIn2{
+
+  .formularioSignIn2 {
     width: 100vw;
   }
-  .formularioSignIn{
+
+  .formularioSignIn {
     width: 100vw;
     height: 65vh;
     display: flex;
     flex-wrap: wrap;
-    background-color:#DDCA7D ;
+    background-color: #DDCA7D;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
@@ -841,15 +846,16 @@ img{
     border-radius: 14px;
     text-decoration: none;
   }
-  
-  .formularioSignIn input{
+
+  .formularioSignIn input {
     width: 80%;
     height: 5vh;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
   }
-  .contenedorU{
+
+  .contenedorU {
     width: 80vw;
     height: 5vh;
     display: flex;
@@ -858,15 +864,16 @@ img{
     justify-content: center;
     align-items: center;
   }
-  
-  .contenedorU button{
+
+  .contenedorU button {
     width: 15vw;
     height: 5vh;
     background-color: #533E2D;
     color: #DDCA7D;
     border-radius: 15px;
   }
-  #signIn{
+
+  #signIn {
     width: 15vw;
     height: 6vh;
     display: flex;
@@ -878,73 +885,26 @@ img{
     color: #DDCA7D;
     font-style: none;
     text-decoration: none;
-    }
-}
-@media screen and (max-width: 650px){
-.detallesDeHotel button{
-  width: 25vw;
-  height: 4vh;
-  background-color: #a89858;
-  border-radius: 10px;
-  border: #242331;
   }
-  .detallesDeShow button{
-    width: 25vw;
-    height: 4vh;
-    background-color: #a89858;
-    border-radius: 10px;
-    border: #242331;
-    }
-    .logosSociales img{
-      width: 0vw;
-      height: 0vh;
-    }
-    .logosSociales{
-      width: 0%;
-      height: 0%;
-      display: none;
-      flex-wrap: none;
-      align-items: none;
-      justify-content: none;
-      gap: 18px;
-      
-    }
-    .formularioSignIn2{
-      width: 100vw;
-    }
-    .titulitoH img{
-      width: 0px;
-      height: 0px;
-      display: none;
-      flex-wrap: none;
-    }
-    .titulitoH h2{
-      width: 100vw;
-      display: flex;
-      flex-wrap: wrap;
-      color:  #242331;
-    }
 }
-@media screen and (max-width: 600px){
-  .footer{
-    width: 100vw;
-   height: 35vh;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+
+@media screen and (max-width: 1100px) {
+  .logosSociales img {
+    width: 0vw;
+    height: 0vh;
+  }
+
+  .logosSociales {
+    width: 0%;
+    height: 0%;
+    display: none;
+    flex-wrap: none;
+    align-items: none;
     justify-content: none;
-    background-color: #242331;
+    gap: 18px;
+
   }
-  .horarios{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-  }
-  .mapaFooter{
+.mapaFooter {
     width: 0vw;
     height: 0%;
     display: none;
@@ -953,10 +913,70 @@ img{
     color: #DDCA7D
   }
 }
-@media screen and (max-width: 450px){
-  .botonFooter{
-    width: 15vw;
+
+@media screen and (max-width: 1100px) {
+  .detallesDeHotel button {
+    width: 25vw;
+    height: 4vh;
+    background-color: #a89858;
+    border-radius: 10px;
+    border: #242331;
+  }
+
+  .detallesDeShow button {
+    width: 25vw;
+    height: 4vh;
+    background-color: #a89858;
+    border-radius: 10px;
+    border: #242331;
+  }
+
+  .formularioSignIn2 {
+    width: 100vw;
+  }
+
+  .titulitoH img {
+    width: 0px;
+    height: 0px;
+    display: none;
+    flex-wrap: none;
+  }
+
+  .titulitoH h2 {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    color: #242331;
   }
 }
 
+@media screen and (max-width: 825px) {
+  .footer {
+    width: 100vw;
+    min-height: 45vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: none;
+    background-color: #242331;
 
+  }
+
+  .horarios {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  
+}
+
+@media screen and (max-width: 450px) {
+  .botonFooter {
+    width: 15vw;
+  }
+}

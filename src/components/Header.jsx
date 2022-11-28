@@ -144,9 +144,6 @@ export default function Header() {
                   <>
 
                     <Linkeador to="/myprofile" >
-
-                    <Linkeador to={`/api/auth/me/${id}` }>
-
                       <li>My Profile</li>
                     </Linkeador>
                     <div to="/signin">

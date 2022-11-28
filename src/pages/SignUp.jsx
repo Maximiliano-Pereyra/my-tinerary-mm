@@ -14,7 +14,6 @@ export default function SignUp(props){
     const emailInputElement = useRef();
     const passwordInputElement = useRef();
     let form = useRef();
-    let {role} = props
     
 async function handleSubmit(event){
   event.preventDefault(); 
@@ -24,7 +23,7 @@ async function handleSubmit(event){
           lastName: lastNameInputElement.current?.value,
           photo: photoInputElement.current?.value,
           age: ageInputElement.current?.value,
-          role,
+          role:'user',
           email: emailInputElement.current?.value,
           password: passwordInputElement.current?.value
         };
