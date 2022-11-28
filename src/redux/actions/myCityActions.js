@@ -17,10 +17,11 @@ const getMyCity = createAsyncThunk("getMyCity", async ({ id }) => {
   }
 });
 
-const deleteMyCity = createAsyncThunk("deleteMyCity", async ({ cityid }) => {
+const deleteMyCity = createAsyncThunk("deleteMyCity", async ({ cityid, token }) => {
+  let headers = { headers: { Authorization: `Bearer ${token}` } };
   let url = `${BASE_URL}/city/destroy/${cityid}`;
   try {
-    const response = await axios.delete(url);
+    const response = await axios.delete(url, headers);
     return {
       success: true,
       response: response.data.message,

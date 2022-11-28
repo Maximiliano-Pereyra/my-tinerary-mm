@@ -4,12 +4,15 @@ import { BASE_URL } from "../api/url";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function CityEdit() {
   let [cities, setCities] = useState([]);
+  const { idUser} = useSelector((state) => state.user);
 
   const onInputChange = (e) => {
     setCities({ ...cities, [e.target.placeholder]: e.target.value });
+    
   };
   let { id } = useParams();
   console.log(id);
@@ -34,9 +37,8 @@ export default function CityEdit() {
       continent: NewCityContinent.current.value,
       photo: NewCityPhoto.current.value,
       population: CityPopulation.current.value,
-      userId: "636d8bcade38ce0e1619410f",
+      userId: idUser,
     };
-
     try {
       let response = await axios.put(`${BASE_URL}/city/${id}`, newCity);
       console.log(response);

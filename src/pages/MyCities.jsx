@@ -28,7 +28,7 @@ export default function Cities() {
       <div>
         {city.city?.map((item) => {
           function functionDelete() {
-            if (dispatch(deleteMyCity({ cityid: item._id }))) {
+            if (dispatch(deleteMyCity({ cityid: item._id}))) {
               toast.success("The city was deleted", {
                 position: toast.POSITION.TOP_CENTER,
               });

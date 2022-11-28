@@ -12,15 +12,14 @@ const tineraryReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(getMyTinerary.fulfilled, (state, action) => {
       console.log(action.payload);
-      return { ...state, itineraries: action.payload };
+      return {
+        itineraries: action.payload,
+      };
     })
     .addCase(deleteTinerary.fulfilled, (state, action) => {
-      let tinerary = state.itineraries.filter(
-        (tinerary) => tinerary._id !== action.payload.data._id
-      );
+      console.log(action.payload._id);
       return {
-        ...state,
-        tinerary: tinerary,
+        tineId: action.payload,
       };
     });
 });
