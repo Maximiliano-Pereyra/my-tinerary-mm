@@ -142,11 +142,7 @@ export default function Header() {
               <div >
                 {(user.role === "admin" || user.role === "user") && (
                   <>
-
                     <Linkeador to="/myprofile" >
-
-                    <Linkeador to={`/api/auth/me/${id}` }>
-
                       <li>My Profile</li>
                     </Linkeador>
                     <div to="/signin">
