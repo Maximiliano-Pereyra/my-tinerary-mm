@@ -54,6 +54,8 @@ function App() {
         <Route path="/hotels" element={<PginasDeCards />} />
         <Route path="/city" element={<Cities />} />
         <Route path="/signIn" element={<SingIn />} />
+        <Route path="/myProfile" element={<MyProfile />} />
+        <Route path="/editProfile" element={<EditMyProfile/>} />
         <Route
           element={
             <RuteProtect isAllowed={user.role === "admin"} redirect="/signin" />
