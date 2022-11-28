@@ -10,9 +10,7 @@ const initialState = {
   logged: false,
   token: "",
   idUser: "",
-
   user: [],
-
   email:"",
 
 };

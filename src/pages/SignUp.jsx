@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import {BASE_URL} from "../api/url"
 
-export default function SignUp(props){
+export default function SignUp(){
     const firstNameInputElement = useRef();
     const lastNameInputElement = useRef();
     const photoInputElement = useRef();
@@ -26,6 +26,7 @@ async function handleSubmit(event){
           role:'user',
           email: emailInputElement.current?.value,
           password: passwordInputElement.current?.value
+
         };
         try {
           let response = await axios.post(`${BASE_URL}/auth/sign-up`, handleSubmit)
@@ -46,7 +47,6 @@ async function handleSubmit(event){
             icon: "error",
             confirmButtonColor: "#9f2703",
             iconColor: "#9f2703",
-            title: error.response.data.message,
             showConfirmButton: true,});
         }}
     return (
@@ -63,7 +63,7 @@ async function handleSubmit(event){
             <Input type="text" ref={passwordInputElement} id='password' name='password' className='pasword-input' placeholder="Password" />
             </div>
             <div className="submit-buttons">
-            <button type="submit" onClick={handleSubmit} className='signu'>Sign Up</button>
+            <button type="submit"  className='signu'>Sign Up</button>
             <button type="submit" className="google-acc">Google</button>
             </div>
             </form>            
