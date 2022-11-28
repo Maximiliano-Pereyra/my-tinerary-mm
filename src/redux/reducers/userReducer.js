@@ -1,7 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 import userActions from "../actions/userActions";
 
-const { enter, reEnter, signout } = userActions;
+const { enter, reEnter, signout, getUser } = userActions;
 
 const initialState = {
   name: "",
@@ -10,6 +10,7 @@ const initialState = {
   logged: false,
   token: "",
   idUser: "",
+  user: [],
 };
 
 const usersReducer = createReducer(initialState, (builder) => {
@@ -90,6 +91,12 @@ const usersReducer = createReducer(initialState, (builder) => {
         };
         return newState;
       }
+    })
+    .addCase(getUser.fulfilled, (state, action) => {
+      return {
+        ...state,
+        user: action.payload.response,
+      };
     });
 });
 

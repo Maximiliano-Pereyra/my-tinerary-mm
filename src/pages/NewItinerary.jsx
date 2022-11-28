@@ -39,11 +39,11 @@ export default function NewItinerary() {
           photo: photoElement.current?.value,
           price: priceInputElement.current?.value,
           userId: idUser,
-          duration: durationInputElement?.value
+          duration: durationInputElement.current?.value
         };
-        let data = { data: { Authorization: `Bearer ${token}` } };
+        let headers = { headers: { Authorization: `Bearer ${token}` } };
         try {
-          let response = await axios.post(`${BASE_URL}/itinerary`, NewIt, data);
+          let response = await axios.post(`${BASE_URL}/itinerary`, NewIt, headers);
           console.log(response);
           if (response.data.success){
             Swal.fire({
