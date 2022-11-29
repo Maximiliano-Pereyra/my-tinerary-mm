@@ -55,35 +55,29 @@ function App() {
         <Route path="/city" element={<Cities />} />
         <Route path="/signIn" element={<SingIn />} />
         <Route path="/myProfile" element={<MyProfile />} />
-        <Route path="/editProfile" element={<EditMyProfile/>} />
+        <Route path="/editProfile" element={<EditMyProfile />} />
         <Route
-          element={
-            <RuteProtect isAllowed={user.role === "admin"} redirect="/signin" />
-          }
-        ></Route>
+          element={<RuteProtect isAllowed={user.logged && user.role === "admin"} redirect="/signin" />}>
+          <Route path="/newCity" element={<NewCity />} />
+          <Route path="/newHotel" element={<NuevoHotel />} />
+          <Route path="/hotels/prueba" element={<HotelesDeUsuario />} />
+          <Route path="/hotels/prueba/:id/edit" element={<EditorDeHotel />} />
+          <Route path="/mycity" element={<MyCities />} />
+          <Route path="/cityedit/:id" element={<CityEdit />} />
+        </Route>
         <Route path="/signUp" element={<SignUp />} />
-        <Route path="/newCity" element={<NewCity />} />
-        <Route path="/newHotel" element={<NuevoHotel />} />
-        <Route path="/hotels/prueba" element={<HotelesDeUsuario />} />
-        <Route path="/hotels/prueba/:id/edit" element={<EditorDeHotel />} />
         <Route
-          element={<RuteProtect isAllowed={user.role === "user"} />}
-        ></Route>
-
-        <Route path="/shows/prueba" element={<MyShows/>} />
-        <Route path="/shows/prueba/newShow" element={<NewShow/>} />
-        <Route path="/shows/prueba/:id/edit" element={<EditDeShow/>} />
-
-
-       
+          element={<RuteProtect isAllowed={user.logged && user.role === "user"} />}>
+          <Route path="/shows/prueba" element={<MyShows />} />
+          <Route path="/shows/prueba/newShow" element={<NewShow />} />
+          <Route path="/shows/prueba/:id/edit" element={<EditDeShow />} />
+          <Route path="/mytineraries" element={<MyTineraries />} />
+          <Route path="/tineraryedit/:id" element={<TineraryEdit />} />
+          <Route path="/useritinerary" element={<NewItinerary />} />
+        </Route>
         <Route path="/city/:id" element={<DetailsCity />} />
         <Route path="/hotels/:id" element={<DetailsHotels />} />
         <Route path="/*" element={<NotFound />} />
-        <Route path="/mycity" element={<MyCities />} />
-        <Route path="/cityedit/:id" element={<CityEdit />} />
-        <Route path="/mytineraries" element={<MyTineraries />} />
-        <Route path="/tineraryedit/:id" element={<TineraryEdit />} />
-        <Route path="/useritinerary" element={<NewItinerary />} />
       </Routes>
     </Main>
 
