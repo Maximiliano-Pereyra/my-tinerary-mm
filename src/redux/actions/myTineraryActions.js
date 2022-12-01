@@ -3,10 +3,12 @@ import axios from "axios";
 import { BASE_URL } from "../../api/url";
 
 const getMyTinerary = createAsyncThunk("getMyTinerary", async ({ tineId }) => {
-  let url = `${BASE_URL}/itinerary?userId=${tineId}`;
+  let url = `${BASE_URL}/itineraries?userId=${tineId}`;
   try {
     const response = await axios.get(url);
-    return response.data.response;
+    return {
+      itineraries: response.data.response
+    }
   } catch (error) {
     console.log(error);
     return {
@@ -17,21 +19,17 @@ const getMyTinerary = createAsyncThunk("getMyTinerary", async ({ tineId }) => {
 
 const deleteTinerary = createAsyncThunk(
   "deleteTinerary",
-  async ({ tineId }) => {
-    let url = `${BASE_URL}/itinerary/destroy/${tineId}`;
+  async ({ tineId, token }) => {
+    let headers = { headers: { Authorization: `Bearer ${token}` } };
+    let url = `${BASE_URL}/itineraries/destroy/${tineId}`;
     try {
-      const response = await axios.delete(url);
+      const response = await axios.delete(url,headers);
       console.log(response.data.message);
       console.log(response.data);
       if (response.data._id) {
         return {
-          success: false,
-          response: response.data,
-        };
-      } else {
-        return {
-          success: true,
-          response: response.data.message,
+         itineraries: response.data,
+         data: response.data.response
         };
       }
     } catch (error) {

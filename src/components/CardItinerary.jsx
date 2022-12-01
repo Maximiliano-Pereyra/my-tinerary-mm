@@ -1,4 +1,5 @@
 import React from "react";
+import Reaction from "./Reaction";
 
 function CardItinerary(props){
     console.log(props)
@@ -6,6 +7,8 @@ function CardItinerary(props){
     let {descripcion} = props
     let {duracion} = props
     let {precio} = props
+    let {id}= props
+    
    return (
     <div className="cardsdetcity">
         <div className="subcarddet">
@@ -16,6 +19,7 @@ function CardItinerary(props){
             <p>Duration: {duracion} hs</p>
             <p>Price: {precio} USD</p>
         </div>
+        <Reaction tineId={id}></Reaction>
     </div>
 );
 }

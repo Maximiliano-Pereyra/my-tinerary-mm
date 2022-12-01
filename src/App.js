@@ -32,6 +32,9 @@ import NewItinerary from "./pages/NewItinerary";
 import MyProfile from "./pages/MyProfile";
 import EditMyProfile from "./pages/EditMyProfile";
 import NewShow from "./pages/NewShow";
+import NewReaction from "./pages/NewReaction";
+import Reaction from "./components/Reaction";
+import Itinerary from "./components/Itinerary";
 
 
 function App() {
@@ -47,8 +50,7 @@ function App() {
   }, []);
 
   return (
-
-    <Main>
+<Main>
       <Routes>
         <Route path="" element={<Home />} />
         <Route path="/hotels" element={<PginasDeCards />} />
@@ -79,8 +81,7 @@ function App() {
         <Route path="/hotels/:id" element={<DetailsHotels />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
-    </Main>
-
+    </Main>  
   );
 }
 

@@ -19,7 +19,7 @@ export default function DetailsCity() {
   }, [])
 
   useEffect( () => {
-    axios.get(`${BASE_URL}/itinerary`)
+    axios.get(`${BASE_URL}/itineraries`)
     .then(response => setItineraries(response.data.response.find(activities=>activities.cityId===id)))
     .catch(err => console.log(err.message))
   }, [])
