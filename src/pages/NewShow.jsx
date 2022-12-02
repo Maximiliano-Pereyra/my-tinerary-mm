@@ -15,6 +15,7 @@ export default function NewShow() {
   const priceInputElement = useRef();
   const dateInputElement = useRef();
   const hotelIdInputElement = useRef();
+  const { token } = useSelector((state) => state.user);
 
   let handleSubmit = async (event) => {
     event.preventDefault();
@@ -29,8 +30,9 @@ export default function NewShow() {
     };
 
     console.log(data);
+    let headers = { headers: { Authorization: ` Bearer ${token} ` } };
     try {
-      let res = await axios.post((`http://localhost:8000/api/show/`), data)
+      let res = await axios.post((`http://localhost:8000/api/show/`), data, headers)
       console.log(res);
       if (res.data.success) {
         toast.success(' The show was created', {
