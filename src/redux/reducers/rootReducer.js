@@ -16,7 +16,7 @@ const rootReducer = {
   shows: showReducer,
   user: usersReducer,
 
-  reactions: reactionsReducers
+  reactions: reactionsReducers,
 
   comments: commentReducers
 

@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import { useRef } from 'react';
 import { useState } from "react";
-import UserComment from './UserComment';
 
 export default function Comments({ idShow }) {
     const dispatch = useDispatch();
