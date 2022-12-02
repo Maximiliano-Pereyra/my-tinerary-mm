@@ -30,7 +30,7 @@ console.log(comments);
                     {comments.map(allcomments => <li className="cadaComentario">{allcomments.comment}</li>)}
                 </ol>
                 ) : (
-                    <button id='commentsbutton' onClick={hide}>See all comments</button>
+                    <button id='commentsbutton' onClick={hide}>See others comments</button>
             )}
             </div>
         )
