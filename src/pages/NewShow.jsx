@@ -6,33 +6,34 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function NuevoHotel() {
-
+export default function NewShow() {
 
   const { idUser } = useSelector((state) => state.user);
-  console.log(idUser);
-
   const nameInputElement = useRef();
   const photoInputElement = useRef();
-  const capacityInputElement = useRef();
-  const cityIdInputElement = useRef();
+  const descriptionInputElement = useRef();
+  const priceInputElement = useRef();
+  const dateInputElement = useRef();
+  const hotelIdInputElement = useRef();
 
   let handleSubmit = async (event) => {
     event.preventDefault();
     const data = {
       name: nameInputElement.current.value,
       photo: photoInputElement.current.value,
-      capacity: capacityInputElement.current.value,
-      cityId: cityIdInputElement.current.value,
+      description:descriptionInputElement.current.value,
+      price:priceInputElement.current.value,
+      date:dateInputElement.current.value,
+      hotelId: hotelIdInputElement.current.value,
       userId: idUser
     };
 
     console.log(data);
     try {
-      let res = await axios.post((`http://localhost:8000/api/hotel/`), data)
+      let res = await axios.post((`http://localhost:8000/api/show/`), data)
       console.log(res);
       if (res.data.success) {
-        toast.success(' The hotel was created', {
+        toast.success(' The show was created', {
           position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,
@@ -41,7 +42,7 @@ export default function NuevoHotel() {
           draggable: true,
           progress: undefined,
           theme: "dark",});
-          window.location.href=`http://localhost:3000/hotels`
+          window.location.href=`http://localhost:3000`
       }else{
         toast.error(res.data.message.join('///'), {
           position: "top-center",
@@ -57,7 +58,7 @@ export default function NuevoHotel() {
         
     } catch (error) {
       console.log(error.message);
-      toast.error('Sorry, the hotel could not be created!', {
+      toast.error('Sorry, the show could not be created!', {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -75,7 +76,7 @@ export default function NuevoHotel() {
     <form className='formularioSignIn2'>
 
       <div className='titulitoH'>
-        <h2>New hotel information</h2>
+        <h2>New show information</h2>
         <img src="./img/datosSign.png" alt="" />
       </div>
 
@@ -84,9 +85,17 @@ export default function NuevoHotel() {
         type="text"
         name='name'
         autoComplete='off'
-        placeholder='Hotel name'
+        placeholder='Show name'
         ref={nameInputElement}>
       </input>
+
+      <input
+        type="text"
+        name='description'
+        autoComplete='off'
+        placeholder='Description'
+        ref={descriptionInputElement}>
+      </input> 
 
       <input
         type="text"
@@ -98,18 +107,26 @@ export default function NuevoHotel() {
 
       <input
         type="text"
-        name='capacity'
+        name='date'
         autoComplete='off'
-        placeholder='Enter capacity'
-        ref={capacityInputElement}>
+        placeholder="Show's date"
+        ref={dateInputElement}>
       </input>
 
       <input
         type="text"
-        name='cityId'
+        name='price'
         autoComplete='off'
-        placeholder='City Id'
-        ref={cityIdInputElement}>
+        placeholder='Enter price'
+        ref={priceInputElement}>
+      </input>
+
+      <input
+        type="text"
+        name='hotelId'
+        autoComplete='off'
+        placeholder='Hotel Id'
+        ref={hotelIdInputElement}>
       </input>
 
       <button id='signIn2' type='submit' onClick={handleSubmit}>Send data</button>
@@ -119,3 +136,4 @@ export default function NuevoHotel() {
 
   )
 }
+

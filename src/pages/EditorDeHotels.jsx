@@ -1,21 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useRef } from "react";
 import axios from 'axios';
-import { BASE_URL } from '../api/url';
 import { ToastContainer, toast } from 'react-toastify';
 import { useParams } from 'react-router-dom';
-
+import { useSelector } from 'react-redux';
+import hotelActions from '../redux/actions/hotelActions';
+import { useDispatch } from 'react-redux';
 
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function EditorDeHotel() {
-
- 
+  const dispatch = useDispatch();
+ const {deleteHotels} = hotelActions
   const nameInputElement = useRef();
   const photoInputElement = useRef();
   const capacityInputElement = useRef();
   const cityIdInputElement = useRef();
-  const userIdInputElement = useRef();
+  const { idUser } = useSelector((state) => state.user);
  let {id} = useParams();
 
   let handleSubmit = async (event) => {
@@ -27,7 +28,7 @@ export default function EditorDeHotel() {
       photo: photoInputElement.current.value,
       capacity: capacityInputElement.current.value,
       cityId: cityIdInputElement.current.value,
-      userId: userIdInputElement.current.value
+      userId:idUser
     };
 
     console.log(data);
@@ -65,40 +66,17 @@ export default function EditorDeHotel() {
 
   let deleteF = async (event) => {
    
-    event.preventDefault();
-    const data = {_id: id, };
+    const _id = id;
 
-    console.log(data);
-    try {
-      let res = await axios.delete((`http://localhost:8000/api/hotel/${id}`), data)
-      console.log(res);
-      if (res.data.success) {
-        toast.success(' The hotel was deleted', {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",});
-          window.location.href=`http://localhost:3000/hotels`
-      }
-        
-    } catch (error) {
-      console.log(error.message);
-      toast.error('Sorry, the hotel could not be deleted!', {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        });
+    if (dispatch(deleteHotels({ hotelId:_id }))) {
+      toast.success("The hotel was deleted", {
+        position: toast.POSITION.TOP_CENTER,
+        theme: "dark"
+      });
+      window.location.href=`http://localhost:3000/hotels`
     }
-
+    window.location.href=`http://localhost:3000/hotels`
+   
   }
 
   return (
@@ -141,13 +119,6 @@ export default function EditorDeHotel() {
         ref={cityIdInputElement}>
       </input>
 
-      <input
-        type="text"
-        name='userId'
-        autoComplete='off'
-        placeholder='Enter User Id'
-        ref={userIdInputElement}>
-      </input>
 
       <button id='signIn2' type='submit' onClick={handleSubmit}>Send data</button>
       <ToastContainer />
@@ -165,3 +136,38 @@ export default function EditorDeHotel() {
        data.capacity!=='' &&
        data.cityId!=='' &&
        data.userId!=='' */
+
+/*        event.preventDefault();
+       const data = {_id: id, };
+   
+       console.log(data);
+       try {
+         let res = await axios.delete((`http://localhost:8000/api/hotel/${id}`), data)
+         console.log(res);
+         if (res.data.success) {
+           toast.success(' The hotel was deleted', {
+             position: "top-center",
+             autoClose: 5000,
+             hideProgressBar: false,
+             closeOnClick: true,
+             pauseOnHover: true,
+             draggable: true,
+             progress: undefined,
+             theme: "dark",});
+             window.location.href=`http://localhost:3000/hotels`
+         }
+           
+       } catch (error) {
+         console.log(error.message);
+         toast.error('Sorry, the hotel could not be deleted!', {
+           position: "top-center",
+           autoClose: 5000,
+           hideProgressBar: false,
+           closeOnClick: true,
+           pauseOnHover: true,
+           draggable: true,
+           progress: undefined,
+           theme: "dark",
+           });
+       }
+    */

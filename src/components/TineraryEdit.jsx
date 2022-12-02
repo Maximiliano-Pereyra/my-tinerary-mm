@@ -1,14 +1,14 @@
- import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { BASE_URL } from "../api/url";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useParams } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 
 export default function TineraryEdit() {
   let [tinerary, setTineraries] = useState([]);
-
+  const { idUser} = useSelector((state) => state.user);
   const onInputChange = (e) => {
     setTineraries({ ...tinerary, [e.target.placeholder]: e.target.value });
   };
@@ -36,7 +36,7 @@ export default function TineraryEdit() {
       photo: NewTineraryPhoto .current.value,
       duration: NewTineraryDuration.current.value,
       description: NewTineraryDescription.current.value,
-      userId: "636d8bcade38ce0e1619410f",
+      userId: idUser,
     };
 
     try {

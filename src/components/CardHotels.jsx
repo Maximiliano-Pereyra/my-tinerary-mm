@@ -6,16 +6,15 @@ export default function CardHotels (props) {
     let {name}= props
     let {id}= props
     return (
-     
-        <div class="card">
-            <div class="image">
+        <div className="card">
+            <div className="image">
                 <img src={photo}  alt={`imgen de ${photo}`} />
             </div>
-            <div class="details">
-                <div class="center">
+            <div className="details">
+                <div className="center">
                     <h1>{name}</h1>
                     <Linkeador to={id}>
-                        <div className='botonH'><h3>Details</h3></div>
+                    <button className='botonH'><h3>Details</h3></button>
                     </Linkeador>
                 </div>
             </div>
