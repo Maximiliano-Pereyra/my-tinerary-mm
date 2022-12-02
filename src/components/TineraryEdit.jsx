@@ -16,7 +16,7 @@ export default function TineraryEdit() {
   console.log(id);
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/itinerary/${id}`)
+      .get(`${BASE_URL}/itineraries/${id}`)
       .then((response) => setTineraries(response.data.response));
   
   }, []);
@@ -40,7 +40,7 @@ export default function TineraryEdit() {
     };
     let headers = { headers: { Authorization: `Bearer ${token}` } };
     try {
-      let response = await axios.put(`${BASE_URL}/itinerary/${id}`, newTinerary, headers);
+      let response = await axios.put(`${BASE_URL}/itineraries/${id}`, newTinerary, headers);
       console.log(response);
 
       if (response.data.success) {

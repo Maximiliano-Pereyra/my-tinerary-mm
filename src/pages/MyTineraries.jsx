@@ -11,22 +11,22 @@ import "react-toastify/dist/ReactToastify.css";
 export default function MyTineraries() {
 
     const dispatch = useDispatch();
-    const { deleteTinerary, getMyTinerary} = myTineraryActions;
+    const { deleteMyTinerary, getMyTineraries} = myTineraryActions;
     const { idUser, token} = useSelector((state) => state.user);
-    const { itineraries } = useSelector((state) => state.mytineraries);
+    const { tineraries } = useSelector((state) => state.mytineraries);
 
   useEffect(() => {
 
-   dispatch(getMyTinerary({tineId: idUser}))
+   dispatch(getMyTineraries({idTinerary: idUser}))
   }, []);
 
   return (
     <div ><ToastContainer/>
     <h1>My Tineraries</h1>
     <div>
-      {itineraries.itineraries?.map((item) => {
+      {tineraries?.map((item) => {
         function functionDelete() {
-          if (dispatch(deleteTinerary({ tineId: item._id, token}))) {
+          if (dispatch(deleteMyTinerary({ idTinerary: item._id, token}))) {
             toast.success("The Tinerary was deleted", {
               position: toast.POSITION.TOP_CENTER,
             });
@@ -37,7 +37,7 @@ export default function MyTineraries() {
           <MyCardTinerary
           key={item._id}
           name={item.name}
-          img={item.photo[0]}
+          photo={item.photo[0]}
           description={item.description}
           price={item.price} duration={item.duration}
             onClick={functionDelete}

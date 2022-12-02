@@ -1,17 +1,17 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import reactionsActions from "../redux/actions/reactionActions";
+import reactionAction from "../redux/actions/reactionAction";
 
 export default function Reaction(props) {
-  let { idTinerary } = props;
+  let { eventId, type } = props;
   const { token, idUser } = useSelector((state) => state.user);
   let dispatch = useDispatch();
-  const { getReactions, updateReactions } = reactionsActions;
+  const { getReactions, updateReactions } = reactionAction;
   const [reaction, setReaction] = useState([]);
   const [reload, setReload] = useState(true);
-
   async function changeIcon(event) {
+   
     let name;
     reaction.reactions.data.forEach((e) => {
       if (e.name === event.target.name) {
@@ -19,7 +19,13 @@ export default function Reaction(props) {
       }
     });
     try {
-      await dispatch(updateReactions({ id: idTinerary, name, token }));
+      let datos = {
+        token: token,
+        type: type,
+        eventId: eventId,
+        name: name
+      }
+      await dispatch(updateReactions(datos));
       setReload(!reload);
     } catch (error) {
       console.log(error);
@@ -28,11 +34,11 @@ export default function Reaction(props) {
 
   useEffect(() => {
     reactions();
-    // eslint-disable-next-line
+
   }, [reload]);
 
   async function reactions() {
-    let res = await dispatch(getReactions(idTinerary));
+    let res = await dispatch(getReactions({eventId, type}));
     setReaction(res.payload);
   }
 
@@ -49,7 +55,7 @@ export default function Reaction(props) {
               width="15"
               alt={e.name}
               name={e.name}
-              className="reaction"
+
               onClick={changeIcon}
             />
             <p>{reaction.reactions.lengthOfReactions[e.name]}</p>
@@ -60,7 +66,7 @@ export default function Reaction(props) {
               width="15"
               alt={e.name}
               name={e.name}
-              className="reaction"
+
               onClick={changeIcon}
             />
             <p>{reaction.reactions.lengthOfReactions[e.name]}</p>
