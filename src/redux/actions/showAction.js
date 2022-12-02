@@ -20,7 +20,6 @@ const getShow = createAsyncThunk("getShow", async () => {
     async (userId) => {
       let url = ` ${BASE_URL}/show/?userId=${userId}`;
       try { 
-        console.log(url);
         const res = await axios.get(url);
         console.log(res.data.res);
         console.log(userId);
@@ -36,10 +35,47 @@ const getShow = createAsyncThunk("getShow", async () => {
       }
     }
   );
-
+  const getOneShowId = createAsyncThunk(
+    "getOneShowId",
+    async (_id) => {
+      let url = ` ${BASE_URL}/show/?_id=${_id}`;
+      try { 
+        const res = await axios.get(url);
+        console.log(res.data.res);
+        return {
+          shows: res.data.res,
+        };
+      } catch (error) {
+        console.log(error);
+        return {
+          payload: "Error",
+        };
+      }
+    }
+  );
+  const getShowHotelId = createAsyncThunk(
+    "getShowHotelId",
+    async (hotelId) => {
+      let url = ` ${BASE_URL}/show/?hotelId=${hotelId}`;
+      try { 
+        const res = await axios.get(url);
+        console.log(res.data.res);
+        return {
+          shows: res.data.res,
+        };
+      } catch (error) {
+        console.log(error);
+        return {
+          payload: "Error",
+        };
+      }
+    }
+  );
 const showActions = {
     getShow,
-    getShowId
+    getShowId,
+    getOneShowId,
+    getShowHotelId
   };
   
   export default showActions;

@@ -482,6 +482,7 @@ code {
   justify-content: center;
   color: #533E2D;
   border-radius: 10px;
+  margin: 10px;
 }
 
 .centerH h1 {
@@ -685,6 +686,50 @@ code {
   color: #242331;
   font-size: large;
 }
+.comments{
+  width: 70vw;
+  min-height: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #7B5731;
+  color: #d1c07c;
+}
+.comments h2{
+  width: 100%;
+  height: 4vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+.comments h3{
+width: 100%;
+height: 2vh;
+}
+
+.footerDeShow{
+  width: 70vw;
+  min-height: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  color: #d1c07c;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  gap: 5px;
+}
+.nuevoComentario{
+  width: 70vw;
+  min-height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 8px;
+}
+.nuevoComentario input{
+height: 3vh;
+}
 
 /*-------------------------------------------------------------------------Mycity---------------------------------------------------------------------------------------*/
 .contmycit {
@@ -771,6 +816,31 @@ code {
 img {
   width: 50px;
   height: 50px;
+}
+
+/* ---------------------------------------------my show------------------------------------------------- */
+
+.comentarios{
+  width: 30vw;
+  height: 6vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #d1c07c;
+  color: #533E2D;
+  justify-content: center;
+  align-content: center;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.todosLosComentarios{
+  width: 30vw;
+  min-height:15vh ;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #61dafb;
+  color: red;
+  margin-top: 10px;
 }
 
 

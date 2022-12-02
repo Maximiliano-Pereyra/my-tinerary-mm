@@ -1,7 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 import showActions from "../actions/showAction";
 
-const { getShow, getShowId } = showActions
+const { getShow, getShowId, getOneShowId, getShowHotelId} = showActions
 
 const initialState = {
 
@@ -23,6 +23,18 @@ const showReducer = createReducer(initialState, (builder) => {
         return {
           ...state,
           ...action.payload,
+        };
+      })
+      .addCase(getOneShowId.fulfilled, (state, action) => {
+        return {
+          ...state,
+          shows: action.payload,
+        };
+      })
+      .addCase(getShowHotelId.fulfilled, (state, action) => {
+        return {
+          ...state,
+          shows: action.payload,
         };
       })
 });
