@@ -11,13 +11,11 @@ import NewCity from "./pages/NewCity";
 import DetailsCity from "./pages/DetailsCity";
 import DetailsHotels from "./pages/DetailsHotels";
 import NotFound from "./pages/NotFound";
-
 import MyCities from "../src/pages/MyCities.jsx";
 import CityEdit from "../src/components/CityEdit";
 import MyTineraries from "../src/pages/MyTineraries";
 import MyCardTinerary from "./components/MyCardTinerary";
 import TineraryEdit from "./components/TineraryEdit";
-
 import HotelesDeUsuario from "./pages/HotelesDeUsuario";
 import EditorDeHotel from "./pages/EditorDeHotels";
 import MyShows from "./pages/MyShows";
@@ -26,14 +24,16 @@ import RuteProtect from "./components/RuteProtect";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import userActions from "./redux/actions/userActions";
-
 import NewItinerary from "./pages/NewItinerary";
-
 import MyProfile from "./pages/MyProfile";
 import EditMyProfile from "./pages/EditMyProfile";
 import NewShow from "./pages/NewShow";
+
 import Reaction from "./components/Reaction";
 import MyReactions from "./pages/MyReactions";
+
+
+import DetailShow from "./components/DetailShow";
 
 
 
@@ -74,6 +74,7 @@ function App() {
           <Route path="/shows/prueba" element={<MyShows />} />
           <Route path="/shows/prueba/newShow" element={<NewShow />} />
           <Route path="/shows/prueba/:id/edit" element={<EditDeShow />} />
+          <Route path="/shows/prueba/:id/info" element={<DetailShow />} />
           <Route path="/mytineraries" element={<MyTineraries />} />
           <Route path="/tineraryedit/:id" element={<TineraryEdit />} />
           <Route path="/useritinerary" element={<NewItinerary />} />
