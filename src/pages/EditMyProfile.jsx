@@ -52,7 +52,7 @@ export default function EditMyPerfil() {
 
         } catch (error) {
             console.log(error.message);
-            toast.error('Sorry, the show could not be modificated!', {
+            toast.error('The profile could not be modificated, please enter all fields!', {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,

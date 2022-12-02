@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function NuevoHotel() {
 
 
-  const { idUser } = useSelector((state) => state.user);
+  const { idUser, token } = useSelector((state) => state.user);
   console.log(idUser);
 
   const nameInputElement = useRef();
@@ -28,8 +28,9 @@ export default function NuevoHotel() {
     };
 
     console.log(data);
+    let headers = { headers: { Authorization: ` Bearer ${token} ` } };
     try {
-      let res = await axios.post((`http://localhost:8000/api/hotel/`), data)
+      let res = await axios.post((`http://localhost:8000/api/hotel/`), data,headers)
       console.log(res);
       if (res.data.success) {
         toast.success(' The hotel was created', {

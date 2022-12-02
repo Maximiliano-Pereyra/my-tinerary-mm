@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 
 export default function TineraryEdit() {
   let [tinerary, setTineraries] = useState([]);
-  const { idUser} = useSelector((state) => state.user);
+  const { idUser, token} = useSelector((state) => state.user);
   const onInputChange = (e) => {
     setTineraries({ ...tinerary, [e.target.placeholder]: e.target.value });
   };
@@ -16,7 +16,7 @@ export default function TineraryEdit() {
   console.log(id);
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/itinerary/${id}`)
+      .get(`${BASE_URL}/itineraries/${id}`)
       .then((response) => setTineraries(response.data.response));
   
   }, []);
@@ -38,9 +38,9 @@ export default function TineraryEdit() {
       description: NewTineraryDescription.current.value,
       userId: idUser,
     };
-
+    let headers = { headers: { Authorization: `Bearer ${token}` } };
     try {
-      let response = await axios.put(`${BASE_URL}/itinerary/${id}`, newTinerary);
+      let response = await axios.put(`${BASE_URL}/itineraries/${id}`, newTinerary, headers);
       console.log(response);
 
       if (response.data.success) {

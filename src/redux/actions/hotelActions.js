@@ -15,9 +15,11 @@ const getHotels = createAsyncThunk("getHotels", async () => {
     };
   }
 });
-const deleteHotels = createAsyncThunk("deleteHotels", async ({hotelId}) => {
+const deleteHotels = createAsyncThunk("deleteHotels", async ({hotelId},{token} ) => {
+
+  let headers = { headers: { Authorization: ` Bearer ${token} ` } };
   try {
-    const res = await axios.delete(`http://localhost:8000/api/hotel/${hotelId}`);
+    const res = await axios.delete(`http://localhost:8000/api/hotel/${hotelId}`, headers);
 
     return {
       success: true,
@@ -93,6 +95,28 @@ const getHotelsId = createAsyncThunk(
     }
   }
 );
+const getOneHotelId = createAsyncThunk(
+  "getOneHotelId",
+  async (_id) => {
+    let url = ` ${BASE_URL}/hotel/?_id=${_id}`;
+    try { 
+      console.log(url);
+      const res = await axios.get(url);
+      console.log(res.data.res);
+      console.log(_id);
+      return {
+        hotels: res.data.res,
+        hotel:res.data.res[0],
+        _id,
+      };
+    } catch (error) {
+      console.log(error);
+      return {
+        payload: "Error",
+      };
+    }
+  }
+);
 
 
 
@@ -101,8 +125,8 @@ const hotelActions = {
   getHotelsFilter,
   getHotelsSelect,
   getHotelsId,
-  deleteHotels
-
+  deleteHotels,
+  getOneHotelId
 };
 
 export default hotelActions;

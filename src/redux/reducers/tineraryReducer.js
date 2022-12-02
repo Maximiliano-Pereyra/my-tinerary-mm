@@ -1,27 +1,28 @@
 const { createReducer } = require("@reduxjs/toolkit");
-const { default: myTineraryActions } = require("../actions/myTineraryActions");
+const {
+  default: mytinerariesActions,
+} = require("../actions/myTineraryActions");
 
-const { deleteTinerary, getMyTinerary } = myTineraryActions;
+const { deleteMyTinerary, getMyTineraries } = mytinerariesActions;
 
 const initialState = {
-  itineraries: [],
-  tineId: "",
+  tineraries: []
 };
 
-const tineraryReducer = createReducer(initialState, (builder) => {
+const mytinerariesReducers = createReducer(initialState, (builder) => {
   builder
-    .addCase(getMyTinerary.fulfilled, (state, action) => {
+    .addCase(getMyTineraries.fulfilled, (state, action) => {
       console.log(action.payload);
-      return {
-        itineraries: action.payload,
-      };
+      return { ...state, tineraries: action.payload.tineraries}
+
     })
-    .addCase(deleteTinerary.fulfilled, (state, action) => {
-      console.log(action.payload._id);
-      return {
-        tineId: action.payload,
-      };
+
+    .addCase(deleteMyTinerary.fulfilled, (state, action) => {
+      let itinerary = state.tineraries.filter(
+        (itinerary) => itinerary._id !== action.payload.data._id
+      );
+      return { ...state, tineraries: itinerary };
     });
 });
 
-export default tineraryReducer;
+export default mytinerariesReducers;
