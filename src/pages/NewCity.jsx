@@ -13,7 +13,7 @@ export default function NewCity() {
     const continentInputElement = useRef();
     const userIdInputElement = useRef();
     const photoElement = useRef();
-    const { idUser} = useSelector((state) => state.user);
+    const { idUser, token} = useSelector((state) => state.user);
 
   async function handleSubmit (event) {
         event.preventDefault();
@@ -24,8 +24,9 @@ export default function NewCity() {
           continent: continentInputElement.current?.value,
           userId: idUser
         };
+        let headers = { headers: { Authorization: `Bearer ${token}` } };
         try {
-          let res = await axios.post(`${BASE_URL}/city`, data);
+          let res = await axios.post(`${BASE_URL}/city`, data, headers);
           console.log(res);
           if (res.data.success){
             toast.success("The city was created", {

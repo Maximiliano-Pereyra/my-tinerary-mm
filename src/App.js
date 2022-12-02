@@ -28,7 +28,13 @@ import NewItinerary from "./pages/NewItinerary";
 import MyProfile from "./pages/MyProfile";
 import EditMyProfile from "./pages/EditMyProfile";
 import NewShow from "./pages/NewShow";
+
+import Reaction from "./components/Reaction";
+import MyReactions from "./pages/MyReactions";
+
+
 import DetailShow from "./components/DetailShow";
+
 
 
 function App() {
@@ -44,8 +50,7 @@ function App() {
   }, []);
 
   return (
-
-    <Main>
+  <Main>
       <Routes>
         <Route path="" element={<Home />} />
         <Route path="/hotels" element={<PginasDeCards />} />
@@ -63,6 +68,7 @@ function App() {
           <Route path="/cityedit/:id" element={<CityEdit />} />
         </Route>
         <Route path="/signUp" element={<SignUp />} />
+        <Route path="/myreactions" element={<MyReactions/>}/>
         <Route
           element={<RuteProtect isAllowed={user.logged && user.role === "user"} />}>
           <Route path="/shows/prueba" element={<MyShows />} />
@@ -77,8 +83,7 @@ function App() {
         <Route path="/hotels/:id" element={<DetailsHotels />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
-    </Main>
-
+    </Main> 
   );
 }
 

@@ -1,4 +1,4 @@
-
+import reactionsReducers from './reactionReducer';
 import hotelReducer from './hotelReducer'
 import cityReducer from "./cityReducer";
 import showReducer from './showReducer'
@@ -7,6 +7,7 @@ import tineraryReducer from "./tineraryReducer";
 import usersReducer from './userReducer';
 import commentReducers from './commentReducer';
 
+
 const rootReducer = {
   cities: cityReducer, //nombre que le doy al reductor y el reductor que traigo
   mycity: myCityReducer,
@@ -14,7 +15,11 @@ const rootReducer = {
   hotels : hotelReducer,
   shows: showReducer,
   user: usersReducer,
+
+  reactions: reactionsReducers
+
   comments: commentReducers
+
 };
 
 export default rootReducer 

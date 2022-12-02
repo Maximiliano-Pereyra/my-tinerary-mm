@@ -2,37 +2,14 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { BASE_URL } from "../../api/url";
 
-const getMyTinerary = createAsyncThunk("getMyTinerary", async ({ tineId }) => {
-  let url = `${BASE_URL}/itinerary?userId=${tineId}`;
-  try {
-    const response = await axios.get(url);
-    return response.data.response;
-  } catch (error) {
-    console.log(error);
-    return {
-      payload: "Error",
-    };
-  }
-});
-
-const deleteTinerary = createAsyncThunk(
-  "deleteTinerary",
-  async ({ tineId }) => {
-    let url = `${BASE_URL}/itinerary/destroy/${tineId}`;
+const getMyTineraries = createAsyncThunk(
+  "getMyTineraries",
+  async ({ idTinerary }) => {
+    let url = `${BASE_URL}/itineraries?userId=${idTinerary}`;
     try {
-      const response = await axios.delete(url);
-      console.log(response.data.message);
-      console.log(response.data);
-      if (response.data._id) {
-        return {
-          success: false,
-          response: response.data,
-        };
-      } else {
-        return {
-          success: true,
-          response: response.data.message,
-        };
+      const res = await axios.get(url);
+      return {
+       tineraries: res.data.response
       }
     } catch (error) {
       console.log(error);
@@ -43,9 +20,33 @@ const deleteTinerary = createAsyncThunk(
   }
 );
 
-const myTineraryActions = {
-  getMyTinerary,
-  deleteTinerary,
+const deleteMyTinerary = createAsyncThunk(
+  "deleteMyTinerary",
+  async ({ idTinerary, token }) => {
+    let headers = { headers: { Authorization: `Bearer ${token}` } };
+    let url = `${BASE_URL}/itineraries/${idTinerary}`;
+    try {
+      const res = await axios.delete(url, headers);
+      
+      return {
+        tineraries:res.data,
+        data: res.data.res
+
+      }
+
+    } catch(error){
+        console.log(error)
+        return {
+            payload: 'Error'
+        }
+    }
+})
+
+
+const mytinerariesActions = {
+  deleteMyTinerary,
+  getMyTineraries,
+
 };
 
-export default myTineraryActions;
+export default mytinerariesActions;

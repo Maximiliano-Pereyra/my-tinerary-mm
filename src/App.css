@@ -395,6 +395,7 @@ width: auto;
 }
 .imgdet{
   width: 100vh;
+  height: 50vh;
 }
 .subcarddet{
   display: flex;

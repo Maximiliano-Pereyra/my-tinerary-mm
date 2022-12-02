@@ -5,8 +5,6 @@ const { getMyCity, deleteMyCity } = myCityActions;
 
 const initialState = {
   city: [],
-  id: "",
-  cityid: "",
 };
 
 const myCityReducer = createReducer(initialState, (builder) => {
@@ -14,14 +12,15 @@ const myCityReducer = createReducer(initialState, (builder) => {
     .addCase(getMyCity.fulfilled, (state, action) => {
       return {
         ...state,
-        city: action.payload,
+        city: action.payload.city,
       };
     })
     .addCase(deleteMyCity.fulfilled, (state, action) => {
       console.log(action.payload);
+      let data = state.cities.filter((e) => e._id !== action.payload.data._id);
       return {
         ...state,
-        ...action.payload,
+        cities: data,
       };
     });
 });

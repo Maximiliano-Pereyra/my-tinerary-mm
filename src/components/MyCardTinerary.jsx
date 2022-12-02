@@ -1,14 +1,17 @@
 import React from "react";
+
 import { Link as Linkeador } from "react-router-dom";
 
+
 export default function MyCardTinerary(props) {
-  let { img } = props;
+  let { photo } = props;
   let { name } = props;
   let {price} = props
   let {duration} = props
   let {description} = props
   let {onClick} = props 
   let {id} = props
+
 
   return (
     <div>
@@ -17,7 +20,7 @@ export default function MyCardTinerary(props) {
             <h2 className="mycitname">{name}</h2>
           </div>
         <div>
-          <img className="mycitimg" src={img} alt={name}></img>
+          <img className="mycitimg" src={photo} alt={name}></img>
         </div>
         <div>
             <h4>Price: USD {price}</h4>

@@ -6,6 +6,7 @@ import { BASE_URL } from '../api/url'
 import axios from 'axios'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import Itinerary from '../components/Itinerary'
 
 export default function DetailsCity() {
   let {id} = useParams() //id de la url de la barra de busqueda
@@ -19,7 +20,7 @@ export default function DetailsCity() {
   }, [])
 
   useEffect( () => {
-    axios.get(`${BASE_URL}/itinerary`)
+    axios.get(`${BASE_URL}/itineraries`)
     .then(response => setItineraries(response.data.response.find(activities=>activities.cityId===id)))
     .catch(err => console.log(err.message))
   }, [])
@@ -30,7 +31,8 @@ console.log(id)
 <div>
       <CardCitie key={foundCity.id} titulo={foundCity.name} continente={foundCity.continent} imagen={foundCity.photo} poblacion={foundCity.population}/>
 </div>
-  <CardItinerary  imagen={itineraries?.photo}  precio={itineraries?.price} duracion={itineraries?.duration} descripcion={itineraries?.description}  id={itineraries?._id}/>      
+  <Itinerary/>      
 </div>
   )
 }
+

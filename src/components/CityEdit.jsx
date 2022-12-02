@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 
 export default function CityEdit() {
   let [cities, setCities] = useState([]);
-  const { idUser} = useSelector((state) => state.user);
+  const { idUser, token} = useSelector((state) => state.user);
 
   const onInputChange = (e) => {
     setCities({ ...cities, [e.target.placeholder]: e.target.value });
@@ -39,8 +39,9 @@ export default function CityEdit() {
       population: CityPopulation.current.value,
       userId: idUser,
     };
+    let headers = { headers: { Authorization: `Bearer ${token}` } };
     try {
-      let response = await axios.put(`${BASE_URL}/city/${id}`, newCity);
+      let response = await axios.put(`${BASE_URL}/city/${id}`, newCity, headers);
       console.log(response);
 
       if (response.data.success) {

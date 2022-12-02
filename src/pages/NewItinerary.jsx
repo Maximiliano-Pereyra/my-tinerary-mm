@@ -43,7 +43,7 @@ export default function NewItinerary() {
         };
         let headers = { headers: { Authorization: `Bearer ${token}` } };
         try {
-          let response = await axios.post(`${BASE_URL}/itinerary`, NewIt, headers);
+          let response = await axios.post(`${BASE_URL}/itineraries`, NewIt, headers);
           console.log(response);
           if (response.data.success){
             Swal.fire({

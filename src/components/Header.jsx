@@ -56,6 +56,11 @@ export default function Header() {
     name: "New Tinerary",
     route: "/useritinerary"
   },
+  {
+    name: "My Reactions",
+    route: "/myreactions"
+  }
+
   ];
   const adminPages = [
     {
@@ -74,6 +79,15 @@ export default function Header() {
       name: "My Hotels",
       route: "/hotels/prueba",
     },
+    {
+      name: "New Reaction",
+      route: "/reactions"
+    },
+    {
+      name: "My Reactions",
+      route: "/myreactions"
+    }
+
   ];
   const noLog= [
     {
