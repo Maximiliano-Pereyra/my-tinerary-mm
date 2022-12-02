@@ -15,12 +15,12 @@ export default function MyTineraries() {
 
     const dispatch = useDispatch();
     const { deleteTinerary, getMyTinerary} = myTineraryActions;
-
+    const { idUser} = useSelector((state) => state.user);
     const { tineId, itineraries } = useSelector((state) => state.mytineraries);
 
   useEffect(() => {
-    
-let userId ="636d8bcade38ce0e1619410f"
+
+let userId = idUser
 dispatch(getMyTinerary({tineId: userId}))
  
   }, []);

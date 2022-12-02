@@ -10,7 +10,7 @@ export default function Main(props){
         <Header/>
         <Scrolltop/>
         <div className="cuerpo-general">{props.children}</div>
-        <div className="footer"><Footer/></div>
+        <Footer/>
 
     </>
     )

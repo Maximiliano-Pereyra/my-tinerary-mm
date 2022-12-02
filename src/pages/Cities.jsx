@@ -37,7 +37,8 @@ function Cities() {
     if (event.target.checked) {
       arrayCheck = [...checkb, event.target.value];
     } else {
-      arrayCheck = checkb.filter((e) => e !== event.target.value);
+      arrayCheck = checkb.filter((e) => e !== event.target.value);//para que retorne valores que no sean diferentes
+      console.log(arrayCheck)
     }
     setChecked(arrayCheck);
     return arrayCheck;

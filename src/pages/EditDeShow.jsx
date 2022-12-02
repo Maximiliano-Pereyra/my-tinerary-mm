@@ -1,12 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useRef } from "react";
 import axios from 'axios';
-import { BASE_URL } from '../api/url';
 import { ToastContainer, toast } from 'react-toastify';
 import { useParams } from 'react-router-dom';
-
-
 import 'react-toastify/dist/ReactToastify.css';
+import { useSelector } from 'react-redux';
 
 export default function EditDeShow() {
 
@@ -16,7 +14,8 @@ export default function EditDeShow() {
   const photoInputElement = useRef();
   const priceInputElement = useRef();
   const dateInputElement = useRef();
-  const userIdInputElement = useRef();
+  const hotelIdInputElement = useRef();
+  const { idUser } = useSelector((state) => state.user);
  let {id} = useParams();
 
   let handleSubmit = async (event) => {
@@ -29,13 +28,14 @@ export default function EditDeShow() {
       photo: photoInputElement.current.value,
       price: priceInputElement.current.value,
       date: dateInputElement.current.value,
-      userId: userIdInputElement.current.value
+      hotelId: hotelIdInputElement.current.value,
+      userId: idUser
     };
 
     console.log(data);
     try {
-      let res = await axios.patch((`http://localhost:8000/api/hotel/${id}`), data)
-      console.log(res);
+      let res = await axios.patch((`http://localhost:8000/api/show/${id}`), data)
+      console.log(res)
       if (res.data.success) {
         toast.success(' The show was modificated', {
           position: "top-center",
@@ -46,12 +46,11 @@ export default function EditDeShow() {
           draggable: true,
           progress: undefined,
           theme: "dark",});
-          window.location.href=`http://localhost:3000/hotels/${id}`
-      }
-        
+          window.location.href=`http://localhost:3000/shows/prueba`
+      } 
     } catch (error) {
       console.log(error.message);
-      toast.error('Sorry, the show could not be modificated!', {
+      toast.error('Sorry, the show could not be modificated!, pleas enter information to all fields', {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -72,7 +71,7 @@ export default function EditDeShow() {
 
     console.log(data);
     try {
-      let res = await axios.delete((`http://localhost:8000/api/hotel/${id}`), data)
+      let res = await axios.delete((`http://localhost:8000/api/show/${id}`), data)
       console.log(res);
       if (res.data.success) {
         toast.success(' The show was deleted', {
@@ -84,7 +83,7 @@ export default function EditDeShow() {
           draggable: true,
           progress: undefined,
           theme: "dark",});
-          window.location.href=`http://localhost:3000/hotels`
+          window.location.href=`http://localhost:3000/shows/prueba`
       }
         
     } catch (error) {
@@ -115,13 +114,13 @@ export default function EditDeShow() {
         type="text"
         name='name'
         autoComplete='off'
-        placeholder='Hotel name'
+        placeholder='Show name'
         ref={nameInputElement}>
       </input>
 
       <input
         type="text"
-        name='name'
+        name='description'
         autoComplete='off'
         placeholder='Enter description'
         ref={descriptionInputElement}>
@@ -137,7 +136,7 @@ export default function EditDeShow() {
 
       <input
         type="text"
-        name='capacity'
+        name='price'
         autoComplete='off'
         placeholder='Enter price'
         ref={priceInputElement}>
@@ -145,7 +144,7 @@ export default function EditDeShow() {
 
       <input
         type="text"
-        name='cityId'
+        name='date'
         autoComplete='off'
         placeholder='Enter date'
         ref={dateInputElement}>
@@ -153,10 +152,10 @@ export default function EditDeShow() {
 
       <input
         type="text"
-        name='userId'
+        name='hotelId'
         autoComplete='off'
-        placeholder='Enter User Id'
-        ref={userIdInputElement}>
+        placeholder='Enter hotel Id'
+        ref={hotelIdInputElement}>
       </input>
 
       <button id='signIn2' type='submit' onClick={handleSubmit}>Send data</button>

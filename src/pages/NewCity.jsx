@@ -3,6 +3,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {BASE_URL} from '../api/url'
+import { useSelector } from "react-redux";
 
 
 export default function NewCity() {
@@ -12,6 +13,7 @@ export default function NewCity() {
     const continentInputElement = useRef();
     const userIdInputElement = useRef();
     const photoElement = useRef();
+    const { idUser} = useSelector((state) => state.user);
 
   async function handleSubmit (event) {
         event.preventDefault();
@@ -20,7 +22,7 @@ export default function NewCity() {
           name: nombreCInputElement.current?.value,
           photo: photoElement.current?.value,
           continent: continentInputElement.current?.value,
-          userId: userIdInputElement.current?.value
+          userId: idUser
         };
         try {
           let res = await axios.post(`${BASE_URL}/city`, data);
@@ -29,9 +31,9 @@ export default function NewCity() {
             toast.success("The city was created", {
               position: toast.POSITION.TOP_CENTER,
               theme:"colored"
-            });window.location.href='http://localhost:3001/city';
+            });
           } else {
-            toast.error(res.data.message.join("&"), {
+            toast.error(res.data.message, {
               position: toast.POSITION.TOP_CENTER,
               theme:"colored"
             });
@@ -93,7 +95,7 @@ export default function NewCity() {
      >
         </input>
     
-        <button id='signIn3' type='submit' onClick={handleSubmit}>Send data</button>
+        <button id='signIn3' type='submit' onClick={handleSubmit}>Create</button>
     
         <ToastContainer></ToastContainer>
     </form>
