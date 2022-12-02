@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import { useRef } from 'react';
+import Comments from "./Comments";
 
 
 function CardShow(props) {
@@ -15,14 +16,9 @@ function CardShow(props) {
     let { id } = props
     let _id = id
     const dispatch = useDispatch();
-    const { getCommentsShowId } = commentActions
-    const { comments } = useSelector((state) => state.comments);
     const { idUser, photo, token } = useSelector((state) => state.user);
     const commentInputElement = useRef();
 
-    useEffect(() => {
-        dispatch(getCommentsShowId(_id))
-    }, [])
     let handleSubmit = async (event) => {
         event.preventDefault();
         const data = {
@@ -31,6 +27,7 @@ function CardShow(props) {
             date: '2022-12-12',
             comment: commentInputElement.current.value,
         };
+
         let headers = { headers: { Authorization: ` Bearer ${token} ` } };
 
         try {
@@ -47,7 +44,7 @@ function CardShow(props) {
                     progress: undefined,
                     theme: "dark",
                 });
-                window.location.href = `http://localhost:3000/shows/prueba/`
+                window.location.href = `http://localhost:3000/hotels`
             } else {
                 toast.error(res.data.message.join('///'), {
                     position: "top-center",
@@ -75,7 +72,7 @@ function CardShow(props) {
             });
         }
     }
-    console.log(comments);
+    
     return (
         <div className="detallesDeShow">
             <div className="tituloEImagenDeShow">
@@ -87,10 +84,7 @@ function CardShow(props) {
                 <p>Price: {precio} USD</p>
                 <p>Date: {fecha}</p>
             </div>
-            <div className="comments">
-                <h2>Comments</h2>
-                {comments.map(allcomments => <h3 >{allcomments.comment}</h3>)}
-            </div>
+            <Comments idShow={_id}/>
             <div className="footerDeShow">
                 <div className="nuevoComentario">
                     <img src={photo} alt={`imagen de ${photo}`} />

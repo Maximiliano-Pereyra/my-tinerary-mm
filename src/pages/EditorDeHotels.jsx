@@ -16,7 +16,7 @@ export default function EditorDeHotel() {
   const photoInputElement = useRef();
   const capacityInputElement = useRef();
   const cityIdInputElement = useRef();
-  const { idUser } = useSelector((state) => state.user);
+  const { idUser, token } = useSelector((state) => state.user);
  let {id} = useParams();
 
   let handleSubmit = async (event) => {
@@ -32,8 +32,10 @@ export default function EditorDeHotel() {
     };
 
     console.log(data);
+
+    let headers = { headers: { Authorization: ` Bearer ${token} ` } };
     try {
-      let res = await axios.patch((`http://localhost:8000/api/hotel/${id}`), data)
+      let res = await axios.patch((`http://localhost:8000/api/hotel/${id}`), data,headers)
       console.log(res);
       if (res.data.success) {
         toast.success(' The hotel was modificate', {

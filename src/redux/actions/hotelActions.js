@@ -15,9 +15,11 @@ const getHotels = createAsyncThunk("getHotels", async () => {
     };
   }
 });
-const deleteHotels = createAsyncThunk("deleteHotels", async ({hotelId}) => {
+const deleteHotels = createAsyncThunk("deleteHotels", async ({hotelId},{token} ) => {
+
+  let headers = { headers: { Authorization: ` Bearer ${token} ` } };
   try {
-    const res = await axios.delete(`http://localhost:8000/api/hotel/${hotelId}`);
+    const res = await axios.delete(`http://localhost:8000/api/hotel/${hotelId}`, headers);
 
     return {
       success: true,

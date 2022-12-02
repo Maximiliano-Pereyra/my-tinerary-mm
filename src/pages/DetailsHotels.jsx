@@ -38,7 +38,7 @@ console.log(shows.shows);
   return (
     <>
         <CardHotel key={hotel.id} titulo={hotel.name} imagen={hotel.photo} capacidad={hotel.capacity}  />
-        {shows?.shows?.map(allshow=><CardShow key={allshow._id} id={allshow._id} titulo={allshow.name} imagen={allshow.photo} precio={allshow.price} fecha={allshow.date}/>)}   
+        {shows?.shows?.map(allshow=><CardShow key={allshow._id} id={allshow._id} titulo={allshow.name} imagen={allshow.photo} precio={allshow.price} fecha={allshow.date.slice(0,-14)}/>)}   
      
     </>
   )

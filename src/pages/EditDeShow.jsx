@@ -15,7 +15,7 @@ export default function EditDeShow() {
   const priceInputElement = useRef();
   const dateInputElement = useRef();
   const hotelIdInputElement = useRef();
-  const { idUser } = useSelector((state) => state.user);
+  const { idUser, token } = useSelector((state) => state.user);
  let {id} = useParams();
 
   let handleSubmit = async (event) => {
@@ -33,8 +33,9 @@ export default function EditDeShow() {
     };
 
     console.log(data);
+    let headers = { headers: { Authorization: ` Bearer ${token} ` } };
     try {
-      let res = await axios.patch((`http://localhost:8000/api/show/${id}`), data)
+      let res = await axios.patch((`http://localhost:8000/api/show/${id}`), data, headers)
       console.log(res)
       if (res.data.success) {
         toast.success(' The show was modificated', {
@@ -70,8 +71,9 @@ export default function EditDeShow() {
     const data = {_id: id, };
 
     console.log(data);
+    let headers = { headers: { Authorization: ` Bearer ${token} ` } };
     try {
-      let res = await axios.delete((`http://localhost:8000/api/show/${id}`), data)
+      let res = await axios.delete((`http://localhost:8000/api/show/${id}`), data, headers)
       console.log(res);
       if (res.data.success) {
         toast.success(' The show was deleted', {

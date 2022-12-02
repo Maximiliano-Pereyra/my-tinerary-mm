@@ -694,16 +694,34 @@ code {
   background-color: #7B5731;
   color: #d1c07c;
 }
-.comments h2{
-  width: 100%;
-  height: 4vh;
+.comments h3{
+  width: 70vw;
+  min-height: 3vh;
+  display: flex;
+  flex-wrap: wrap;
+ justify-content: center;
+}
+#commentsbutton{
+  width: 70vw;
+  min-height: 3vh;
+  display: flex;
+  flex-wrap: wrap;
+ justify-content: center;
+ align-items: center;
+ font-size: medium;
+}
+.listaDeComentarios{
+  width: 70vw;
+  min-height: 4vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  font-size: larger;
   }
-.comments h3{
+.cadaComentario{
 width: 100%;
-height: 2vh;
+height: 4vh;
 }
 
 .footerDeShow{
