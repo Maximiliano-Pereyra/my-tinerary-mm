@@ -22,7 +22,7 @@ console.log(comments);
         return (
             <div className="comments">
                 <h3>Your's comments</h3>
-                <h3>*Acatendrian que ir los comentarios del usuario*</h3>
+                <h3>*Acatendrian que ir los comentarios del usuario de ese show*</h3>
                {/*  <UserComment /> */}
                 { mostrarOcultar ? (
             
